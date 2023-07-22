@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.mapper.KakaoMapper">
+	
+	<select id="KakaoLoginCheck" parameterType="KakaoDTO" resultType="String">
+		select ID from MEMBER where ID = #{ID}
+	</select>
+	
+	<insert id="KakaoLogin" parameterType="KakaoDTO">
+		insert into MEMBER values(#{ID},' ','카카오',#{NAME})
+	</insert>
+
+</mapper>
