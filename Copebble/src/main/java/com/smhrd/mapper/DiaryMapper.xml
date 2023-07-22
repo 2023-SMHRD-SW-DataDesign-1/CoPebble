@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.mapper.DiaryMapper">
+	
+	<insert id="writeDiary" parameterType="DiaryDTO">
+		insert into INFANT_DIARY2 values(NUM_DIARY2.nextval,
+		#{FAMILY_KEY}, #{TITLE}, #{DIARY}, #{FILENAME},to_char(sysdate,'YYYY-MM-DD'))
+	</insert>
+
+	<select id="showDiary" resultType="DiaryDTO">
+		select * from INFANT_DIARY2 order by NUM
+	</select>
+
+	<select id="showDiaryOne" parameterType="int" resultType="DiaryDTO">
+		select * from INFANT_DIARY2 where NUM = #{num}
+	</select>
+	
+	<delete id="deleteDiary" parameterType="int">
+		delete from INFANT_DIARY2 where NUM = #{num}
+	</delete>
+</mapper>
