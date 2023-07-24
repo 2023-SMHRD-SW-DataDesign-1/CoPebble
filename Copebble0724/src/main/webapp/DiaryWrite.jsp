@@ -16,7 +16,7 @@
 			enctype="multipart/form-data" id="DiaryForm">
     <div class="diary_write_top_div">
         <div class="diary_babyname_div">
-            <p id="diary_babyname_p">따봉도치(1세)</p>
+            <p id="diary_babyname_p">김민국(만9세)</p>
         </div>
         <div class="diary_br_div"></div>
         <div class="diary_write_date_div">
@@ -34,14 +34,19 @@
             <div class="diary_write_memo_div">
                 <textarea name="DIARY" cols="60" rows="12" style="resize: none;"></textarea>
             </div>
-            <div id="diary_button">
             <input hidden type="text" name="FAMILY_KEY" value="패밀리키">
+            <div id="diary_button">
                 <button id="diary_upload_btn">등록</button>
-                <a href="main.html"><button id="diary_Main_btn">돌아가기</button></a>
+                <button id="diary_Main_btn" onclick="goToBack()">돌아가기</button>
             </div>
         </div>
     </div>
 </body>
 <script src="./js/diaryWrite.js"></script>
+<script type="text/javascript">
+function goToBack(){
+	location.href = 'DiaryMain.jsp'
+}
+</script>
 
 </html>

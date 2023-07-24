@@ -24,7 +24,7 @@
                 <div>
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <div class="plus_icon_div">
+                <div class="plus_icon_div" onclick="goToWrite()">
                     <i class="fa-solid fa-plus"></i>
                 </div>
             </div>
@@ -69,7 +69,7 @@
 		}
 		
 		function goToWrite(){
-			
+			location.href = 'DiaryWrite.jsp'
 		}
 
 	</script>
