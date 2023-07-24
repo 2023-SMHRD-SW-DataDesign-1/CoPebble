@@ -7,39 +7,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style type="text/css">
-#img{
-width: 200px;
-height: 200px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/diary_main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <c:set var="DIARY_list" value="${DiaryDAO.showDiary()}"></c:set>
+    <div class="diary_top_div">
+        <!-- 상단바 -->
+        <div class="diary_header">
+        	<img src="./img/baby.png" alt="포대기 아기 사진">
+            <div class="diary_baby_div">육아 다이어리</div>
+            <div class="diary_icon_div">
+                <div>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="plus_icon_div">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            </div>
+        </div>
 
-<c:set var="DIARY_list" value="${DiaryDAO.showDiary()}"></c:set>
-	<div id="DIARY">
-		<table id="DIARY_list" border="1">
-			<c:forEach items="${DIARY_list}" var="DIARY" varStatus="status">
-			<div>
-			<tr>
-				<td colspan="2">${DIARY.ALLDATE.substring(0,10)}</td>
-			</tr>
-				<td><a href="DiaryDetail.jsp?num=${DIARY.NUM}">${DIARY.TITLE}</a></td>
-			<tr id = "img">
-				<td><img src="./img/${DIARY.FILENAME}" width="200px" height="200px"></td>
-				<td>${DIARY.DIARY}</td>
-			</tr>  
-			<tr>
-			<td><a href="DiaryDeleteCon.do?num=${DIARY.NUM}">삭제</a> </td>
-			</tr>					
-			</div>
-			</c:forEach>
-		</table>
-	</div>
-	
-	
+<!-- 아래 큰 div -->
+<div class="diary_main_div">
+    <div class="diary_name_div">김민국(만9세)</div>
+    <div class="diary_card_container">
+
+        <c:set var="prevDate" value="" />  <%-- Initialize a variable to keep track of the previous date --%>
+
+        <c:forEach items="${DIARY_list}" var="DIARY" varStatus="status">
+        <div class="diary_card">
+            <c:if test="${DIARY.ALLDATE.substring(0, 10) ne prevDate}">
+                
+                    <div class="diary_date_div">${DIARY.ALLDATE.substring(0, 10)}</div>
+                
+                <c:set var="prevDate" value="${DIARY.ALLDATE.substring(0, 10)}" />  <%-- Update the previous date value --%>
+            </c:if>
+
+            <div class="diary_card_item_div" onclick="goToDetail('${DIARY.NUM}')">
+                <img src="./img/${DIARY.FILENAME}" alt="아이이미지">
+                <div class="diary_card_detail_div">
+                    <div class="diary_card_detail_title_div">${DIARY.TITLE}</div>
+                    <div>${DIARY.DIARY}</div>
+                </div>
+            </div>
+            </div>
+        </c:forEach>
+
+    </div>
+</div>
+
+
+    </div>
+
+	<script>
+
+		function goToDetail(index) {
+			location.href = 'DiaryDetail.jsp?num='+index
+		}
+
+	</script>
+
 
 </body>
 </html>

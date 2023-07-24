@@ -43,10 +43,10 @@ public class DiaryWriteCon implements Command {
 		
 		// 데이터 받아오기
 
-		String FAMILY_KEY = multi.getParameter("FAMILY_KEY");		
 		String TITLE = multi.getParameter("TITLE");
 		String DIARY = multi.getParameter("DIARY");
 		String FILENAME = multi.getFilesystemName("FILENAME");
+		String FAMILY_KEY = multi.getParameter("FAMILY_KEY");		
 		
 		
 		System.out.println("FAMILY_KEY :"+FAMILY_KEY);
