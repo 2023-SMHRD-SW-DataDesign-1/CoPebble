@@ -19,11 +19,19 @@ public class MemberDAO {
 			} 
 		
 		public int join(MemberDTO dto) {
-			SqlSession session = sqlSessionFactory.openSession(true);
-			int row = session.insert("join", dto);
-			session.close();
-			return row;
-		}
+		      SqlSession session = sqlSessionFactory.openSession(true);
+		      int row = session.insert("join", dto);
+		      session.close();
+		      return row;
+		   }
+		   
+		   public MemberDTO login(MemberDTO dto) {
+		      SqlSession session = sqlSessionFactory.openSession(true);
+		      MemberDTO info = session.selectOne("login", dto);
+		      session.close();
+		      return info;
+		   }
+
 
 		
 		

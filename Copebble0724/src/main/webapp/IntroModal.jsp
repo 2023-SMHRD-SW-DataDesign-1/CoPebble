@@ -31,7 +31,7 @@
         <!--메인로고 -->
         <div style="width: 10%; min-width: 150px;">
             <a href="Main.jsp">
-                <img class="header_logo" src="img/mainlogo.png" alt="">
+                <img class="header_logo" src="mainlogo.png" alt="">
             </a>
         </div>
          <!-- 육아 다이어리 로고 -->
@@ -60,8 +60,8 @@
     <main>
         <!-- 소개 이미지 또는 글 넣기 -->
         <div>
-            <img src="./img/mainLogo.png" class="leftSlide">
-            <img src="./img/mainLogo.png" class="rightSlide">
+            <img src="mainlogo.png" class="leftSlide">
+            <img src="mainlogo.png" class="rightSlide">
         </div>
 
         <!-- 로그인 모달창 -->
@@ -70,9 +70,9 @@
                 <span class="close-btn">&times;</span>
                 <div class="header_logo2"></div>
                 <p style="margin-bottom: 1%;">아이디</p>
-                <input type="text" name="id" placeholder="  아이디를 입력하세요">
+                <input type="text" name="id" id="loginID" placeholder="  아이디를 입력하세요">
                 <p style="margin-bottom: 1%;">비밀번호</p>
-                <input type="password" name="pw" placeholder="  비밀번호를 입력하세요">
+                <input type="password" name="pw" id="loginPW" placeholder="  비밀번호를 입력하세요">
         
                 <input type="submit" value="로그인" id="login_btn">
                 <input type="submit" value="카카오 로그인" id="kakaologin_btn">
@@ -91,7 +91,7 @@
                 <p style="margin-bottom: 1%;">비밀번호</p>
                 <input type="password" name="PW" id="PW" placeholder="  비밀번호를 입력하세요">
                 <p style="margin-bottom: 1%;">비밀번호 확인</p>
-                <input id="pwCheck" type="text" name="pwCheck" placeholder="  비밀번호를 확인 해 주세요">
+                <input id="pwCheck" type="password" name="pwCheck" placeholder="  비밀번호를 확인 해 주세요">
                 <p style="margin-bottom: 1%;">이름</p>
                 <input type="text" name="NAME" id="NAME" placeholder="  이름을 입력하세요">
                 <input type="submit" value="회원가입" id="join_btn">
@@ -105,7 +105,7 @@
                 <div class="header_logo3"></div>
                 <h2>name님,</h2><br>
                 <h3>회원가입이 완료되었습니다</h3>
-                <a href="Main.jsp">
+                <a href="./main.html">
                     <input type="submit" value="withDAY 이용하기" id="goMain">
                 </a>
             </div>
@@ -152,25 +152,26 @@
     <!-- 로그인 ajax -->
     <script>
     $('#login_btn').on('click', function(){
-       var ID = $('#ID').val();
-        var PW = $('#PW').val(); 
-
-        }
+        var ID = $('#loginID').val();
+        var PW = $('#loginPW').val();
+        console.log(ID);
+        console.log(PW);
+        
         $.ajax({
            url : "LoginCon",
            dataType: "text",
             data : {
                ID : ID,
-                PW : PW
+                PW : PW,
             }, //여기까지 통신하고 LoginCon으로 이동
            success : function(result){ 
               console.log(result)
-              if(result!=="오라클 로그인 연결 실패"){
-                   window.location.href="./Main.jsp";
-                } else {
-                   alert("등록 되지않은 회원입니다.")
-                   document.getElementById("modal2").style.display = "block";
-                }
+               if(result!=="오라클 로그인 연결 실패"){
+                  window.location.href = "./main.html"
+               }else{
+                  alert("등록되지 않은 회원입니다")
+                  document.getElementById("modal2").style.display = "block";
+               }
            },
            error:function(e){
                alert('로그인 통신실패');

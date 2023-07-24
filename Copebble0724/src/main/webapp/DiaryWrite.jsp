@@ -8,6 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/diary_write.css">
+      <style>
+        @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+        * {
+            font-family: "Noto Sans KR", sans-serif;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +26,7 @@
 
         <div style="width: 10%; min-width: 150px;">
             <a href="main.html">
-                <img class="header_logo" src="./img/mainLogo.png" alt="">
+                <img class="header_logo" src="mainlogo.png" alt="">
             </a>
 
 

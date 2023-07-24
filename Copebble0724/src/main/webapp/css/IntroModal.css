@@ -168,14 +168,14 @@ input[id=goMain] {
 
 
 .header_logo2 { /*********************************************** 로그인/회원가입 모달창 안에 로고*/
-            background-image: url("img/logo-01.png");
+            background-image: url("mainlogo.png");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
             height: 100px;
         }
 .header_logo3 { /*********************************************** 회원가입완료 모달창 안에 로고*/
-            background-image: url("img/logo-01.png");
+            background-image: url("mainlogo.png");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;

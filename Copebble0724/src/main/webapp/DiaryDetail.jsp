@@ -8,6 +8,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+  <style>
+        @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+        * {
+            font-family: "Noto Sans KR", sans-serif;
+        }
+    </style>
 </head>
 <body>
 	<!-- Q19. 게시글 세부내용 조회 기능 -->

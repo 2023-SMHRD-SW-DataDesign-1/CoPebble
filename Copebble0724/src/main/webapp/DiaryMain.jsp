@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="./css/diary_main.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      <style>
+        @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+        * {
+            font-family: "Noto Sans KR", sans-serif;
+        }
+    </style>
 </head>
 <body>
  <!--헤더-->
@@ -23,7 +30,7 @@
 
         <div style="width: 10%; min-width: 150px;">
             <a href="main.html">
-                <img class="header_logo" src="./img/mainLogo.png" alt="">
+                <img class="header_logo" src="mainlogo.png" alt="">
             </a>
 
 
