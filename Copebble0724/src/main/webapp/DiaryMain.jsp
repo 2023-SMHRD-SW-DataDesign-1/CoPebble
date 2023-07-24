@@ -11,11 +11,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/diary_main.css">
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+ <!--헤더-->
+
+    <header class="header_main mt-3 ">
+        <div style="width: 20%;">
+        </div>
+
+        <div style="width: 10%; min-width: 150px;">
+            <a href="main.html">
+                <img class="header_logo" src="./img/logo-01.png" alt="">
+            </a>
+
+
+        </div>
+
+        <div style="width: 45%; min-width: 100px;">
+            <a href="DiaryMain.jsp" class="baby_diary">
+                <p1>육아 다이어리</p1>
+            </a>
+        </div>
+
+        <div style="width: 2%; min-width: 20px;">
+            <a href="mypage.html" class="header_icon_mypage">
+                <i class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
+            </a>
+        </div>
+        <div style="width: 2%; min-width: 20px;">
+
+            <a href="#" class="header_icon_logout">
+                <i class="fa-solid fa-right-from-bracket" style="font-size: 30px; color: #000000;"></i>
+            </a>
+        </div>
+        <div style="width: 21%;">
+        </div>
+    </header>
+    <p></p>
     <c:set var="DIARY_list" value="${DiaryDAO.showDiary()}"></c:set>
     <div class="diary_top_div">
+
         <!-- 상단바 -->
         <div class="diary_header">
         	<img src="./img/baby.png" alt="포대기 아기 사진">

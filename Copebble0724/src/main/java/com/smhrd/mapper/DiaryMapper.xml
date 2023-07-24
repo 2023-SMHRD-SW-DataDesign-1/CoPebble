@@ -5,19 +5,19 @@
 <mapper namespace="com.smhrd.mapper.DiaryMapper">
 	
 	<insert id="writeDiary" parameterType="DiaryDTO">
-		insert into INFANT_DIARY2 values(NUM_DIARY2.nextval,
+		insert into INFANT_DIARY values(NUM_DIARY2.nextval,
 		#{FAMILY_KEY}, #{TITLE}, #{DIARY}, #{FILENAME},to_char(sysdate,'YYYY-MM-DD'))
 	</insert>
 
 	<select id="showDiary" resultType="DiaryDTO">
-		select * from INFANT_DIARY2 order by NUM
+		select * from INFANT_DIARY order by NUM
 	</select>
 
 	<select id="showDiaryOne" parameterType="int" resultType="DiaryDTO">
-		select * from INFANT_DIARY2 where NUM = #{num}
+		select * from INFANT_DIARY where NUM = #{num}
 	</select>
 	
 	<delete id="deleteDiary" parameterType="int">
-		delete from INFANT_DIARY2 where NUM = #{num}
+		delete from INFANT_DIARY where NUM = #{num}
 	</delete>
 </mapper>
