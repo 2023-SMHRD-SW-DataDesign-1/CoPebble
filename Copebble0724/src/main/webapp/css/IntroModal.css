@@ -81,7 +81,7 @@ input[id=login_btn] {
     border: none;
     box-shadow: 3px 3px 10px 3px #8f8e8e;
 }
-input[id=kakaologin_btn] {
+input[id=kakao-login-btn] {
     font-weight: bold;
     background-color: #F9E000;
     position: absolute; top: 73%; left: 27%;
@@ -124,7 +124,7 @@ input[id=goMain] {
     padding: 3px; padding-left: 10px; padding-right: 10px; 
     border-radius: 5px;
 }
-#kakaologin_btn:hover {
+#kakao-login-btn:hover {
     background-color: #f8b03a;
     padding: 3px; padding-left: 10px; padding-right: 10px; 
     border-radius: 5px;
