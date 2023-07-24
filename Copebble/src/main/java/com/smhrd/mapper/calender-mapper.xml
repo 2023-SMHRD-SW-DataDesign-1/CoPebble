@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mapper namespace="Calender">
+
+  <resultMap id="calenderRM" type="Calender">
+
+    <id property="calebderNum" column="NUM" />
+<result property="calebderFK" column="FAMILY_KEY" />
+<result property="calebderWho" column="WHO" />
+    <result property="calebderTitle" column="TITLE" />
+    <result property="sDate" column="S_DATE" />
+    <result property="eDate" column="E_DATE" />
+   <result property="calebderColor" column="COLOR" />
+  </resultMap>
+	
+	<select id="calenderList" resultMap="calenderRM">
+		select * from CALENDER 
+	</select>
+	
+</mapper>
