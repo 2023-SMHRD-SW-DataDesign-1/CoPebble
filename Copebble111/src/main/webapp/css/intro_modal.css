@@ -1,0 +1,81 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="Diary">
+			<table id="DiaryWritelist">
+				<tr>
+					<span>제목</span>
+					<td><input id="TITLE" type="text" name="TITLE"></td>
+				</tr>
+
+				<tr>
+					<td colspan="2">내용</td>
+				</tr>
+				<tr>
+					<td colspan="2"><input id= "FILENAME" name="FILENAME" type="file"></td>
+				</tr>
+				<tr>
+					<td><textarea id="DIARY" name="DIARY" rows="10" style="resize: none;"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>패밀리키 <input id="FAMILY_KEY" type="text" name="FAMILY_KEY">
+					</td>
+					<td colspan="2"><input type="reset" value="초기화"> </td>
+					<td><button id="diaryUpload_btn">작성하기</button> </td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+
+	
+
+ <script>
+    $('#diaryUpload_btn').on('click', function(){
+    	 var TITLE = $('#TITLE').val();
+    	 var FILENAME = $('#FILENAME').val();
+    	 var DIARY = $('#DIARY').val();
+    	 var FAMILY_KEY = $('#FAMILY_KEY').val();
+         var formData = new FormData(); //Form 객체 
+         formData.append('TITLE',TITLE); 
+         formData.append('FILENAME',FILENAME);
+         formData.append('DIARY',DIARY);
+         formData.append('FAMILY_KEY',FAMILY_KEY);
+
+
+    	 console.log(TITLE);
+    	 console.log(FILENAME);
+    	 console.log(DIARY);
+    	 console.log(FAMILY_KEY);
+    	 
+        $.ajax({
+        	url : "DiaryWriteCon.do",
+        	dataType: "text",
+            data : formdata, 
+           success : function(result){ 
+        	   console.log(result)
+               if(result!=null){
+            	   alert("다이어리 등록 완료")
+            	   
+               }else{
+            	   alert("입력해주세요")
+               }
+           },
+           error:function(e){
+               alert('실패');
+           }
+       });   
+   
+    
+    }
+    </script>
+</body>
+</html>
