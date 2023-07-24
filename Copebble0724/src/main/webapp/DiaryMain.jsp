@@ -23,7 +23,7 @@
 
         <div style="width: 10%; min-width: 150px;">
             <a href="main.html">
-                <img class="header_logo" src="./img/logo-01.png" alt="">
+                <img class="header_logo" src="./img/mainLogo.png" alt="">
             </a>
 
 

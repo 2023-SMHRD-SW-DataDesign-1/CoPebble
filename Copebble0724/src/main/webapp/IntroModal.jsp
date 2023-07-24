@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-	<!-- jquery 불러오기 -->
-	<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+   <!-- jquery 불러오기 -->
+   <script src="https://code.jquery.com/jquery-3.7.0.min.js"
    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
    crossorigin="anonymous"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script> -->
@@ -31,19 +31,19 @@
         <!--메인로고 -->
         <div style="width: 10%; min-width: 150px;">
             <a href="Main.jsp">
-                <img class="header_logo" src="img/logo-01.png" alt="">
+                <img class="header_logo" src="img/mainlogo.png" alt="">
             </a>
         </div>
          <!-- 육아 다이어리 로고 -->
         <div style="width: 45%; min-width: 100px;">
-            <a href="DiaryMain.jsp" class="baby_diary">
+            <a href="babydiary.html" class="baby_diary">
                 <p1>육아 다이어리</p1>
             </a>
         </div>
 
         <!-- 로그인 로고 -->
         <div style="width: 2%; min-width: 70px;">
-			<button id="loginModal_btn">로그인</button>
+         <button id="loginModal_btn">로그인</button>
         </div>
 
         <!-- 회원가입 로고 -->
@@ -60,8 +60,8 @@
     <main>
         <!-- 소개 이미지 또는 글 넣기 -->
         <div>
-            <img src="img/logo-01.png" class="leftSlide">
-            <img src="img/logo-01.png" class="rightSlide">
+            <img src="./img/mainLogo.png" class="leftSlide">
+            <img src="./img/mainLogo.png" class="rightSlide">
         </div>
 
         <!-- 로그인 모달창 -->
@@ -73,9 +73,8 @@
                 <input type="text" name="id" placeholder="  아이디를 입력하세요">
                 <p style="margin-bottom: 1%;">비밀번호</p>
                 <input type="password" name="pw" placeholder="  비밀번호를 입력하세요">
-                <a href="./Main.jsp">
-                    <input type="submit" value="로그인" id="login_btn">
-                </a>
+        
+                <input type="submit" value="로그인" id="login_btn">
                 <input type="submit" value="카카오 로그인" id="kakaologin_btn">
                 <hr class="hr">
                 <input type="submit" value="회원가입" id="joinModal_btn2">
@@ -119,28 +118,28 @@
     <!-- 회원가입 ajax -->
     <script>
     $('#join_btn').on('click', function(){
-    	 var ID = $('#ID').val();
-    	 var PW = $('#PW').val();
-    	 var NAME = $('#NAME').val();
-    	 console.log(ID);
-    	 console.log(PW);
-    	 console.log(NAME);
-    	 
+        var ID = $('#ID').val();
+        var PW = $('#PW').val();
+        var NAME = $('#NAME').val();
+        console.log(ID);
+        console.log(PW);
+        console.log(NAME);
+        
         $.ajax({
-        	url : "JoinCon",
-        	dataType: "text",
+           url : "JoinCon",
+           dataType: "text",
             data : {
                ID : ID,
                PW : PW,
                NAME : NAME,
             }, //여기까지 통신하고 JoinCon으로 이동
            success : function(result){ 
-        	   console.log(result)
+              console.log(result)
                if(result=="오라클 저장 실패"){
-            	   alert("입력되지 않은 항목이 있습니다")
+                  alert("입력되지 않은 항목이 있습니다")
                }else{
-            	   // 회원가입 성공 시
-            	   document.getElementById("modal3").style.display = "block"; //회원가입 완료 모달창
+                  // 회원가입 성공 시
+                  document.getElementById("modal3").style.display = "block"; //회원가입 완료 모달창
                }
            },
            error : function(e){
@@ -153,25 +152,25 @@
     <!-- 로그인 ajax -->
     <script>
     $('#login_btn').on('click', function(){
-    	 var id = $('#id').val();
-    	 var pw = $('#pw').val();
-    	 console.log(id);
-    	 console.log(pw);
-    	 
+       var ID = $('#ID').val();
+        var PW = $('#PW').val(); 
+
+        }
         $.ajax({
-        	url : "LoginCon",
-        	dataType: "text",
+           url : "LoginCon",
+           dataType: "text",
             data : {
-               id : id,
-               pw : pw,
+               ID : ID,
+                PW : PW
             }, //여기까지 통신하고 LoginCon으로 이동
            success : function(result){ 
-        	   console.log(result)
-               if(result!==null){
-            	   //메인페이지 열리기
-               }else{
-            	   alert("입력되지 않은 항목이 있습니다")
-               }
+              console.log(result)
+              if(result!=="오라클 로그인 연결 실패"){
+                   window.location.href="./Main.jsp";
+                } else {
+                   alert("등록 되지않은 회원입니다.")
+                   document.getElementById("modal2").style.display = "block";
+                }
            },
            error:function(e){
                alert('로그인 통신실패');
