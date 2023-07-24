@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	function savedata(jsondata) {
 		$.ajax({
 			type: 'POST',
-			url: "./saveData",//저장하는 함수 로직 만들것
+			url: "./calendarDataCon",//저장하는 함수 로직 만들것
 			data: { "alldata": jsondata },
 			dataType: 'text',
 			async: false
