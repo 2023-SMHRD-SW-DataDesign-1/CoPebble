@@ -1,14 +1,18 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class saveData extends HttpServlet {
+@WebServlet("/saveData")
+public class calendarDataCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -41,21 +45,3 @@ public class saveData extends HttpServlet {
 
 	}
 }
-
-//request.setCharacterEncoding("UTF-8");
-//String [] jsonData = request.getParameterValues("alldata");
-// int size = jsonData.length;
-//for (int i = 0; i < size; i++) {
-//	System.out.println("수신한 데이터 " + i +"번째 : " + jsonData[i]);
-//}
-
-//request.setCharacterEncoding("UTF-8");
-//String jsonData = request.getParameter("alldata");
-//
-//// JSON 형태의 문자열을 ,로 구분하여 배열로 만들기
-//String[] jsonDataArray = jsonData.split(",");
-//
-//// 배열로 받은 데이터 출력
-//for (int i = 0; i < jsonDataArray.length; i++) {
-//    System.out.println("수신한 데이터 " + i + "번째: " + jsonDataArray[i]);
-//}
