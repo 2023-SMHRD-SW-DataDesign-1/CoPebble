@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.smhrd.model.calendarDAO;
+
 @WebServlet("/saveData")
 public class calendarDataCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -20,10 +22,6 @@ public class calendarDataCon extends HttpServlet {
 
 		String jsonData = request.getParameter("alldata");
 		System.out.println("수신한 데이터: " + jsonData);
-
-		// 1. DB 연결하기?
-
-		// 2. DB 저장된 테이블 초기화 하기?
 
 		// JSON 파싱
 		JSONArray dataArr = new JSONArray(jsonData);
