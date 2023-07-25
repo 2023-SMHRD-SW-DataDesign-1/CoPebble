@@ -19,14 +19,23 @@ static SqlSessionFactory sqlSessionFactory = sqlSessionManager.getSqlSession();
 		return row;
 	}
 	
-	// 다이어리 전체 조회 메소드
-	// select * from INFANT_DIARY
+	// 다이어리 전체 조회 메소드 오래된순
+	// select * from INFANT_DIARY order by NUM
 	public static ArrayList<DiaryDTO> showDiary(){
 		SqlSession session =  sqlSessionFactory.openSession(true);
 		ArrayList<DiaryDTO> DIARY_list = (ArrayList)session.selectList("showDiary");
 		session.close();
 		return DIARY_list;
 	}
+	
+	// 다이어리 전체 조회 메소드 최신순
+		// select * from INFANT_DIARY order by NUM DESC
+		public static ArrayList<DiaryDTO> showDiary_DESC(){
+			SqlSession session =  sqlSessionFactory.openSession(true);
+			ArrayList<DiaryDTO> DIARY_list = (ArrayList)session.selectList("showDiary_DESC");
+			session.close();
+			return DIARY_list;
+		}
 	
 	// 다이어리 세부내용 조회 메소드
 	public static DiaryDTO showDiaryOne(int num) {

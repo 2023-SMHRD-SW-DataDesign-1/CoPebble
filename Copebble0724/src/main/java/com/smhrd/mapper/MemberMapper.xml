@@ -12,5 +12,6 @@
 		select * from MEMBER where ID=#{ID} and PW=#{PW}
   </select>
   
+  
 	
 </mapper>

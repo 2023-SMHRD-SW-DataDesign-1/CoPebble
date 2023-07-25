@@ -57,7 +57,7 @@
         </div>
     </header>
     <p></p>
-    <c:set var="DIARY_list" value="${DiaryDAO.showDiary()}"></c:set>
+    <c:set var="DIARY_list" value="${DiaryDAO.showDiary_DESC()}"></c:set>
     <div class="diary_top_div">
 
         <!-- 상단바 -->
@@ -66,7 +66,7 @@
             <div class="diary_baby_div">육아 다이어리</div>
             <div class="diary_icon_div">
                 <div>
-                    오래된순<i class="fa-solid fa-caret-up" onclick="DESC()"></i>
+                    최신순<i class="fa-solid fa-caret-down" onclick="ASC()"></i>
                 </div>
                 <div class="plus_icon_div" onclick="goToWrite()">
                     <i class="fa-solid fa-plus"></i>
@@ -113,11 +113,9 @@
 			location.href = 'DiaryWrite.jsp'
 		}
 		
-		function DESC(){
-			location.href = 'Diary_DESC.jsp'
-		}
-		
-		
+		  function ASC(){
+				location.href = 'DiaryMain.jsp'
+			}
 
 	</script>
 
