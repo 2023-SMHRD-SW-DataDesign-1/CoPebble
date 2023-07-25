@@ -20,7 +20,7 @@ static SqlSessionFactory sqlSessionFactory = sqlSessionManager.getSqlSession();
 	}
 	
 	// 다이어리 전체 조회 메소드
-	// select * from INFANT_DIARY2 order by b_date;
+	// select * from INFANT_DIARY
 	public static ArrayList<DiaryDTO> showDiary(){
 		SqlSession session =  sqlSessionFactory.openSession(true);
 		ArrayList<DiaryDTO> DIARY_list = (ArrayList)session.selectList("showDiary");
@@ -36,6 +36,8 @@ static SqlSessionFactory sqlSessionFactory = sqlSessionManager.getSqlSession();
 		return DiaryOne;
 	}
 	
+	 
+	
 	// 다이어리 삭제 메소드
 	public int deleteDiary(int num) {
 		SqlSession session = sqlSessionFactory.openSession(true);
@@ -44,6 +46,11 @@ static SqlSessionFactory sqlSessionFactory = sqlSessionManager.getSqlSession();
 		return row;
 	}
 	
-	
+	public int updateDiary(DiaryDTO dto) {
+		SqlSession session =  sqlSessionFactory.openSession(true);
+		int row = session.update("updateDiary", dto);
+		session.close();
+		return row;
+	}
 
 }

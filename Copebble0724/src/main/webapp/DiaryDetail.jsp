@@ -28,7 +28,7 @@
         </div>
 
         <div style="width: 10%; min-width: 150px;">
-            <a href="Main.jsp">
+            <a href="main.html">
                 <img class="header_logo" src="./img/mainLogo.png" alt="">
             </a>
 
@@ -81,6 +81,7 @@
                 ${Diary.DIARY}</textarea>
             </div>
             <div id="diary_button">
+                <button id="diary_goUpdate_btn" onclick="goToUpdate('${param.num}')">수정하기</button>
                 <a href="./DiaryMain.jsp"><button id="diary_Main_btn">뒤로가기</button></a>
             </div>
           
@@ -88,6 +89,12 @@
     </div>
 </body>
 <script src="./js/diaryWrite.js"></script>
+<script type="text/javascript">
+
+function goToUpdate(index) {
+	location.href = 'DiaryUpdate.jsp?num='+index
+}
+</script>
 
 
 </html>

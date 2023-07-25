@@ -104,7 +104,7 @@ button:hover{
     
 }
 
-#diary_goUpdate_btn {  
+#diary_Main_btn {  
     width: 150px;
     height: 30px;
     background-color: rgb(245, 149, 59);
@@ -112,6 +112,11 @@ button:hover{
     border-radius: 20%;
     font-family: 'NanumSquareNeo-Variable';
     font-weight: 600;
+}
+
+.diary_write_memo_div{
+	display:flex;
+	background-color: aqua;
 }
 
 #download_btn{

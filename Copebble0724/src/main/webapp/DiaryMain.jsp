@@ -77,7 +77,7 @@
 <!-- 아래 큰 div -->
 <div class="diary_main_div">
     <div class="diary_name_div">김민국(만9세)</div>
-    <div class="diary_card_container">
+    <div class="diary_card_container" ">
 
         <c:set var="prevDate" value="" />  <%-- Initialize a variable to keep track of the previous date --%>
 
@@ -90,7 +90,7 @@
                 <c:set var="prevDate" value="${DIARY.ALLDATE.substring(0, 10)}" />  <%-- Update the previous date value --%>
             </c:if>
 
-            <div class="diary_card_item_div" onclick="goToDetail('${DIARY.NUM}')">
+            <div class="diary_card_item_div " onclick="goToDetail('${DIARY.NUM}')" ondblclick="showDeleteModal(this)">
                 <img src="./img/${DIARY.FILENAME}" alt="아이이미지">
                 <div class="diary_card_detail_div">
                     <div class="diary_card_detail_title_div">${DIARY.TITLE}</div>
@@ -105,10 +105,21 @@
 
 
     </div>
+    <!-- 다이어리 삭제를 물어보는 모달창 -->
+    <div id="deleteModal" style="display: none;">
+    <p>해당 다이어리를 삭제하시겠습니까?</p>
+    <button onclick="deleteDiary()">삭제</button>
+    <button onclick="closeDeleteModal()">취소</button>
+</div>
+
+<form id="deleteForm" method="post" action="/delete-diary">
+    <input type="hidden" name="diaryId" id="diaryIdInput">
+</form>
 
 	<script>
 
 		function goToDetail(index) {
+			console.log(index)
 			location.href = 'DiaryDetail.jsp?num='+index
 		}
 		
@@ -117,6 +128,35 @@
 		}
 
 	</script>
+	
+	<!-- 모달창 관련 js -->
+	<script>
+    function showDeleteModal(diary_card_item_div) {
+        // 모달창 보이기
+        const modal = document.getElementById("deleteModal");
+        modal.style.display = "block";
+
+        // 선택한 다이어리 카드 정보를 모달창에 저장 (다이어리 ID)
+        const diaryId = diaryCardContainer.getAttribute("data-diary-id");
+        const diaryIdInput = document.getElementById("diaryIdInput");
+        diaryIdInput.value = diaryId;
+    }
+
+    function closeDeleteModal() {
+        // 모달창 닫기
+        const modal = document.getElementById("deleteModal");
+        modal.style.display = "none";
+    }
+
+    function deleteDiary() {
+        // 모달창에서 form을 제출
+        const deleteForm = document.getElementById("deleteForm");
+        deleteForm.submit();
+
+        // 모달창 닫기
+        closeDeleteModal();
+    }
+</script>
 
 
 </body>

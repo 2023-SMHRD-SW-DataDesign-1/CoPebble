@@ -17,6 +17,10 @@
 		select * from INFANT_DIARY where NUM = #{num}
 	</select>
 	
+	<update id="updateDiary" parameterType="DiaryDTO">
+		update INFANT_DIARY set TITLE=#{TITLE}, DIARY=#{DIARY}, FILENAME=#{FILENAME} where NUM=#{NUM}
+	</update>
+	
 	<delete id="deleteDiary" parameterType="int">
 		delete from INFANT_DIARY where NUM = #{num}
 	</delete>

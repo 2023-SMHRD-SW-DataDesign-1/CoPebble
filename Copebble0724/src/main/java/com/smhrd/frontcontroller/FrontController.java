@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.command.Command;
+import com.smhrd.controller.DiaryUpdateCon;
 import com.smhrd.controller.DiaryWriteCon;
 import com.smhrd.controller.KakaoLoginCon;
 
@@ -26,6 +27,7 @@ public class FrontController extends HttpServlet {
 		list = new HashMap<String, Command>();
 		list.put("DiaryWriteCon.do", new DiaryWriteCon());
 		list.put("KakaoLoginCon.do", new KakaoLoginCon());
+		list.put("DiaryUpdateCon.do", new DiaryUpdateCon());
 
 		
 	}

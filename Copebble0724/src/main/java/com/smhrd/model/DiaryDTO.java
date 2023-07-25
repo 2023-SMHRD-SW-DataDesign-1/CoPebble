@@ -14,9 +14,17 @@ public class DiaryDTO {
 	
 	private int NUM;
 	private String FAMILY_KEY;
-	@NonNull private String TITLE;
+	private String TITLE;
 	private String DIARY;
 	private String FILENAME;
 	@NonNull private String ALLDATE;
+	
+	public DiaryDTO (String TITLE, String DIARY, String FILENAME,int NUM) {
+		this.NUM = NUM;
+		this.TITLE = TITLE;
+		this.DIARY = DIARY;
+		this.FILENAME = FILENAME;
+	}
 
+	
 }
