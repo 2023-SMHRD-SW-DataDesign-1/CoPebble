@@ -76,6 +76,7 @@
 .diary_write_memo_div {
     margin-top: 10px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 button:hover{
@@ -112,6 +113,18 @@ button:hover{
     border-radius: 20%;
     font-family: 'NanumSquareNeo-Variable';
     font-weight: 600;
+}
+
+#diary_Main_btn{
+	margin-left:30px;
+	width: 150px;
+    height: 30px;
+    background-color: rgb(245, 149, 59);
+    border: 1px solid whitesmoke;
+    border-radius: 20%;
+    font-family: 'NanumSquareNeo-Variable';
+    font-weight: 600;
+	
 }
 
 #download_btn{
