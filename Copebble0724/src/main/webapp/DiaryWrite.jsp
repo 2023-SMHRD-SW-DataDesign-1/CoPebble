@@ -53,10 +53,9 @@
         </div>
     </header>
     <!-- 흰색 div -->
-    <form action="DiaryWriteCon.do" method="post"
-			enctype="multipart/form-data" id="DiaryForm">
 	<p></p>
     <div class="diary_write_top_div">
+                <a href="./DiaryMain.jsp"><button id="diary_Main_btn">&times;</button></a>
         <div class="diary_babyname_div">
             <p id="diary_babyname_p">김민국(만9세)</p>
         </div>
@@ -64,6 +63,8 @@
         <div class="diary_write_date_div">
             <p id="diary_write_date_p"></p>
         </div>
+    <form action="DiaryWriteCon.do" method="post"
+			enctype="multipart/form-data" id="DiaryForm">
         <div class="diary_write_title_div"><input type="text" name="TITLE" placeholder="제목을 입력해주세요"></div>
         <div>
             <div class="diary_picture_div">
@@ -78,10 +79,8 @@
             </div>
             <input hidden type="text" name="FAMILY_KEY" value="패밀리키">
             <div id="diary_button">
-                <button id="diary_upload_btn">등록</button>
-                </form>
-                <a href="./DiaryMain.jsp"><button id="diary_Main_btn">뒤로가기</button></a>
             </div>
+                <button id="diary_upload_btn">등록</button></form>
         </div>
     </div>
 </body>

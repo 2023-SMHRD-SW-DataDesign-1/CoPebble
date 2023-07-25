@@ -1,120 +1,132 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 
-   <!-- jquery 불러오기 -->
-   <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+<!-- jquery 불러오기 -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"
    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
    crossorigin="anonymous"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script> -->
-    <!-- 부트스트랩 태그 및 무료 아이콘 태그 모으는 곳 -->
-    <script src="https://kit.fontawesome.com/a34da1aa1b.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
-    <link rel="stylesheet" href="./css/Main.css" />
-    <link rel="stylesheet" href="./css/IntroModal.css">
+<!-- <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script> -->
+<!-- 부트스트랩 태그 및 무료 아이콘 태그 모으는 곳 -->
+<script src="https://kit.fontawesome.com/a34da1aa1b.js"
+   crossorigin="anonymous"></script>
+<link
+   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+   rel="stylesheet"
+   integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+   crossorigin="anonymous">
+<link rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+<link rel="stylesheet" href="./css/Main.css" />
+<link rel="stylesheet" href="./css/IntroModal.css">
 
 </head>
 
+<c:set var="info" value="${sessionScope.info}" />
+
 <body>
-    <!--헤더-->
-    <header class="header_main mt-3 ">
-        <div style="width: 20%;">
-        </div>
-        <!--메인로고 -->
-        <div style="width: 10%; min-width: 150px;">
-            <a href="Main.jsp">
-                <img class="header_logo" src="img/mainlogo.png" alt="">
-            </a>
-        </div>
-         <!-- 육아 다이어리 로고 -->
-        <div style="width: 45%; min-width: 100px;">
-            <a href="babydiary.html" class="baby_diary">
-                <p1>육아 다이어리</p1>
-            </a>
-        </div>
+   <!--헤더-->
+   <header class="header_main mt-3 ">
+      <div style="width: 20%;"></div>
+      <!--메인로고 -->
+      <div style="width: 10%; min-width: 150px;">
+         <a href="Main.jsp"> <img class="header_logo"
+            src="img/mainlogo.png" alt="">
+         </a>
+      </div>
+      <!-- 육아 다이어리 로고 -->
+      <div style="width: 45%; min-width: 100px;">
+         <a href="babydiary.html" class="baby_diary"> <p1>육아 다이어리</p1>
+         </a>
+      </div>
 
-        <!-- 로그인 로고 -->
-        <div style="width: 2%; min-width: 70px;">
+      <!-- 로그인 로고 -->
+      <div style="width: 2%; min-width: 70px;">
          <button id="loginModal_btn">로그인</button>
-        </div>
+      </div>
 
-        <!-- 회원가입 로고 -->
-        <div style="width: 2%; min-width: 90px;">
-            <button id="joinModal_btn">회원가입</button>
-        </div>
-        
-        <div style="width: 21%;">
-        </div>
-    </header>
+      <!-- 회원가입 로고 -->
+      <div style="width: 2%; min-width: 90px;">
+         <button id="joinModal_btn">회원가입</button>
+      </div>
+
+      <div style="width: 21%;"></div>
+   </header>
 
 
-    <!--메인-->
-    <main>
-        <!-- 소개 이미지 또는 글 넣기 -->
-        <div>
-            <img src="./img/mainLogo.png" class="leftSlide">
-            <img src="./img/mainLogo.png" class="rightSlide">
-        </div>
+   <!--메인-->
+   <main>
+      <!-- 소개 이미지 또는 글 넣기 -->
+      <div>
+         <img src="./img/mainLogo.png" class="leftSlide"> <img
+            src="./img/mainLogo.png" class="rightSlide">
+      </div>
 
-        <!-- 로그인 모달창 -->
-        <div id="modal1" class="modalBack">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <div class="header_logo2"></div>
-                <p style="margin-bottom: 1%;">아이디</p>
-                <input type="text" name="id" placeholder="  아이디를 입력하세요">
-                <p style="margin-bottom: 1%;">비밀번호</p>
-                <input type="password" name="pw" placeholder="  비밀번호를 입력하세요">
-        
-                <input type="submit" value="로그인" id="login_btn">
-                <input type="submit" value="카카오 로그인" id="kakao-login-btn">
-                <hr class="hr">
-                <input type="submit" value="회원가입" id="joinModal_btn2">
-            </div>
-        </div>
+      <!-- 로그인 모달창 -->
+      <div id="modal1" class="modalBack">
+         <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="header_logo2"></div>
+            <p style="margin-bottom: 1%;">아이디</p>
+            <input type="text" name="id" placeholder="  아이디를 입력하세요">
+            <p style="margin-bottom: 1%;">비밀번호</p>
+            <input type="password" name="pw" placeholder="  비밀번호를 입력하세요">
 
-        <!-- 회원가입 모달창 -->
-        <div id="modal2" class="modalBack">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <div class="header_logo2"></div>
-                <p style="margin-bottom: 1%;">아이디</p>
-                <input type="text" name="ID" id="ID" placeholder="  아이디를 입력하세요">
-                <p style="margin-bottom: 1%;">비밀번호</p>
-                <input type="password" name="PW" id="PW" placeholder="  비밀번호를 입력하세요">
-                <p style="margin-bottom: 1%;">비밀번호 확인</p>
-                <input id="pwCheck" type="text" name="pwCheck" placeholder="  비밀번호를 확인 해 주세요">
-                <p style="margin-bottom: 1%;">이름</p>
-                <input type="text" name="NAME" id="NAME" placeholder="  이름을 입력하세요">
-                <input type="submit" value="회원가입" id="join_btn">
-            </div>
-        </div>
-       
-     <!-- 회원가입완료 모달창 -->   
-        <div id="modal3" class="modalBack">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <div class="header_logo3"></div>
-                <h2>name님,</h2><br>
-                <h3>회원가입이 완료되었습니다</h3>
-                <a href="Main.jsp">
-                    <input type="submit" value="withDAY 이용하기" id="goMain">
-                </a>
-            </div>
-        </div>
-    </main>
+            <input type="submit" value="로그인" id="login_btn"> <input
+               type="submit" value="카카오 로그인" id="kakao-login-btn">
+            <hr class="hr">
+            <input type="submit" value="회원가입" id="joinModal_btn2">
+         </div>
+      </div>
 
-    <!-- 외부 자바스크립트 연결 -->
-    <script src="./js/IntroModal.js"></script>
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script><script type="text/javascript">
+      <!-- 회원가입 모달창 -->
+      <div id="modal2" class="modalBack">
+         <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="header_logo2"></div>
+            <p style="margin-bottom: 1%;">아이디</p>
+            <input type="text" name="ID" id="ID" placeholder="  아이디를 입력하세요">
+            <p style="margin-bottom: 1%;">비밀번호</p>
+            <input type="password" name="PW" id="PW" placeholder="  비밀번호를 입력하세요">
+            <p style="margin-bottom: 1%;">비밀번호 확인</p>
+            <input id="pwCheck" type="text" name="pwCheck"
+               placeholder="  비밀번호를 확인 해 주세요">
+            <p style="margin-bottom: 1%;">이름</p>
+            <input type="text" name="NAME" id="NAME" placeholder="  이름을 입력하세요">
+            <input type="submit" value="회원가입" id="join_btn">
+         </div>
+      </div>
+
+      <!-- 회원가입완료 모달창 -->
+      <div id="modal3" class="modalBack">
+         <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="header_logo3"></div>
+            <h2>${info.NAME}님,</h2>
+            <br>
+            <h3>회원가입이 완료되었습니다</h3>
+            <a href="Main.jsp"> <input type="submit" value="withDAY 이용하기"
+               id="goMain">
+
+            </a> <a href="FamilyKey.jsp"> <input type="submit" value="패밀리키 등록하기"
+               id="goFamily">
+            </a>
+         </div>
+      </div>
+   </main>
+
+   <!-- 외부 자바스크립트 연결 -->
+   <script src="./js/IntroModal.js"></script>
+   <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+   <script type="text/javascript">
      Kakao.init('1a299c90361bc9c75bee41f6a9bc76e0'); // 사용하려는 앱의 JavaScript 키 입력
      
    $("#kakao-login-btn").on("click", function(){
@@ -146,7 +158,7 @@
                   type: 'post',
                   data: param,
                   success: function(res){
-                      location.href="./Main.jsp";
+                      location.href="./main.html";
 
                   }
                })
@@ -164,9 +176,9 @@
         
 }) 
 </script>
-    
-    <!-- 회원가입 ajax -->
-    <script>
+
+   <!-- 회원가입 ajax -->
+   <script>
     $('#join_btn').on('click', function(){
         var ID = $('#ID').val();
         var PW = $('#PW').val();
@@ -198,9 +210,9 @@
        });
     });
     </script>
-    
-    <!-- 로그인 ajax -->
-    <script>
+
+   <!-- 로그인 ajax -->
+   <script>
     $('#login_btn').on('click', function(){
        var ID = $('#ID').val();
         var PW = $('#PW').val(); 
@@ -228,10 +240,8 @@
        });
     });
     </script>
-    
-    
-    
-    
-</body>
 
-</html>
+
+
+
+</body>
