@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 public class DiaryDTO {
 	
 	private int NUM;
-	@NonNull private String FAMILY_KEY;
+	private String FAMILY_KEY;
 	@NonNull private String TITLE;
 	private String DIARY;
 	private String FILENAME;

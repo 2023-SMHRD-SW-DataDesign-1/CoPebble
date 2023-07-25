@@ -29,7 +29,7 @@
         </div>
 
         <div style="width: 10%; min-width: 150px;">
-            <a href="main.html">
+            <a href="Main.jsp">
                 <img class="header_logo" src="mainlogo.png" alt="">
             </a>
 

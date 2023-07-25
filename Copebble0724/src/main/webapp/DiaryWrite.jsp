@@ -25,8 +25,8 @@
         </div>
 
         <div style="width: 10%; min-width: 150px;">
-            <a href="main.html">
-                <img class="header_logo" src="mainlogo.png" alt="">
+            <a href="Main.jsp">
+                <img class="header_logo" src="./img/mainLogo.png" alt="">
             </a>
 
 
@@ -54,7 +54,7 @@
     </header>
     <!-- 흰색 div -->
     <form action="DiaryWriteCon.do" method="post"
-			enctype="multipart/form-data" id="DiaryForm"></form>
+			enctype="multipart/form-data" id="DiaryForm">
 	<p></p>
     <div class="diary_write_top_div">
         <div class="diary_babyname_div">
@@ -82,7 +82,6 @@
                 </form>
                 <a href="./DiaryMain.jsp"><button id="diary_Main_btn">뒤로가기</button></a>
             </div>
-          
         </div>
     </div>
 </body>

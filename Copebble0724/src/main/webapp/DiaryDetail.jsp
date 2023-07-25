@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/diary_write.css">
+    <link rel="stylesheet" href="./css/diary_detail.css">
       <style>
         @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
@@ -28,7 +28,7 @@
         </div>
 
         <div style="width: 10%; min-width: 150px;">
-            <a href="main.html">
+            <a href="Main.jsp">
                 <img class="header_logo" src="./img/mainLogo.png" alt="">
             </a>
 
@@ -73,7 +73,7 @@
             <div class="diary_picture_div">
                 <div id="image_preview_div">
                     <img id="image_preview" alt="미리보기 이미지" src="./img/${Diary.FILENAME}">
-                    <a href="./img/${Diary.FILENAME}" download> <button>다운로드</button></a>
+                    <button id ="download_btn"><a href="./img/${Diary.FILENAME}" download> 다운로드</a></button>
                     <p></p>
                 </div>
             </div>

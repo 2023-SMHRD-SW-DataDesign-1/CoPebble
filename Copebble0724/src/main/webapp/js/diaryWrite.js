@@ -39,12 +39,6 @@ var dateString = year + '-' + month + '-' + day;
 document.getElementById("diary_write_date_p").innerHTML = dateString;
 
 
-function submitForm() {
-	// 폼 요소 가져오기
-	var DiaryForm = document.getElementById("DiaryForm");
-	// 폼 submit
-	DiaryForm.submit();
-}
 
 // 버튼 클릭 이벤트에 submitForm 함수 연결
 var diary_upload_btn = document.getElementById("diary_upload_btn");

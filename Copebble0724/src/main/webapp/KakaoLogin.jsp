@@ -49,7 +49,7 @@
                   type: 'post',
                   data: param,
                   success: function(res){
-                      location.href="main.html";
+                      location.href="Main.jsp";
 
                   }
                })
