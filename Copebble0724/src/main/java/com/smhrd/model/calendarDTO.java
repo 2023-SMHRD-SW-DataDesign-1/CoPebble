@@ -13,11 +13,11 @@ import lombok.RequiredArgsConstructor;
 
 public class calendarDTO {
 	private int NUM;
-	@NonNull private String FAMILY_KEY;
+	private String FAMILY_KEY;
 	private String ASSORT;
 	private String WHO;
-	@NonNull private String TITLE;
-	@NonNull private String S_DATE;
-	@NonNull private String E_DATE;
-	@NonNull private String COLOR;
+	@NonNull private String title;
+	@NonNull private String start;
+	@NonNull private String end;
+	@NonNull private String color;
 }

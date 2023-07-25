@@ -1,7 +1,37 @@
 
 var calendar = null;
 var all_events = null;
-// all_events = loadingEvents(); // DB값 불러 온거
+
+function loadingEvents(jsondata) {
+	var return_value = null;
+	$.ajax({
+		type: 'POST',
+		data: {},
+		url: "./calendarSelectCon",
+		dataType: 'json',
+		async: true
+	})
+		.done(function(result) { // 성공시 실행
+
+			console.log(result);			
+			for (i = 0; i < result.length; i++) {
+				calendar.addEvent({
+					title:  result[i].title,
+					start:  result[i].start,
+					textColor: '#000000',
+					end:  result[i].end,
+					color:  result[i].color,
+					allDay: true
+				})
+			}
+		})
+		.fail(function(request, status, error) { // 실패시 실행
+			console.log("불러오기 실패");
+		});
+	return return_value;
+}
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
 	var calendarEl = document.getElementById('calendar');
@@ -22,18 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
 			};
 		},
 		editable: true,
-		allDay: false,
+		allDay: true,
 		dayMaxEventRows: true,
-		// events: all_events, // DB값에 저장된거 출력하기
-		events: [
-			{ // 저장된 이벤트 불러오기! for문 쓰면 되지않을까 생각중?
-				title: 'The Title',
-				start: '2023-07-01',
-				end: '2023-07-05',
-				textColor: '#000000',
-				color: '#00FF00',
-			}
-		],
+		events: loadingEvents(),
 		eventDrop: function(info) {
 			console.log('드래그 앤 드랍이 완료되었습니다.');
 			allSave();
@@ -58,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			document.getElementById('deleteEventPopup').style.display = 'block';
 		}
 	});
-
 	calendar.render();
 
 
@@ -89,23 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		savedata(jsondata);
 	}
 
-	function loadingEvents(jsondata) {
-		var return_value = null;
-		$.ajax({
-			type: 'POST',
-			url: "",//불러오는 함수 로직 만들것 
-			data: {},
-			dataType: 'json',
-			async: false
-		})
-			.done(function(reuslt) { // 성공시 실행
-				return_value = reuslt;
-			})
-			.fail(function(request, status, error) { // 실패시 실행
-				console.log("불러오기 실패");
-			})
-		return return_value;
-	}
 
 
 	function savedata(jsondata) {
@@ -285,10 +288,10 @@ $('#addTodoBtn').click(function() {
 	$.ajax({
 		type: 'POST',
 		url: './todoData',
-		data: {"title": eventTodoTitle, 'start' : eventTodoStart ,'end': eventTodoEnd,'manager': eventTodoManager},
+		data: { "title": eventTodoTitle, 'start': eventTodoStart, 'end': eventTodoEnd, 'manager': eventTodoManager },
 		dataType: 'text',
 		success: function(response) {
-			
+
 			console.log('데이터 전송 성공!!!');
 
 		},
@@ -338,23 +341,23 @@ $('#cancelTodoBtn').click(function() {
 
 // 가족알림장 리스트 생성
 function createTodoItem(text, date) {
-    const li = document.createElement('li');
-      li.classList.add('todo-item'); // 클래스 이름을 'todo-item'으로 설정
-      li.draggable = true; // 리스트 아이템을 드래그 가능하도록 설정
-    li.innerHTML = `
+	const li = document.createElement('li');
+	li.classList.add('todo-item'); // 클래스 이름을 'todo-item'으로 설정
+	li.draggable = true; // 리스트 아이템을 드래그 가능하도록 설정
+	li.innerHTML = `
         <input type="checkbox" />
         ${text}
         ${date}
         <button class="deleteTodoBtn">X</button>
     `;
-    return li;
+	return li;
 }
 
 // 새로운 할일 리스트 아이템을 리스트에 추가하는 함수
 function addTodoItem(text, date) {
-    const todoList = document.getElementById('todoList');
-    const newItem = createTodoItem(text, date);
-    todoList.appendChild(newItem);
+	const todoList = document.getElementById('todoList');
+	const newItem = createTodoItem(text, date);
+	todoList.appendChild(newItem);
 }
 // DB에 저장된 리스트 불러오기!
 addTodoItem("남자 나는 탈주 할것이다!", "07-22 ~ 07-31");
@@ -417,41 +420,41 @@ $('#cancelMemoBtn').click(function() {
 let draggedItem = null;
 
 // 드래그 앤 드롭 기능 구현
-$(document).off('dragstart', '.todo-item').on('dragstart', '.todo-item', function (e) {
-  draggedItem = e.target;
-  e.originalEvent.dataTransfer.setData('text/plain', ''); // 드래그 이벤트를 동작하기 위해 필요
+$(document).off('dragstart', '.todo-item').on('dragstart', '.todo-item', function(e) {
+	draggedItem = e.target;
+	e.originalEvent.dataTransfer.setData('text/plain', ''); // 드래그 이벤트를 동작하기 위해 필요
 });
 
-$(document).off('dragover', '.todo-item').on('dragover', '.todo-item', function (e) {
-  e.preventDefault();
+$(document).off('dragover', '.todo-item').on('dragover', '.todo-item', function(e) {
+	e.preventDefault();
 });
 
-$(document).off('drop', '.todo-item').on('drop', '.todo-item', function (e) {
-  e.preventDefault();
-  const dropTarget = e.target;
+$(document).off('drop', '.todo-item').on('drop', '.todo-item', function(e) {
+	e.preventDefault();
+	const dropTarget = e.target;
 
-  // 만약 드롭한 요소가 리스트 아이템이면 해당 위치로 이동
-  if ($(dropTarget).hasClass('todo-item')) {
-    const dropIndex = $(dropTarget).index();
-    const draggedIndex = $(draggedItem).index();
+	// 만약 드롭한 요소가 리스트 아이템이면 해당 위치로 이동
+	if ($(dropTarget).hasClass('todo-item')) {
+		const dropIndex = $(dropTarget).index();
+		const draggedIndex = $(draggedItem).index();
 
-    if (dropIndex > draggedIndex) {
-      $(dropTarget).after(draggedItem);
-    } else {
-      $(dropTarget).before(draggedItem);
-    }
-  }
+		if (dropIndex > draggedIndex) {
+			$(dropTarget).after(draggedItem);
+		} else {
+			$(dropTarget).before(draggedItem);
+		}
+	}
 });
 
-$(document).ready(function () {
-  $('#addTodoBtn').click(function () {
-    const eventTodoTitle = $('#eventTodoTitle').val();
-    const eventTodoStart = $('#eventTodoStart').val();
-    const eventTodoEnd = $('#eventTodoEnd').val();
-    const eventTodoManager = $('input[name=Manager]:checked').val();
+$(document).ready(function() {
+	$('#addTodoBtn').click(function() {
+		const eventTodoTitle = $('#eventTodoTitle').val();
+		const eventTodoStart = $('#eventTodoStart').val();
+		const eventTodoEnd = $('#eventTodoEnd').val();
+		const eventTodoManager = $('input[name=Manager]:checked').val();
 
-    // To-do 리스트에 새로운 항목 추가
-    const todoItem = `
+		// To-do 리스트에 새로운 항목 추가
+		const todoItem = `
       <li class="todo-item">
         <input type="checkbox"/>
         ${eventTodoManager} ${eventTodoTitle}
@@ -459,8 +462,8 @@ $(document).ready(function () {
         <button class="deleteTodoBtn">X</button>
       </li>
     `;
-    $('#todoList').append(todoItem);
-  });
+		$('#todoList').append(todoItem);
+	});
 });
 
 
@@ -469,61 +472,61 @@ $(document).ready(function () {
 const myBox = document.getElementById('myBox');
 
 myBox.addEventListener('click', () => {
-  const newColor = getRandomYellowColor();
-  myBox.style.backgroundColor = newColor;
+	const newColor = getRandomYellowColor();
+	myBox.style.backgroundColor = newColor;
 });
 
 function getRandomYellowColor() {
-  // 연한 노란색 계열의 색상들을 배열로 정의
-  const yellowColors = [
-    '#ffc6a5',
-    '#fcf6dd',
-    '#FFFFE6',
-    '##ffd895',
-    '#ffe3a3',
-    '#FFFFF9',
-    '#FFFFFC',
-    '#FFFFFE',
-    '#FFDD7C',
-    '#FEFEF0',
-  ];
-  // 배열에서 랜덤하게 색상 선택
-  const randomIndex = Math.floor(Math.random() * yellowColors.length);
-  return yellowColors[randomIndex];
+	// 연한 노란색 계열의 색상들을 배열로 정의
+	const yellowColors = [
+		'#ffc6a5',
+		'#fcf6dd',
+		'#FFFFE6',
+		'##ffd895',
+		'#ffe3a3',
+		'#FFFFF9',
+		'#FFFFFC',
+		'#FFFFFE',
+		'#FFDD7C',
+		'#FEFEF0',
+	];
+	// 배열에서 랜덤하게 색상 선택
+	const randomIndex = Math.floor(Math.random() * yellowColors.length);
+	return yellowColors[randomIndex];
 }
 ///////////////////////가족알림장 리스트 색깔 랜덤
 
 const colors = [
-    '#ffc6a5',
-    '#fcf6dd',
-    '#FFFFE6',
-    '#ffd895',
-    '#ffe3a3',
-    '#FFFFF9',
-    '#FFFFFC',
-    '#FFFFFE',
-    '#FFDD7C',
-    '#FEFEF0'
+	'#ffc6a5',
+	'#fcf6dd',
+	'#FFFFE6',
+	'#ffd895',
+	'#ffe3a3',
+	'#FFFFF9',
+	'#FFFFFC',
+	'#FFFFFE',
+	'#FFDD7C',
+	'#FEFEF0'
 ];
 
 // 가족알림장 리스트 색상 랜덤 출력
 function getRandomColorFromArray(colorArray) {
-    const randomIndex = Math.floor(Math.random() * colorArray.length);
-    return colorArray[randomIndex];
+	const randomIndex = Math.floor(Math.random() * colorArray.length);
+	return colorArray[randomIndex];
 }
 
 // 여기서 특정 색깔만 출력할 예정!
 function applyRandomColorToElement(element) {
-    const randomColor = getRandomColorFromArray(colors);
-    element.style.backgroundColor = randomColor;
+	const randomColor = getRandomColorFromArray(colors);
+	element.style.backgroundColor = randomColor;
 }
 
 // 페이지 로드 후 실행되는 함수
 document.addEventListener("DOMContentLoaded", function() {
-    const todoItems = document.querySelectorAll(".todo-item");
-    todoItems.forEach(function(item) {
-        applyRandomColorToElement(item);
-    });
+	const todoItems = document.querySelectorAll(".todo-item");
+	todoItems.forEach(function(item) {
+		applyRandomColorToElement(item);
+	});
 });
 
 

@@ -8,6 +8,7 @@
 		<typeAlias type="com.smhrd.model.DiaryDTO" alias="DiaryDTO" />
 		<typeAlias type="com.smhrd.model.KakaoDTO" alias="KakaoDTO" />
 		<typeAlias type="com.smhrd.model.MemberDTO" alias="MemberDTO" />
+		<typeAlias type="com.smhrd.model.calendarDTO" alias="calendarDTO" />
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -24,5 +25,6 @@
 		<mapper resource="com/smhrd/mapper/DiaryMapper.xml" />
 		<mapper resource="com/smhrd/mapper/KakaoMapper.xml" />
 		<mapper resource="com/smhrd/mapper/MemberMapper.xml" />
+	<mapper resource="com/smhrd/mapper/calendarMapper.xml" />
 	</mappers>
 </configuration>
