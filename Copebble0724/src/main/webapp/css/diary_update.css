@@ -78,6 +78,12 @@
     text-align: center;
 }
 
+textarea{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 button:hover{
     cursor: pointer;
     color: rgb(255, 255, 255);
@@ -104,6 +110,16 @@ button:hover{
     
 }
 
+#diary_modify_btn {  
+    width: 150px;
+    height: 30px;
+    background-color: rgb(245, 149, 59);
+    border: 1px solid whitesmoke;
+    border-radius: 20%;
+    font-family: 'NanumSquareNeo-Variable';
+    font-weight: 600;
+}
+
 #diary_Main_btn {  
     width: 150px;
     height: 30px;
@@ -116,6 +132,7 @@ button:hover{
 
 .diary_write_memo_div{
 	display:flex;
+	text-align: center;
 	background-color: aqua;
 }
 

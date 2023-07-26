@@ -11,6 +11,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="./css/main.css">
 <link rel="stylesheet" href="./css/diary_detail.css">
+<script src="https://kit.fontawesome.com/a34da1aa1b.js"
+   crossorigin="anonymous"></script>
 <style>
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
@@ -101,6 +103,9 @@ button {
 	<!-- 삭제 확인 모달창 -->
 	<div id="diary_modal">
     <div id="modal-content">
+    	<div id="alert">
+    	<i class="fa-solid fa-triangle-exclamation fa-2xl" style="color: #e22222; font-size: 55px;"></i>
+    	</div>
         <h3>정말 해당 다이어리를 삭제하시겠습니까?</h3>
         <div>
             <form action="DiaryDeleteCon.do" method="post" enctype="multipart/form-data" id="DiaryDeleteForm">
