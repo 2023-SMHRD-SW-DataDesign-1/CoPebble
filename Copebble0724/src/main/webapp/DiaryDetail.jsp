@@ -18,32 +18,12 @@
 	font-family: "Noto Sans KR", sans-serif;
 }
 </style>
- <style>
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
+<style>
 
-    .modal-content {
-      background-color: white;
-      width: 300px;
-      padding: 20px;
-      border-radius: 8px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    button {
-      margin-right: 10px;
-    }
-  </style>
+button {
+	margin-right: 10px;
+}
+</style>
 </head>
 
 <body>
@@ -85,6 +65,7 @@
 
 	<c:set var="Diary" value="${DiaryDAO.showDiaryOne(param.num)}"></c:set>
 	<div class="diary_write_top_div">
+	<button id="diary_Main_btn"><a href="./DiaryMain.jsp">&times;</a></button>
 		<div class="diary_babyname_div">
 			<p id="diary_babyname_p">김민국(만9세)</p>
 		</div>
@@ -110,33 +91,32 @@
 			</div>
 			<div id="diary_button">
 				<button id="diary_goUpdate_btn" onclick="goToUpdate('${param.num}')">수정하기</button>
-				<!-- 다이어리 삭제 폼 -->	
-					<button id="diary_modal_btn" type="button">삭제</button>
-				<a href="./DiaryMain.jsp"><button id="diary_Main_btn">뒤로가기</button></a>
+				<!-- 다이어리 삭제 폼 -->
+				<button id="diary_modal_btn" type="button">삭제</button>
 			</div>
 
 		</div>
 	</div>
 
 	<!-- 삭제 확인 모달창 -->
-	<div id="diary_modal" style="display: none;">
-		<div id="modal-content"
-			style="width: 400px; height: 300px; background-color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-			<form action="DiaryDeleteCon.do" method="post"
-					enctype="multipart/form-data" id="DiaryDeleteForm">
-					<input hidden name="num" type="text" value="${param.num}">
-			<h3>해당 다이어리를 삭제하시겠습니까?</h3>
-			<button id="delete_btn">삭제</button>
-			<button id="cancel_btn">취소</button>
-			</form>
-		</div>
+	<div id="diary_modal">
+    <div id="modal-content">
+        <h3>정말 해당 다이어리를 삭제하시겠습니까?</h3>
+        <div>
+            <form action="DiaryDeleteCon.do" method="post" enctype="multipart/form-data" id="DiaryDeleteForm">
+                <input type="hidden" name="num" value="${param.num}">
+                <button id="delete_btn">삭제</button>
+            </form>
+            <button id="cancel_btn">취소</button>
+        </div>
+    </div>
+</div>
 	</div>
+	
+	
+	
+	
+	
 	<script src="./js/diaryDelete.js"></script>
-
-
-
-
-
-
 </body>
 </html>

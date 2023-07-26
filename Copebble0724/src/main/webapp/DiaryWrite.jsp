@@ -55,7 +55,7 @@
     <!-- 흰색 div -->
 	<p></p>
     <div class="diary_write_top_div">
-                <a href="./DiaryMain.jsp"><button id="diary_Main_btn">&times;</button></a>
+               <button id="diary_Main_btn"><a href="./DiaryMain.jsp">&times;</a></button>
         <div class="diary_babyname_div">
             <p id="diary_babyname_p">김민국(만9세)</p>
         </div>
