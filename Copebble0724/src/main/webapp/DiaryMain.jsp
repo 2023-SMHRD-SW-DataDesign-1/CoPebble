@@ -99,16 +99,18 @@
 					</div>
 				</c:forEach>
 			</div>
-
-			<!-- Pagination navigation -->
-			<div class="pagination">
-				<i class="fa-solid fa-circle-chevron-left fa-2x"
-					onclick="prevPage()"></i> <i
-					class="fa-solid fa-circle-chevron-right fa-2x" onclick="nextPage()"></i>
-			</div>
+		<!-- Pagination navigation -->
+		<div class="pagination">
+			<i class="fa-solid fa-circle-chevron-left fa-2x" onclick="prevPage()"></i>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+			<i class="fa-solid fa-circle-chevron-right fa-2x" onclick="nextPage()"></i>
 		</div>
+		</div>
+		
+	</div>
 
-		<script>
+
+	<script>
     // JavaScript code for pagination
     const diaryCards = document.querySelectorAll('.diary_card');
     const itemsPerPage = 5;
@@ -143,7 +145,7 @@
     // Show the first page on initial load
     showPage(currentPage);
 </script>
-		<script>
+	<script>
 
 		function goToDetail(index) {
 			console.log(index)
@@ -162,6 +164,6 @@
 
 	</script>
 
-		</script>
+	</script>
 </body>
 </html>

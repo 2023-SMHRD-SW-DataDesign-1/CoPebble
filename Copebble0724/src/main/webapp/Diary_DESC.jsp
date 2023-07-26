@@ -106,6 +106,7 @@
 			<!-- Pagination navigation -->
 			<div class="pagination">
 				<i class="fa-solid fa-circle-chevron-left fa-2x"  onclick="prevPage()"></i>
+				&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
 				<i class="fa-solid fa-circle-chevron-right fa-2x" onclick="nextPage()"></i>
 			</div>
 		</div>
