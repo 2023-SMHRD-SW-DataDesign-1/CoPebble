@@ -4,7 +4,7 @@ var all_events = null;
 
 function loadingEvents(jsondata) {
 	var return_value = null;
-	$.ajax({ 
+	$.ajax({
 		type: 'POST',
 		data: {},
 		url: "./calendarSelectCon",
@@ -13,20 +13,20 @@ function loadingEvents(jsondata) {
 	})
 		.done(function(result) { // 성공시 실행
 
-			console.log(result);			
+			console.log("캘린더 DB 불러오기 성공");
 			for (i = 0; i < result.length; i++) {
 				calendar.addEvent({
-					title:  result[i].title,
-					start:  result[i].start,
+					title: result[i].title,
+					start: result[i].start,
 					textColor: '#000000',
-					end:  result[i].end,
-					color:  result[i].color,
+					end: result[i].end,
+					color: result[i].color,
 					allDay: true
 				})
 			}
 		})
 		.fail(function(request, status, error) { // 실패시 실행
-			console.log("불러오기 실패");
+			console.log("캘린더 DB 불러오기 실패");
 		});
 	return return_value;
 }
@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			events.push(obj);
 		}
 		var jsondata = JSON.stringify(events);
-		console.log(jsondata); // 테스트용 출력
 		savedata(jsondata);
 	}
 
@@ -120,10 +119,10 @@ document.addEventListener('DOMContentLoaded', function() {
 			async: false
 		})
 			.done(function(reuslt) { // 성공시 실행
-				console.log("저장하기 성공");
+				console.log("캘린더 저장하기 성공");
 			})
 			.fail(function(request, status, error) { // 실패시 실행
-				console.log("저장하기 실패");
+				console.log("캘린더 저장하기 실패");
 			})
 	}
 
@@ -140,6 +139,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		// 필수 입력 필드 확인
 		if (eventTitle && eventStart && eventEnd && eventColor) {
+			// end +1 추가
+			var endDate = new Date(eventEnd);
+			endDate.setDate(endDate.getDate() + 1);
+			eventEnd = endDate.toISOString().slice(0, 10);
 			// 일정 객체 생성
 			var eventData = {
 				title: eventTitle,
@@ -269,7 +272,7 @@ year = date.getFullYear();
 month = date.getMonth() + 1;
 day = date.getDate();
 document.getElementById("current_date").innerHTML = month + "월 " + day + "일";
-
+/*
 // familynotice_add 버튼에 클릭 이벤트 리스너 추가
 $('.familynotice_add').click(function() {
 	// addEventPopup2 요소의 가시성을 토글합니다.
@@ -303,13 +306,13 @@ $('#addTodoBtn').click(function() {
 
 	// To-do 리스트에 새로운 항목 추가
 	const todoItem = `
-        <li>
-            <input type="checkbox"/>
-            ${eventTodoManager} ${eventTodoTitle}
-            ${eventTodoStart} ~ ${eventTodoEnd}
-            <button class="deleteTodoBtn">X</button>
-        </li>
-    `;
+		<li>
+			<input type="checkbox"/>
+			${eventTodoManager} ${eventTodoTitle}
+			${eventTodoStart} ~ ${eventTodoEnd}
+			<button class="deleteTodoBtn">X</button>
+		</li>
+	`;
 	$('#todoList').append(todoItem);
 
 	// 일정 추가 창 닫기
@@ -345,11 +348,11 @@ function createTodoItem(text, date) {
 	li.classList.add('todo-item'); // 클래스 이름을 'todo-item'으로 설정
 	li.draggable = true; // 리스트 아이템을 드래그 가능하도록 설정
 	li.innerHTML = `
-        <input type="checkbox" />
-        ${text}
-        ${date}
-        <button class="deleteTodoBtn">X</button>
-    `;
+		<input type="checkbox" />
+		${text}
+		${date}
+		<button class="deleteTodoBtn">X</button>
+	`;
 	return li;
 }
 
@@ -362,59 +365,6 @@ function addTodoItem(text, date) {
 // DB에 저장된 리스트 불러오기!
 addTodoItem("남자 나는 탈주 할것이다!", "07-22 ~ 07-31");
 addTodoItem("남자 아무것도하기싫다!", "07-20 ~ 07-31");
-
-
-// 부부 브리핑
-$('.delete_btn').click(function() {
-	// 해당 메모를 삭제합니다.
-	$(this).parent('.memo_box').remove();
-});
-
-$('.briefing_add').click(function() {
-	// addEventPopup3 요소의 가시성을 토글합니다.
-	$('#addEventPopup3').toggle();
-});
-// 메모 추가 버튼 이벤트 처리
-$('#addMemoBtn').click(function() {
-	const eventMemoTitle = $('#eventMemo').val();
-	const eventMemoManager = $('input[name=memoManager]:checked').val();
-
-	// 메모 리스트에 새로운 항목 추가
-	const MemoLsit = `
-<div class="memo_box">
-<div>${eventMemoManager}</div>
-<div>${eventMemoTitle}</div>
-
-<!-- 메모 삭제 버튼 -->
-<button class="delete_btn">X</button>
-</div>
-`;
-	$('#MemoLsit').append(MemoLsit);
-
-
-	// 메모 삭제 버튼에 클릭 이벤트 처리
-	$('.delete_btn').click(function() {
-		// 해당 메모를 삭제합니다.
-		$(this).parent('.memo_box').remove();
-	});
-
-	// 일정 추가 창 닫기
-	$('#addEventPopup3').hide();
-	// 입력 필드 초기화
-	document.getElementById('eventMemo').value = '';
-	$('input[name=memoManager]').prop('checked', false);
-});
-
-// 취소 버튼 이벤트 처리
-$('#cancelMemoBtn').click(function() {
-	// 일정 추가 창 닫기
-	$('#addEventPopup3').hide();
-	// 입력 필드 초기화
-	document.getElementById('eventMemo').value = '';
-	$('input[name=memoManager]').prop('checked', false);
-});
-
-
 
 //가족알림장 드래그앤드롭
 let draggedItem = null;
@@ -455,13 +405,13 @@ $(document).ready(function() {
 
 		// To-do 리스트에 새로운 항목 추가
 		const todoItem = `
-      <li class="todo-item">
-        <input type="checkbox"/>
-        ${eventTodoManager} ${eventTodoTitle}
-        ${eventTodoStart} ~ ${eventTodoEnd}
-        <button class="deleteTodoBtn">X</button>
-      </li>
-    `;
+	  <li class="todo-item">
+		<input type="checkbox"/>
+		${eventTodoManager} ${eventTodoTitle}
+		${eventTodoStart} ~ ${eventTodoEnd}
+		<button class="deleteTodoBtn">X</button>
+	  </li>
+	`;
 		$('#todoList').append(todoItem);
 	});
 });
@@ -530,3 +480,4 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+*/

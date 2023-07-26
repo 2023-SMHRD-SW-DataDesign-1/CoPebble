@@ -69,7 +69,7 @@
 					<!-- 철수님 은아님 안녕하세요 텍스트 -->
 					<div>
 						<span class="hello_name" style="width: 100%; max-width: 500px;">
-							${info.NAME}님 안녕하세요(●'◡'●)</span> <span id="current_date3"
+							${info.NAME}님 안녕하세요(●'◡'●)🧡🧡🧡🧡</span> <span id="current_date3"
 							class="current_date4" style="width: 100%; max-width: 200px;"></span>
 					</div>
 				</div>
@@ -110,22 +110,7 @@
 						</button>
 						<div class="text-center">부부 브리핑</div>
 						<hr>
-						<div id="MemoLsit">
-
-							<div class="memo_box">
-								<!-- 여기서 for문 돌려서 저장된 DB를 불러오면 될려나??? -->
-								<div>남자</div>
-								<div>간단한 내용 테스트.</div>
-								<!-- 메모 삭제 버튼 -->
-								<button class="delete_btn">X</button>
-							</div>
-							<div class="memo_box">
-								<div>남자</div>
-								<div>장문의 글을 작성하는 테스트 입니다.</div>
-								<!-- 메모 삭제 버튼 -->
-								<button class="delete_btn">X</button>
-							</div>
-						</div>
+						<div id="MemoList"></div>
 					</div>
 				</div>
 			</div>
@@ -206,8 +191,8 @@
 		</div>
 		<div class="form-group">
 			<label for="eventManager">담당자</label> <label><input
-				type="radio" name="memoManager" value="남자"> 남자</label> <label><input
-				type="radio" name="memoManager" value="여자"> 여자</label>
+				type="radio" name="memoManager" value="🧑">🧑</label><label><input
+				type="radio" name="memoManager" value="👩">👩</label>
 		</div>
 		<div class="btn-container">
 			<button id="addMemoBtn">등록</button>
@@ -229,11 +214,12 @@
 	</script>
 
 
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 	<script src="./js/main_script.js"></script>
+	<script src="./js/main_script_br.js"></script>
+	<script src="./js/main_script_fa.js"></script>
 </body>

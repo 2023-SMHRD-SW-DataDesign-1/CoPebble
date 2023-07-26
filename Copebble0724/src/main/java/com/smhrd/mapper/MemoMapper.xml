@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smhrd.mapper.MemoMapper">
+
+	<insert id="insertMemo" parameterType="MemoDTO">
+		insert into brefing values(#{num}, #{FAMILY_KEY}, #{WRITER}, #{B_CONTENT})
+	</insert>
+
+	<select id="showMemo" resultType="MemoDTO">
+	select * from brefing where Family_key = #{Family_key}
+	</select>
+
+	<delete id="deleteMemo">
+	DELETE from brefing where (NUM = #{num} and FAMILY_KEY = #{FAMILY_KEY} and WRITER = #{WRITER} and B_CONTENT = #{B_CONTENT})
+	</delete>
+	
+</mapper>
