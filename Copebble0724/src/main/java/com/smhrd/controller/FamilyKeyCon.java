@@ -55,7 +55,7 @@ public class FamilyKeyCon extends HttpServlet {
 
          // 수정 성공 시 session의 info도 업데이트
 
-         request.getSession().setAttribute("info", info);
+         request.getSession().setAttribute("info", dto);
 
       }
 
