@@ -4,7 +4,7 @@ var all_events = null;
 
 function loadingEvents(jsondata) {
 	var return_value = null;
-	$.ajax({
+	$.ajax({ 
 		type: 'POST',
 		data: {},
 		url: "./calendarSelectCon",
