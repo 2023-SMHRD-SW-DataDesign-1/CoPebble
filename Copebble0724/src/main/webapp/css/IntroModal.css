@@ -5,6 +5,7 @@
 }
 
 
+
 /*************************************************************** 모달창 여는 버튼 */
 #loginModal_btn { /* 로그인 */
     font-size: 17px; font-weight: bold;
@@ -59,9 +60,10 @@ input[type=text] {
     width: 100%; height: 50px; border-radius: 5px;
     font-size: 15px;
     margin-top: none; margin-bottom: 15px;
+    background-color: white;
     padding-left: 2px;
     border: none;
-    box-shadow: 3px 3px 10px 3px #8f8e8e;
+    box-shadow: 1px 1px 3px 1px #8f8e8e;
 }
 
 input[type=password] {
@@ -69,7 +71,7 @@ input[type=password] {
     font-size: 15px; 
     margin-top: none; margin-bottom: 15px;
     border: none;
-    box-shadow: 3px 3px 10px 3px #8f8e8e;
+    box-shadow: 1px 1px 3px 1px #8f8e8e;
 }
 input[id=login_btn] {
     font-weight: bold;
@@ -79,7 +81,7 @@ input[id=login_btn] {
     font-size: 15px;
     margin-top: none; margin-bottom: 15px;
     border: none;
-    box-shadow: 3px 3px 10px 3px #8f8e8e;
+    box-shadow: 1px 1px 3px 1px #8f8e8e;
 }
 input[id=kakao-login-btn] {
     font-weight: bold;
@@ -89,7 +91,7 @@ input[id=kakao-login-btn] {
     font-size: 15px; 
     margin-top: none; margin-bottom: 15px;
     border: none;
-    box-shadow: 3px 3px 10px 3px #8f8e8e;
+    box-shadow: 1px 1px 3px 1px #8f8e8e;
 }
 
 .hr { /* 왜 안 나와ㅠㅠㅠㅠㅠㅠㅠㅠ */
@@ -104,7 +106,7 @@ input[id=join_btn] { /* 회원가입 모달창 안에 회원가입버튼 */
     font-size: 15px; 
     margin-top: none; margin-bottom: 15px;
     border: none;
-    box-shadow: 3px 3px 10px 3px #8f8e8e;
+    box-shadow: 1px 1px 3px 1px #8f8e8e;
 }
 
 input[id=goFamily] { /* 회원가입 완료 모달창 내에 패밀리키 만들러 가는 버튼 */
@@ -115,7 +117,7 @@ input[id=goFamily] { /* 회원가입 완료 모달창 내에 패밀리키 만들
     font-size: 15px; 
     margin-top: none; margin-bottom: 15px;
     border: none;
-    box-shadow: 3px 3px 10px 3px #8f8e8e;
+    box-shadow: 1px 1px 3px 1px #8f8e8e;
 }
 
 input[id=goMain] { /* 회원가입 완료 모달창 내에 메인페이지로 가는 버튼 */
@@ -126,7 +128,7 @@ input[id=goMain] { /* 회원가입 완료 모달창 내에 메인페이지로 �
     font-size: 15px; 
     margin-top: none; margin-bottom: 15px;
     border: none;
-    box-shadow: 3px 3px 10px 3px #8f8e8e;
+    box-shadow: 1px 1px 3px 1px #8f8e8e;
 }
 
 
@@ -165,7 +167,7 @@ input[id=goMain] { /* 회원가입 완료 모달창 내에 메인페이지로 �
     font-size: 15px; 
     margin-top: none; margin-bottom: 15px;
     border: none;
-    box-shadow: 3px 3px 10px 3px #8f8e8e;
+    box-shadow: 1px 1px 3px 1px #8f8e8e;
 }
 
 #joinModal_btn2:hover {
@@ -245,4 +247,3 @@ input[id=goMain] { /* 회원가입 완료 모달창 내에 메인페이지로 �
         opacity: 1;
     }
 }
-
