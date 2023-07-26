@@ -65,42 +65,41 @@
    <main>
       <!-- 소개 이미지 또는 글 넣기 -->
       <div>
-         <img src="mainlogo.png" class="leftSlide"> <img
-            src="mainlogo.png" class="rightSlide">
+         <img src="mainlogo.png" class="leftSlide"> 
+         <img src="mainlogo.png" class="rightSlide">
       </div>
 
       <!-- 로그인 모달창 -->
-      <div id="modal1" class="modalBack">
-         <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div class="header_logo2"></div>
-            <p style="margin-bottom: 1%;">아이디</p>
-            <input type="text" name="id" placeholder="  아이디를 입력하세요">
-            <p style="margin-bottom: 1%;">비밀번호</p>
-            <input type="password" name="pw" placeholder="  비밀번호를 입력하세요">
-
-            <input type="submit" value="로그인" id="login_btn"> 
-            <input type="submit" value="카카오 로그인" id="kakao-login-btn">
-            <hr class="hr">
-            <input type="submit" value="회원가입" id="joinModal_btn2">
-         </div>
-      </div>
+        <div id="modal1" class="modalBack">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="header_logo2"></div> <br>
+                <p style="margin-bottom: 1%; font-weight: bold;">아이디</p>
+                <input type="text" name="id" id="loginID" placeholder="  아이디를 입력하세요">
+                <p style="margin-bottom: 1%; font-weight: bold;">비밀번호</p>
+                <input type="password" name="pw" id="loginPW" placeholder="  비밀번호를 입력하세요">
+        
+                <input type="submit" value="로그인" id="login_btn">
+                <input type="submit" value="카카오 로그인" id="kakao-login-btn">
+                <hr class="hr">
+                <input type="submit" value="회원가입" id="joinModal_btn2"> <!-- 회원가입 모달창 열기 -->
+            </div>
+        </div>
 
       <!-- 회원가입 모달창 -->
       <div id="modal2" class="modalBack">
          <div class="modal-content">
             <span class="close-btn">&times;</span>
             <div class="header_logo2"></div>
-            <p style="margin-bottom: 1%;">아이디</p>
-            <input type="text" name="ID" id="ID" placeholder="  아이디를 입력하세요">
-            <p style="margin-bottom: 1%;">비밀번호</p>
-            <input type="password" name="PW" id="PW" placeholder="  비밀번호를 입력하세요">
-            <p style="margin-bottom: 1%;">비밀번호 확인</p>
-            <input id="pwCheck" type="text" name="pwCheck"
-               placeholder="  비밀번호를 확인 해 주세요">
-            <p style="margin-bottom: 1%;">이름</p>
-            <input type="text" name="NAME" id="NAME" placeholder="  이름을 입력하세요">
-            <input type="submit" value="회원가입" id="join_btn">
+            <p style="margin-bottom: 1%; font-weight: bold;">아이디</p>
+            <input type="text" name="ID" id="joinID" placeholder="  아이디를 입력하세요">
+            <p style="margin-bottom: 1%; font-weight: bold;">비밀번호</p>
+            <input type="password" name="PW" id="joinPW" placeholder="  비밀번호를 입력하세요">
+            <p style="margin-bottom: 1%; font-weight: bold;">비밀번호 확인</p>
+            <input id="pwCheck" type="text" name="pwCheck" placeholder="  비밀번호를 확인 해 주세요">
+            <p style="margin-bottom: 1%; font-weight: bold;">이름</p>
+            <input type="text" name="NAME" id="joinNAME" placeholder="  이름을 입력하세요">
+            <input type="submit" value="회원가입" id="join_btn"> <!-- 회원가입 ajax -->
          </div>
       </div>
 
@@ -154,7 +153,7 @@
                   type: 'post',
                   data: param,
                   success: function(res){
-                  location.href=".Main.jsp";
+                  location.href="./Main.jsp";
                  }
                })    
         }
@@ -172,12 +171,12 @@
    <!-- 회원가입 ajax -->
    <script>
     $('#join_btn').on('click', function(){
-        var ID = $('#ID').val();
-        var PW = $('#PW').val();
-        var NAME = $('#NAME').val();
-        console.log(ID);
-        console.log(PW);
-        console.log(NAME);
+        var ID = $('#joinID').val();
+        var PW = $('#joinPW').val();
+        var NAME = $('#joinNAME').val();
+        console.log("ID: "+ID);
+          console.log("PW: "+PW);
+        console.log("NAME: "+NAME);
         
         $.ajax({
            url : "JoinCon",
@@ -190,7 +189,7 @@
            success : function(result){ 
               console.log(result+" : ajax이후")
                if(result==null){
-                  alert("입력되지 않은 항목이 있습니다")
+                  alert('등록된 ID이거나 입력되지 않은 항목이 있습니다.');
                }else{
                   // 회원가입 성공 시
                   document.getElementById("modal3").style.display = "block"; //회원가입 완료 모달창
@@ -199,18 +198,20 @@
                }
            },
            error : function(e){
-               alert('회원가입 통신실패');
+               alert('등록된 ID이거나 입력되지 않은 항목이 있습니다.');
            }
        });
     });
     </script>
 
    <!-- 로그인 ajax -->
-   <script>
+    <script>
     $('#login_btn').on('click', function(){
-        var ID = $('#ID').val();
-        var PW = $('#PW').val(); 
-        }
+        var ID = $('#loginID').val();
+        var PW = $('#loginPW').val();
+        console.log("ID: "+ID);
+        console.log("PW: "+PW);
+        
         $.ajax({
            url : "LoginCon",
            dataType: "text",
@@ -219,13 +220,13 @@
                 PW : PW
             }, //여기까지 통신하고 LoginCon으로 이동
            success : function(result){ 
-              console.log(result)
-              if(result!=="오라클 로그인 연결 실패"){
-                   window.location.href="./Main.jsp";
-                } else {
-                   document.getElementById("modal2").style.display = "block";
-                
-                }
+              console.log(result+" : ajax이후");
+               if(result=="오라클 로그인 연결 실패"){
+                  alert("등록되지 않은 회원입니다");
+                  document.getElementById("modal2").style.display = "block"; // 회원가입 모달창
+               }else{
+                  window.location.href = "./Main.jsp";
+               }
            },
            error:function(e){
                alert('로그인 통신실패');

@@ -18,7 +18,7 @@ public class calendarSelectCon extends HttpServlet {
 
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    	System.out.println("데이터 수신 확인");
+    	System.out.println("캘린더 데이터 수신 확인");
         String FK = "test0001";
 
         ArrayList<calendarDTO> calendar_list = calendarDAO.selectCalendar(FK);
@@ -33,12 +33,12 @@ public class calendarSelectCon extends HttpServlet {
 
         response.setCharacterEncoding("UTF-8");
 
-        System.out.println("데이터 수신 성공");
+        System.out.println("캘린더 데이터 수신 성공");
 
 
         PrintWriter out = response.getWriter();
         out.print(json);
         out.flush();
-        System.out.println("데이터 전송 성공");
+        System.out.println("캘린더 데이터 전송 성공");
     }
 }

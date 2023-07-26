@@ -46,7 +46,7 @@ public class JoinCon extends HttpServlet {
           // session 데이터 저장
           session.setAttribute("info", info);
       } else {
-         result = null;
+          result = null;
       }
 
       response.setCharacterEncoding("UTF-8");

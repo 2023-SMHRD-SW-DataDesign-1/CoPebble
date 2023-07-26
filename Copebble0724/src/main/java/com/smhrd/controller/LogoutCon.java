@@ -16,7 +16,7 @@ public class LogoutCon extends HttpServlet {
       System.out.println("삭제 전 :"+session.getAttribute("info"));
       session.removeAttribute("info"); // 세션삭제
       System.out.println("삭제 후: "+session.getAttribute("info"));
-      response.sendRedirect("introModal.jsp");
+      response.sendRedirect("IntroModal.jsp");
 
    }
 
