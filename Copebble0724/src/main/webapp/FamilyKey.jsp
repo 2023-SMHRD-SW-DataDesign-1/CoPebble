@@ -13,6 +13,11 @@
 <link rel="stylesheet" href="./css/familykey.css" />
 <link rel="stylesheet"
    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<link
+   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+   rel="stylesheet"
+   integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+   crossorigin="anonymous">
 <!-- 부트스트랩 태그 및 무료 아이콘 태그 모으는 곳 -->
 <script src="https://kit.fontawesome.com/a34da1aa1b.js"
    crossorigin="anonymous"></script>
@@ -49,7 +54,7 @@
 
       <div style="width: 10%; min-width: 150px;">
          <a href="main.html"> <img class="header_logo"
-            src="/img/로고최종3-01.png" alt="">
+            src="mainlogo.png" alt="">
          </a>
 
       </div>
@@ -87,31 +92,50 @@
       <div class="familykey_box" style="width: 100%; min-width: 100px;">
 
          <div>
-            <h2 class="familkey_title">${info.NAME}님패밀리키생성</h2>
+            <i id="key_box" class="bi bi-key"
+               style="font-size: 60px; color: #007138;"></i>
+            <h2 class="familkey_title">${info.NAME}님
+               <br>패밀리키 등록
+            </h2>
+            <h1 class="familykey_content2">패밀리키를 등록해 WithDAY를 부부가 함께 사용해요</h1>
+
             <hr>
             <div class="form-group" id="familykeycontent">
-               <label for="inputPasswordCheck">패밀리키 생성</label>
+               <label for="inputPasswordCheck" class="family_text">패밀리키 생성</label>
                <div>
-                  <button type="submit" id="familykey_make" class="btn btn-success">
+                  <button type="button" id="familykey_make" class="btn btn-success">
                      패밀리키 생성</button>
-                  <div class=familykey_make></div>
-               </div>
-               <div class="makespace">
-                  <label for="inputPassword">패밀리키 입력</label>
-               </div>
-               <form action="FamilyKeyCon" method="POST">
-                  <input type="text" class="form-control" id="FAMILY_KEY2" name="FAMILY_KEY"
-                     placeholder="패밀리키를 등록해주세요">
 
-                  <button type="submit" id="familykey_submit"
-                     class="btn btn-success">
-                     패밀리키 등록<i class="fa fa-check spaceLeft"></i>
-                  </button>
-               </form>
+               </div>
+               <div class=familykey_make></div>
             </div>
 
 
+            <div class="makespace center">
+
+
+               <label for="inputPassword">패밀리키 입력</label>
+      
+               <form action="FamilyKeyCon" method="POST">
+
+
+                  <input type="text" class="form-control" id="FAMILY_KEY2"
+                     name="FAMILY_KEY" placeholder="패밀리키를 등록해주세요">
+
+                  <button type="submit" id="familykey_submit"
+                     class="btn btn-success">패밀리키 등록</button>
+                     
+
+
+               </form>
+
+            </div>
          </div>
+         <h1 class="familykey_content3">패밀리키 등록버튼을 누르면 메인으로 이동합니다</h1>
+         
+
+
+      </div>
 
 
       </div>
@@ -130,6 +154,7 @@
                   function() {
                      const randomString = generateRandomString(10); // 10자리 랜덤 문자열 생성
                      document.querySelector('.familykey_make').textContent = randomString;
+
                   });
 
       function generateRandomString(length) {
