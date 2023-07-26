@@ -12,6 +12,14 @@
 		select * from MEMBER where ID=#{ID} and PW=#{PW}
   </select>
   
-  
+  <update id="familykey" parameterType="MemberDTO">
+    update MEMBER
+    set
+    ID = #{ID, jdbcType=VARCHAR},
+    FAMILY_KEY = #{FAMILY_KEY, jdbcType=VARCHAR},
+    PW=#{PW, jdbcType=VARCHAR},
+    NAME=#{NAME, jdbcType=VARCHAR}
+    where ID = #{ID, jdbcType=VARCHAR}
+</update>
 	
 </mapper>

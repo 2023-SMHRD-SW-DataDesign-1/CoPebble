@@ -1,27 +1,71 @@
 package com.smhrd.controller;
 
-import java.util.Random;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-public class FamilyKeyCon {
-	    private static final String ALLOWED_CHARS = "abcdefghijklmnopqrstuvwxyz0123456789";
-	    private static final int RANDOM_STRING_LENGTH = 10; // 생성할 랜덤 문자열의 길이
+import com.smhrd.model.MemberDAO;
+import com.smhrd.model.MemberDTO;
 
-	    public static String generateRandomString() {
-	        Random random = new Random();
-	        StringBuilder sb = new StringBuilder(RANDOM_STRING_LENGTH);
+@WebServlet("/FamilyKeyCon")
+public class FamilyKeyCon extends HttpServlet {
+   private static final long serialVersionUID = 1L;
 
-	        for (int i = 0; i < RANDOM_STRING_LENGTH; i++) {
-	            int randomIndex = random.nextInt(ALLOWED_CHARS.length());
-	            char randomChar = ALLOWED_CHARS.charAt(randomIndex);
-	            sb.append(randomChar);
-	        }
+   protected void service(HttpServletRequest request, HttpServletResponse response)
+         throws ServletException, IOException {
 
-	        return sb.toString();
-	    }
-	}
-	
-	
-	
-	
-	
+      System.out.println("[Familykey]");
+      request.setCharacterEncoding("UTF-8");
 
+   
+      String FAMILY_KEY = request.getParameter("FAMILY_KEY");
+      HttpSession session = request.getSession();
+      MemberDTO info = (MemberDTO) session.getAttribute("info");
+
+      String ID = info.getID();
+      String PW = info.getPW();
+      String NAME = info.getNAME();
+      session.setAttribute("FAMILY_KEY", FAMILY_KEY);
+      
+
+      System.out.println(ID);
+      System.out.println(PW);
+      System.out.println(NAME);
+      System.out.println(FAMILY_KEY);
+
+      // 4. (MemberDTO에서의)family메소드 호출
+
+      MemberDTO dto = new MemberDTO(ID, FAMILY_KEY, PW, NAME);
+      MemberDAO dao = new MemberDAO();
+      int row = dao.familykey(dto);
+
+      // 5. update 결과값에 따라 출력
+
+   
+
+      if (row > 0) {
+
+         System.out.println("패밀리키 업데이트 성공");
+
+         response.sendRedirect("Main.jsp");
+
+         // 수정 성공 시 session의 info도 업데이트
+
+         request.getSession().setAttribute("info", info);
+
+      }
+
+      else {
+
+         System.out.println("입력한 정보가 일치하지 않습니다");
+
+         response.sendRedirect("FamilyKey.jsp");
+
+      }
+
+   }
+}
