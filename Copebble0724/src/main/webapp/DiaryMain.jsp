@@ -65,7 +65,7 @@
 			<div class="diary_baby_div">육아 다이어리</div>
 			<div class="diary_icon_div">
 				<div>
-					오래된순<i class="fa-solid fa-caret-up" onclick="DESC()"></i>
+					<span>오래된순 </span><i class="fa-solid fa-caret-up" onclick="DESC()"></i>
 				</div>
 				<div class="plus_icon_div" onclick="goToWrite()">
 					<i class="fa-solid fa-plus"></i>

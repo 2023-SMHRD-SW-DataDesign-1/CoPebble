@@ -66,7 +66,7 @@
 			<div class="diary_baby_div">육아 다이어리</div>
 			<div class="diary_icon_div">
 				<div>
-					최신순<i class="fa-solid fa-caret-down" onclick="ASC()"></i>
+					<span>최신순</span> <i class="fa-solid fa-caret-down" onclick="ASC()"></i>
 				</div>
 				<div class="plus_icon_div" onclick="goToWrite()">
 					<i class="fa-solid fa-plus"></i>

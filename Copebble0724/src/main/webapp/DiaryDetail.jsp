@@ -110,9 +110,9 @@ button {
         <div>
             <form action="DiaryDeleteCon.do" method="post" enctype="multipart/form-data" id="DiaryDeleteForm">
                 <input type="hidden" name="num" value="${param.num}">
-                <button id="delete_btn">삭제</button>
+                <button id="delete_btn">YES</button>
             </form>
-            <button id="cancel_btn">취소</button>
+            <button id="cancel_btn">NO</button>
         </div>
     </div>
 </div>
