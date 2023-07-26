@@ -69,7 +69,8 @@
 					<!-- 철수님 은아님 안녕하세요 텍스트 -->
 					<div>
 						<span class="hello_name" style="width: 100%; max-width: 500px;">
-							${info.NAME}님 안녕하세요(●'◡'●)🧡🧡🧡🧡</span> <span id="current_date3"
+						
+							${sessionScope.NAME}${info.NAME}님 안녕하세요(●'◡'●)🧡🧡🧡🧡</span> <span id="current_date3"
 							class="current_date4" style="width: 100%; max-width: 200px;"></span>
 					</div>
 				</div>
