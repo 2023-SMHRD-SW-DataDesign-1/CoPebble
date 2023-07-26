@@ -11,12 +11,12 @@ diaryModalBtn.addEventListener('click', () => {
 	diaryModal.style.display = 'block';
 });
 
+cancelBtn.addEventListener('click', () => {
+	diaryModal.style.display = 'none';
+});
 deleteBtn.addEventListener('click', () => {
 	diaryModal.style.display = 'none';
 	var deleteBtn = document.getElementById("deleteBtn");
 	deleteBtn.addEventListener("click", submitForm);
 });
 
-cancelBtn.addEventListener('click', () => {
-	diaryModal.style.display = 'none';
-});
