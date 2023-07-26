@@ -107,10 +107,21 @@ input[id=join_btn] { /* 회원가입 모달창 안에 회원가입버튼 */
     box-shadow: 3px 3px 10px 3px #8f8e8e;
 }
 
-input[id=goMain] {
+input[id=goFamily] { /* 회원가입 완료 모달창 내에 패밀리키 만들러 가는 버튼 */
     font-weight: bold;
     background-color: #FFDD7C;
-    position: absolute; top: 84%; left: 27%;
+    position: absolute; top: 71%; left: 27%;
+    width: 200px; height: 40px; border-radius: 5px;
+    font-size: 15px; 
+    margin-top: none; margin-bottom: 15px;
+    border: none;
+    box-shadow: 3px 3px 10px 3px #8f8e8e;
+}
+
+input[id=goMain] { /* 회원가입 완료 모달창 내에 메인페이지로 가는 버튼 */
+    font-weight: bold;
+    background-color: #FFDD7C;
+    position: absolute; top: 81%; left: 27%;
     width: 200px; height: 40px; border-radius: 5px;
     font-size: 15px; 
     margin-top: none; margin-bottom: 15px;
@@ -130,6 +141,16 @@ input[id=goMain] {
     border-radius: 5px;
 }
 #join_btn:hover {
+    background-color: #f8b03a;
+    padding: 3px; padding-left: 10px; padding-right: 10px; 
+    border-radius: 5px;
+}
+#goMain:hover {
+    background-color: #f8b03a;
+    padding: 3px; padding-left: 10px; padding-right: 10px; 
+    border-radius: 5px;
+}
+#goFamily:hover {
     background-color: #f8b03a;
     padding: 3px; padding-left: 10px; padding-right: 10px; 
     border-radius: 5px;
@@ -168,19 +189,18 @@ input[id=goMain] {
 
 
 .header_logo2 { /*********************************************** 로그인/회원가입 모달창 안에 로고*/
-            background-image: url("mainlogo.png");
-            background-size: contain;
+            background-image: url("../mainlogo.png");
             background-repeat: no-repeat;
             background-position: center;
-            height: 100px;
+            background-size : cover;
+            height: 120px;
         }
 .header_logo3 { /*********************************************** 회원가입완료 모달창 안에 로고*/
-            background-image: url("mainlogo.png");
-            background-size: contain;
+            background-image: url("../mainlogo.png");
             background-repeat: no-repeat;
             background-position: center;
-            height: 200px;
-            margin-left: none;
+            background-size : cover;
+            height: 180px;
         }
 
 
@@ -225,5 +245,4 @@ input[id=goMain] {
         opacity: 1;
     }
 }
-
 

@@ -37,7 +37,7 @@ public class JoinCon extends HttpServlet {
       String result;
 
       if (row > 0) {
-         result = "오라클 저장 성공";
+         result = ID;
          //ID값 보내기
           // MemberDTO 객체 생성 및 값 설정
           MemberDTO info = new MemberDTO(ID, PW, NAME);
@@ -45,10 +45,8 @@ public class JoinCon extends HttpServlet {
           HttpSession session = request.getSession();
           // session 데이터 저장
           session.setAttribute("info", info);
-          // 다른 JSP로 페이지 이동
-          response.sendRedirect("./FamilyKey.jsp");
       } else {
-         result = "오라클 저장 실패";
+         result = null;
       }
 
       response.setCharacterEncoding("UTF-8");

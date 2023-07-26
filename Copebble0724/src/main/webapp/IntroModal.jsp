@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false"%>
@@ -30,21 +31,19 @@
 
 </head>
 
-<c:set var="info" value="${sessionScope.info}" />
-
 <body>
    <!--헤더-->
    <header class="header_main mt-3 ">
       <div style="width: 20%;"></div>
       <!--메인로고 -->
       <div style="width: 10%; min-width: 150px;">
-         <a href="Main.jsp"> <img class="header_logo"
-            src="img/mainlogo.png" alt="">
+         <a href="Main.jsp"> <img class="header_logo" src="mainlogo.png" alt="">
          </a>
       </div>
       <!-- 육아 다이어리 로고 -->
       <div style="width: 45%; min-width: 100px;">
-         <a href="babydiary.html" class="baby_diary"> <p1>육아 다이어리</p1>
+         <a href="babydiary.html" class="baby_diary"> 
+            <p1>육아 다이어리</p1>
          </a>
       </div>
 
@@ -66,8 +65,8 @@
    <main>
       <!-- 소개 이미지 또는 글 넣기 -->
       <div>
-         <img src="./img/mainLogo.png" class="leftSlide"> <img
-            src="./img/mainLogo.png" class="rightSlide">
+         <img src="mainlogo.png" class="leftSlide"> <img
+            src="mainlogo.png" class="rightSlide">
       </div>
 
       <!-- 로그인 모달창 -->
@@ -80,8 +79,8 @@
             <p style="margin-bottom: 1%;">비밀번호</p>
             <input type="password" name="pw" placeholder="  비밀번호를 입력하세요">
 
-            <input type="submit" value="로그인" id="login_btn"> <input
-               type="submit" value="카카오 로그인" id="kakao-login-btn">
+            <input type="submit" value="로그인" id="login_btn"> 
+            <input type="submit" value="카카오 로그인" id="kakao-login-btn">
             <hr class="hr">
             <input type="submit" value="회원가입" id="joinModal_btn2">
          </div>
@@ -110,15 +109,15 @@
          <div class="modal-content">
             <span class="close-btn">&times;</span>
             <div class="header_logo3"></div>
-            <h2>${info.NAME}님,</h2>
-            <br>
-            <h3>회원가입이 완료되었습니다</h3>
-            <a href="Main.jsp"> <input type="submit" value="withDAY 이용하기"
-               id="goMain">
-
-            </a> <a href="FamilyKey.jsp"> <input type="submit" value="패밀리키 등록하기"
-               id="goFamily">
+              <h1 id="join_name"></h1> <!------------------------------- ajax로 값 가져오기 -->
+            <h1>withDAY의</h1><br>
+            <h2>회원이 되셨습니다</h2>
+            <a href="FamilyKey.jsp"> 
+               <input type="submit" value="패밀리키 등록하기" id="goFamily">
             </a>
+            <a href="Main.jsp"> 
+               <input type="submit" value="withDAY 이용하기" id="goMain">
+            </a> 
          </div>
       </div>
    </main>
@@ -130,50 +129,43 @@
      Kakao.init('1a299c90361bc9c75bee41f6a9bc76e0'); // 사용하려는 앱의 JavaScript 키 입력
      
    $("#kakao-login-btn").on("click", function(){
-    //1. 로그인 시도
+    // 1. 로그인 시도
        Kakao.Auth.login({
-           success: function(authObj) {
+       success: function(authObj) {
          
-          //2. 로그인 성공시, API 호출
-                Kakao.API.request({
-               url: '/v2/user/me',
-               data: {
-                property_keys: ["kakao_account.email","kakao_account.profile.nickname"]
-               },
-                 success: function(res) {
-                 var id = res.id;
-              scope : 'profile_nickname, account_email';
-              alert('로그인성공');
-               
-         
-           var param = {
-              NAME : res.kakao_account.profile.nickname,
-              ID : res.kakao_account.email,
-              //user_id : id,  
-             }
-           
-           
+    // 2. 로그인 성공시, API 호출
+       Kakao.API.request({
+       url: '/v2/user/me',
+       data: {
+       property_keys: ["kakao_account.email","kakao_account.profile.nickname"]
+          },success: function(res) {
+             var id = res.id;
+            scope : 'profile_nickname, account_email';
+            alert('로그인성공');
+       
+            var param = {
+            NAME : res.kakao_account.profile.nickname,
+            ID : res.kakao_account.email,
+            //user_id : id,  
+          }
+       
                $.ajax({
                   url:'KakaoLoginCon.do',
                   type: 'post',
                   data: param,
                   success: function(res){
-                      location.href="./main.html";
-
-                  }
-               })
-                              
-                    
+                  location.href=".Main.jsp";
+                 }
+               })    
         }
           })
           console.log(authObj);
           var token = authObj.access_token;
         },
         fail: function(err) {
-          alert(JSON.stringify(err));
+        alert(JSON.stringify(err));
         }
-      });
-        
+      });    
 }) 
 </script>
 
@@ -196,12 +188,14 @@
                NAME : NAME,
             }, //여기까지 통신하고 JoinCon으로 이동
            success : function(result){ 
-              console.log(result)
-               if(result=="오라클 저장 실패"){
+              console.log(result+" : ajax이후")
+               if(result==null){
                   alert("입력되지 않은 항목이 있습니다")
                }else{
                   // 회원가입 성공 시
                   document.getElementById("modal3").style.display = "block"; //회원가입 완료 모달창
+                  document.getElementById("join_name").innerHTML = result+"님,"; //회원가입 완료 모달창
+                  /* $("#join_name").innerHTML(result+"님,"); */
                }
            },
            error : function(e){
@@ -214,9 +208,8 @@
    <!-- 로그인 ajax -->
    <script>
     $('#login_btn').on('click', function(){
-       var ID = $('#ID').val();
+        var ID = $('#ID').val();
         var PW = $('#PW').val(); 
-
         }
         $.ajax({
            url : "LoginCon",
@@ -230,8 +223,8 @@
               if(result!=="오라클 로그인 연결 실패"){
                    window.location.href="./Main.jsp";
                 } else {
-                   alert("등록 되지않은 회원입니다.")
                    document.getElementById("modal2").style.display = "block";
+                
                 }
            },
            error:function(e){
