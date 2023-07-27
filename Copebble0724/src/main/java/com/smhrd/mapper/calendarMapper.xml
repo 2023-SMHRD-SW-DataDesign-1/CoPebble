@@ -9,10 +9,10 @@
 	</insert>
 
     <select id="selectCalendar" resultType="calendarDTO">
-        SELECT title, S_DATE AS "start", E_DATE AS "end", color FROM calendar WHERE Family_key = #{FAMILY_KEY}
+        SELECT title, S_DATE AS "start", E_DATE AS "end", color FROM calendar WHERE (Family_key = #{FAMILY_KEY} and ASSORT = 'C')
     </select>
 
 	<delete id="deleteCalendar">
-    DELETE from calendar where Family_key = #{Family_key}
+    DELETE from calendar where (Family_key = #{FAMILY_KEY} and ASSORT = 'C')
 </delete>
 </mapper>

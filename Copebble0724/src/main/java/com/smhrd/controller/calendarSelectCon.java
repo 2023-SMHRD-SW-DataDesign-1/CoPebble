@@ -14,31 +14,24 @@ import com.google.gson.Gson; // Import Gson library for JSON conversion
 
 @WebServlet("/calendarSelectCon")
 public class calendarSelectCon extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    protected void service(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-    	System.out.println("캘린더 데이터 수신 확인");
-        String FK = "test0001";
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.println("캘린더 데이터 수신 확인");
+		String FK = "test0001";
+		ArrayList<calendarDTO> calendar_list = calendarDAO.selectCalendar(FK);
 
-        ArrayList<calendarDTO> calendar_list = calendarDAO.selectCalendar(FK);
+		Gson gson = new Gson();
+		String json = gson.toJson(calendar_list);
 
+		response.setContentType("application/json");
 
-        Gson gson = new Gson();
-        String json = gson.toJson(calendar_list);
+		response.setCharacterEncoding("UTF-8");
 
+		PrintWriter out = response.getWriter();
+		out.print(json);
+		out.flush();
 
-        response.setContentType("application/json");
-
-
-        response.setCharacterEncoding("UTF-8");
-
-        System.out.println("캘린더 데이터 수신 성공");
-
-
-        PrintWriter out = response.getWriter();
-        out.print(json);
-        out.flush();
-        System.out.println("캘린더 데이터 전송 성공");
-    }
+	}
 }

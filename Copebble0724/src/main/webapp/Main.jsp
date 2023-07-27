@@ -18,8 +18,8 @@
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="css/main_style.css">
 <link rel="stylesheet" href="./css/main.css" />
+<link rel="stylesheet" href="css/main_style.css">
 </head>
 
 <body>
@@ -42,12 +42,12 @@
 			</a>
 		</div>
 
-		<div style="width: 3%; min-width: 20px;">
-			<a href="MyPage.jsp" class="header_icon_mypage"> <i
+		<div style="width: 2%; min-width: 20px;">
+			<a href="mypage.html" class="header_icon_mypage"> <i
 				class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
 			</a>
 		</div>
-		<div style="width: 3%; min-width: 20px;">
+		<div style="width: 2%; min-width: 20px;">
 
 			<a href="LogoutCon" class="header_icon_logout"> <i
 				class="fa-solid fa-right-from-bracket"
@@ -69,8 +69,7 @@
 					<!-- 철수님 은아님 안녕하세요 텍스트 -->
 					<div>
 						<span class="hello_name" style="width: 100%; max-width: 500px;">
-						
-							${sessionScope.NAME}${info.NAME}님 안녕하세요(●'◡'●)🧡🧡🧡🧡</span> <span id="current_date3"
+							${info.NAME}님 안녕하세요(●'◡'●)🧡🧡🧡🧡</span> <span id="current_date3"
 							class="current_date4" style="width: 100%; max-width: 200px;"></span>
 					</div>
 				</div>
@@ -79,7 +78,7 @@
 			<!-- row속성으로 12칸 지정 -->
 			<div class="row">
 				<!-- 캘린더 -->
-				<div class="col-xl-7 col-12 mt-3">
+				<div class="col-xl-8 col-12 mt-3">
 					<div class="calendar_box p-3">
 						<br>
 						<div id="calendar"></div>
@@ -87,7 +86,7 @@
 				</div>
 
 				<!-- 가족 알림장 -->
-				<div class="col-xl-5 col-12">
+				<div class="col-xl-4 col-12">
 
 					<div class="familynotice mt-3 mb-3 p-3">
 						<button class="familynotice_add">
@@ -98,13 +97,10 @@
 							<a id="current_date"></a> 가족알림장
 						</div>
 						<hr>
-						<div id="contentToAdd"></div>
-						<ul id="todoList">
-							<!-- 새로운 리스트 아이템이 여기에 동적으로 추가됩니다 -->
-						</ul>
+						<div class="todoList"></div>
 					</div>
 
-					<div class="briefing p-3">
+					<div class="briefing p-2">
 						<button class="briefing_add">
 							<i class="fa-regular fa-square-plus"
 								style="font-size: 33px; color: #DC6721;"></i>
@@ -113,6 +109,8 @@
 						<hr>
 						<div id="MemoList"></div>
 					</div>
+					
+					
 				</div>
 			</div>
 		</div>
@@ -160,7 +158,7 @@
 	</div>
 
 	<div id="addEventPopup2" class="custom-popup" style="display: none;">
-		<h2>(연필)가족알림장</h2>
+		<h2>✏가족알림장✏</h2>
 		<div class="form-group">
 			<label for="eventTodoTitle">내용</label> <input type="text"
 				id="eventTodoTitle" placeholder="내용을 입력하세요">
@@ -175,8 +173,8 @@
 		</div>
 		<div class="form-group">
 			<label for="eventManager">담당자</label> <label><input
-				type="radio" name="Manager" value="남자"> 남자</label> <label><input
-				type="radio" name="Manager" value="여자"> 여자</label>
+				type="radio" name="Manager" value="🧑">🧑</label> <label><input
+				type="radio" name="Manager" value="👩">👩</label>
 		</div>
 		<div class="btn-container">
 			<button id="addTodoBtn">일정 추가</button>
@@ -216,6 +214,7 @@
 
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 	<script
