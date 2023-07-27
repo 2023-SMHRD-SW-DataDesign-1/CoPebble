@@ -43,7 +43,7 @@
 		</div>
 
 		<div style="width: 2%; min-width: 20px;">
-			<a href="mypage.html" class="header_icon_mypage"> <i
+			<a href="MyPage.jsp" class="header_icon_mypage"> <i
 				class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
 			</a>
 		</div>
