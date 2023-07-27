@@ -97,7 +97,7 @@
 	</div>
 
 </body>
-<script src="./js/diary_update.js"></script>
+<script src="./js/diaryUpdate.js"></script>
 <script>
 	
 </script>

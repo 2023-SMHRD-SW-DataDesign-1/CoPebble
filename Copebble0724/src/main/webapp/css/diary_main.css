@@ -36,7 +36,7 @@ body{
 }
 .diary_header>img{
     position: absolute;
-    top: -20px;
+    top: -10px;
     left: -10px;
     width: 80px;
 }
@@ -46,6 +46,7 @@ body{
 .diary_baby_div{
     background-color: white;
     width: 30%;
+    margin-left:10px;
     padding: 8px 16px;
     display: flex;
     justify-content: center;

@@ -62,7 +62,7 @@
 	<div class="diary_top_div">
 		<!-- 상단바 -->
 		<div class="diary_header">
-			<img src="./img/baby.png" alt="포대기 아기 사진">
+			<img src="./img/포대기아기.png" alt="포대기 아기 사진">
 			<div class="diary_baby_div">육아 다이어리</div>
 			<div class="diary_icon_div">
 				<div>

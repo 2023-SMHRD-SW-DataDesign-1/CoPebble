@@ -19,10 +19,9 @@ public class LogoutCon extends HttpServlet {
       session.removeAttribute("info"); // 세션삭제
       System.out.println("삭제 후: "+session.getAttribute("info"));
       
-      
       System.out.println("토큰삭제 전 :"+session.getAttribute("accesstoken"));
-      System.out.println("ID삭제 전 :"+session.getAttribute("ID"));
-      System.out.println("NAME삭제 전 :"+session.getAttribute("NAME"));
+      System.out.println(session.getAttribute("ID"));
+      System.out.println(session.getAttribute("NAME"));
       session.removeAttribute("accesstoken"); // 세션삭제
       session.removeAttribute("ID"); // 세션삭제
       session.removeAttribute("NAME"); // 세션삭제
