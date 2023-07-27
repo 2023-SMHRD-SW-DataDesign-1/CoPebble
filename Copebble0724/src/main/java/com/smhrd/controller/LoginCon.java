@@ -24,21 +24,25 @@ public class LoginCon extends HttpServlet {
       
       System.out.println("ID: "+ID);
       System.out.println("PW: "+PW);
-      
+       
       // DB 확인 
       MemberDAO dao = new MemberDAO();
-       MemberDTO info = dao.login(new MemberDTO(ID, PW));
-
-         if (info != null) {
-            System.out.println("오라클 로그인 연결 성공");
-            // session객체 생성
-            HttpSession session = request.getSession();
-            session.setAttribute("info", info);
-         } else {
-            System.out.println("오라클 로그인 연결 실패");
-         }
+      MemberDTO info = dao.login(new MemberDTO(ID, PW));
+      
+      String result;
+      if (info != null) {
+         result = "";
+          System.out.println("오라클 로그인 연결 성공");
+          // session객체 생성
+          HttpSession session = request.getSession();
+          session.setAttribute("info", info);
+      } else {
+         result = "오라클 로그인 연결 실패";
+          System.out.println("오라클 로그인 연결 실패");
+      }
          
-         
+      response.setCharacterEncoding("UTF-8");
+      response.getWriter().print(result);   
          
       
    }

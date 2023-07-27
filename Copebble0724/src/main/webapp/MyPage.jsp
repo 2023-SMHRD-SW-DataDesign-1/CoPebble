@@ -61,8 +61,7 @@
    <!--메인-->
    <main class="fullmain">
       <div class="mypage_box">
-         <div class="mypage_textbox"></div>
-         <!-- 공백 -->
+         <div class="mypage_textbox"></div> <!-- 공백 -->
          <div class="mypage_textcontent">
             <div class="TableTitleBox">
                <br>
@@ -77,14 +76,17 @@
                      <p><%=info.getNAME()%></p>
                      <p style="margin-bottom: 1%; font-weight: bold;">아이디</p>
                      <p><%=info.getID()%></p>
+                     <a href="FamilyKey.jsp" class="goFamilykey">
+                        <p style="margin-bottom: 1%; font-weight: bold;">패밀리키</p>
+                     </a>
+                     <p><%=info.getFAMILY_KEY()%></p>
                   </c:when>
                   <input type="hidden" name="ID" id="ID" value="${info.ID}">
                   <p style="margin-bottom: 1%; font-weight: bold;">비밀번호</p>
-                  <input type="password" name="PW" id="PW"
-                     placeholder="비밀번호를 입력해주세요">
+                  <input type="password" name="PW" id="PW" placeholder="비밀번호를 입력해주세요">
                   <p style="margin-bottom: 1%; font-weight: bold;">비밀번호 확인</p>
-                  <input type="password" name="CheckPw" id="inputPasswordCheck"
-                     placeholder="비밀번호를 확인해주세요"> <br>
+                  <input type="password" name="CheckPw" id="inputPasswordCheck" style="margin-bottom: 50px;" placeholder="비밀번호를 확인해주세요"> 
+                  <br>
                   <div style="display: flex; justify-content: center;">
                      <input type="submit" value="비밀번호 변경" class="pwChange" id="passwordChange"> <!-- ajax로 정보 변경하기 -->
                   </div>
@@ -95,10 +97,9 @@
                </div>
             </div>
          </div>
-         <div class="mypage_textbox"></div>
-         <!-- 공백 -->
-         <div class="mypage_textbox"></div>
-         <!-- 공백 -->
+         <div class="mypage_textbox"></div><!-- 공백 -->
+         
+
       </div>
 
    </main>
@@ -107,14 +108,15 @@
       <!-- 회원정보 삭제 재확인 모달창 -->
       <div id="modal4" class="modalBack">
          <div class="modal-content">
+            <span class="close-btn">&times;</span>
             <div class="headerLogo"></div>
+            <br>
             <h3>
                정말로<br>우리 헤어지나요..?
             </h3>
+            <br>
             <div style="display: flex; justify-content: center;">
-               <div id="deleteMember">
-                  <a href="DeleteMemberCon?ID=${info.ID}">회원삭제</a>
-               </div>
+               <a href="DeleteMemberCon?ID=${info.ID}" id="deleteMember">회원삭제</a>
             </div>
          </div>
       </div>
@@ -123,7 +125,7 @@
       <div id="mypage_password_popup" class="modalBack">
          <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <div class="headerLogo"></div><br>
+            <div class="headerLogo"></div><br><br>
             <h2>비밀번호가</h2>
             <h3>변경되었습니다.</h3>
          </div>
@@ -154,7 +156,6 @@
                    if(response == "오라클 회원정보 수정 성공"){
                        alert("회원정보 수정 실패")
                    } else{
-                       alert("회원정보 수정 성공")
                        // 변경 성공 시 모달창
                        document.getElementById("mypage_password_popup").style.display = "block";
                    }

@@ -81,9 +81,8 @@ button {
 /* 긴 박스 스타일 지정 */
 .mypage_box {
 
-    width: 80%;
-    max-width: 800px;
-    height: 100%;
+    width: 80%; max-width: 800px;
+    height: 800px;
     background-color: #ffffff;
     /* 또는 다른 원하는 값을 사용 */
     display: flex;
@@ -102,19 +101,19 @@ button {
 
 .mypage_textcontent {
     background-color: #fbfbfb;
-    height: 450px;
+    height: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10px;
 }
+
 .TableTitleBox { 
     background-color: #fbfbfb;
-    width: 450px; height: 450px; max-width: 400%;
+    width: 450px; height: 600px; max-width: 400%;
     position: absolute;
     top: 13%;
-    padding: 60px;
+    padding-left: 60px; padding-right: 60px;
 }
 
 .mypage_textbox {
@@ -130,6 +129,14 @@ button {
 }
 
 /* 마이페이지 상단/하단 구분선 */
+
+/*****************************************   a 태그 기본 효과 없애기  */
+
+
+a.goFamilykey:link { color: red; text-decoration: none;}
+a.goFamilykey:visited { color: black; text-decoration: none;}
+a.goFamilykey:hover { color: blue; text-decoration: underline;}
+
 
 
 #pwChange {
@@ -228,7 +235,7 @@ input[class=pwChange] { /* 회원정보 수정 버튼 */
 .modal-content { /************************************************ 모달창 화면 */
     background-color: white;
     padding: 60px; border-radius: 30px;
-    width: 450px; height: 400px; max-width: 400%;
+    width: 450px; height: 450px; max-width: 400%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -254,7 +261,7 @@ input[class=pwChange] { /* 회원정보 수정 버튼 */
             background-repeat: no-repeat;
             background-position: center;
             background-size : cover;
-            height: 120px;
+            height: 150px;
         }
 
 #password_popup_text {
@@ -275,7 +282,6 @@ input[class=pwChange] { /* 회원정보 수정 버튼 */
 .close-btn:hover {
     color: black;
 }
-
 
 
 

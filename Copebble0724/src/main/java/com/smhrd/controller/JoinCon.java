@@ -37,15 +37,18 @@ public class JoinCon extends HttpServlet {
       String result;
 
       if (row > 0) {
-         result = ID;
-         //ID값 보내기
+         System.out.println("오라클 로그인 연결 성공");
+         // result에 ID값 보내기
+          result = NAME;
           // MemberDTO 객체 생성 및 값 설정
           MemberDTO info = new MemberDTO(ID, PW, NAME);
-          // session객체 생성
+          // session 객체 생성
           HttpSession session = request.getSession();
           // session 데이터 저장
           session.setAttribute("info", info);
+         
       } else {
+         System.out.println("오라클 로그인 연결 실패");
           result = null;
       }
 
