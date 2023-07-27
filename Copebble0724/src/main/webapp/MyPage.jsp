@@ -37,26 +37,37 @@
    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
    crossorigin="anonymous">
 <!-- 외부 CSS -->
+<link rel="stylesheet" href="./css/main.css" />
 <link rel="stylesheet" href="./css/MyPage.css" />
 
 </head>
 
 <body>
    <!--헤더-->
-   <container> <header class="header_main">
-      <a href="Main.jsp"> <img class="header_logo" src="mainlogo.png">
-      </a>
-      <!-- 육아 다이어리 로고 -->
-      <a href="babydiary.html" class="baby_diary"> <p1>육아 다이어리</p1>
+   <header class="header_main mt-3 ">
+      <div style="width: 20%;"></div>
+
+      <div style="width: 10%; min-width: 150px;">
+         <a href="Main.jsp"> 
+            <img class="header_logo" src="mainlogo.png" alt="">
+         </a>
+      </div>
+      
+     <!-- 메인 육아 다이어리 -->   
+      <div style="width: 45%; min-width: 100px;">
+         <a href="DiaryMain.jsp" class="baby_diary">
+            <p>육아 다이어리</p>
+         </a>
+      </div>
+
+      <!-- 메인 로그아웃 -->
+      <a href="./LogoutCon" class="header_icon_logout"> 
+         <i class="fa-solid fa-right-from-bracket" id="logoutLogo" style="font-size: 30px; color: #000000;"></i>
       </a>
 
-      <!-- 로그아웃 로고 -->
-      <a href="LogoutCon" class="header_icon_logout"> <i
-         class="fa-solid fa-right-from-bracket" id="logoutLogo"
-         style="font-size: 30px; color: #000000;"></i>
-      </a>
-
-   </header> 
+      <div style="width: 21%;"></div>
+   
+   </header>
    
    <!--메인-->
    <main class="fullmain">
@@ -83,21 +94,21 @@
                   </c:when>
                   <input type="hidden" name="ID" id="ID" value="${info.ID}">
                   <p style="margin-bottom: 1%; font-weight: bold;">비밀번호</p>
-                  <input type="password" name="PW" id="PW" placeholder="비밀번호를 입력해주세요">
+                  <input type="password" name="PW" id="PW" placeholder="  비밀번호를 입력해주세요">
                   <p style="margin-bottom: 1%; font-weight: bold;">비밀번호 확인</p>
-                  <input type="password" name="CheckPw" id="inputPasswordCheck" style="margin-bottom: 50px;" placeholder="비밀번호를 확인해주세요"> 
+                  <input type="password" name="CheckPw" id="inputPasswordCheck" style="margin-bottom: 50px;" placeholder="  비밀번호를 확인해주세요"> 
                   <br>
                   <div style="display: flex; justify-content: center;">
                      <input type="submit" value="비밀번호 변경" class="pwChange" id="passwordChange"> <!-- ajax로 정보 변경하기 -->
                   </div>
                   <br>
                   <div style="display: flex; justify-content: center;">
-                     <input type="button" class="pwChange" id="deleteMemberModal_btn" value="회원삭제">
+                     <input type="button" class="pwChange" id="deleteMemberModal_btn" value="회 원 삭 제">
                   </div>
                </div>
             </div>
          </div>
-         <div class="mypage_textbox"></div><!-- 공백 -->
+         <div class="mypage_textbox" style="background-color: #fbfbfb;"></div><!-- 공백 -->
          
 
       </div>
@@ -116,15 +127,15 @@
             </h3>
             <br>
             <div style="display: flex; justify-content: center;">
-               <a href="DeleteMemberCon?ID=${info.ID}" id="deleteMember">회원삭제</a>
-            </div>
+            <a href="DeleteMemberCon?ID=${info.ID}" id="deleteMember" class="deleteMember_btn">회 원 삭 제</a>
+         </div>
          </div>
       </div>
       
       <!-- 회원정보변경(비밀번호변경) 완료 모달창 -->
       <div id="mypage_password_popup" class="modalBack">
          <div class="modal-content">
-            <span class="close-btn">&times;</span>
+            <span class="close-btn" id="goMain2" >&times;</span>
             <div class="headerLogo"></div><br><br>
             <h2>비밀번호가</h2>
             <h3>변경되었습니다.</h3>

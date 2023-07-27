@@ -42,12 +42,12 @@
 			</a>
 		</div>
 
-		<div style="width: 2%; min-width: 20px;">
+		<div style="width: 3%; min-width: 20px;">
 			<a href="MyPage.jsp" class="header_icon_mypage"> <i
 				class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
 			</a>
 		</div>
-		<div style="width: 2%; min-width: 20px;">
+		<div style="width: 3%; min-width: 20px;">
 
 			<a href="LogoutCon" class="header_icon_logout"> <i
 				class="fa-solid fa-right-from-bracket"

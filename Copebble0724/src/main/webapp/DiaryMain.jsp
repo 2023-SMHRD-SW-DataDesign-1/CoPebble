@@ -42,7 +42,7 @@
 		</div>
 
 		<div style="width: 2%; min-width: 20px;">
-			<a href="mypage.html" class="header_icon_mypage"> <i
+			<a href="MyPage.jsp" class="header_icon_mypage"> <i
 				class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
 			</a>
 		</div>
@@ -68,7 +68,8 @@
 					<span>오래된순 </span><i class="fa-solid fa-caret-up" onclick="DESC()"></i>
 				</div>
 				<div class="plus_icon_div" onclick="goToWrite()">
-					<i class="fa-solid fa-plus"></i>
+					<!-- <img alt="" src="./img.png"> -->
+					 <i class="fa-solid fa-plus"></i>
 				</div>
 			</div>
 		</div>

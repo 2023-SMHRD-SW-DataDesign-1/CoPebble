@@ -70,6 +70,9 @@ body{
     color: rgb(189, 0, 0);
     font-size: 32px;
 }
+
+.plus_icon_div>img{
+}
 .diary_main_div{
     background-color: white;
     display: flex;
