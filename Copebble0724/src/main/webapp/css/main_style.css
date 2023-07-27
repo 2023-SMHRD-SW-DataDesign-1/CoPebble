@@ -86,10 +86,6 @@
   margin-bottom: 10px;
 }
 
-.calendar_box2 {
-  width: 95%;
-}
-
 .form-group label {
   display: inline-block;
   margin-right: 10px;
@@ -114,6 +110,14 @@
   right: 5px;
   cursor: pointer;
 }
+
+.Todo_delete_btn{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
 
 .clearfix::after {
   content: "";
