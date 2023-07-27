@@ -2,11 +2,13 @@ package com.smhrd.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+@WebServlet("/LogoutCon")
 public class LogoutCon extends HttpServlet {
    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       
@@ -16,6 +18,15 @@ public class LogoutCon extends HttpServlet {
       System.out.println("삭제 전 :"+session.getAttribute("info"));
       session.removeAttribute("info"); // 세션삭제
       System.out.println("삭제 후: "+session.getAttribute("info"));
+      
+      
+      System.out.println("토큰삭제 전 :"+session.getAttribute("accesstoken"));
+      System.out.println("ID삭제 전 :"+session.getAttribute("ID"));
+      System.out.println("NAME삭제 전 :"+session.getAttribute("NAME"));
+      session.removeAttribute("accesstoken"); // 세션삭제
+      session.removeAttribute("ID"); // 세션삭제
+      session.removeAttribute("NAME"); // 세션삭제
+      System.out.println("삭제 후 토큰: "+session.getAttribute("accesstoken"));
       response.sendRedirect("IntroModal.jsp");
 
    }

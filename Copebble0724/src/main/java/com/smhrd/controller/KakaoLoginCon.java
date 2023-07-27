@@ -28,9 +28,11 @@ public class KakaoLoginCon implements Command {
 
 		String NAME = request.getParameter("NAME");
 		String ID = request.getParameter("ID");
+		String accesstoken = request.getParameter("accesstoken");
 
 		System.out.println(NAME);
 		System.out.println(ID);
+		System.out.println(accesstoken);
 
 		
 		
@@ -43,6 +45,7 @@ public class KakaoLoginCon implements Command {
 			HttpSession session =  request.getSession();
 			session.setAttribute("ID",ID);
 			session.setAttribute("NAME",NAME);
+			session.setAttribute("accesstoken",accesstoken);
 		}
 		
 		
