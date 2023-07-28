@@ -9,23 +9,23 @@
 		#{FAMILY_KEY}, #{TITLE}, #{DIARY}, #{FILENAME},to_char(sysdate,'YYYY-MM-DD'))
 	</insert>
 
-	<select id="showDiary" resultType="DiaryDTO">
-		select * from INFANT_DIARY order by NUM
+	<select id="showDiary" parameterType="String" resultType="DiaryDTO">
+		select * from INFANT_DIARY where FAMILY_KEY = #{FAMILY_KEY} order by NUM
 	</select>
 
-	<select id="showDiary_DESC" resultType="DiaryDTO">
-		select * from INFANT_DIARY order by NUM DESC
+	<select id="showDiary_DESC" parameterType="String" resultType="DiaryDTO">
+		select * from INFANT_DIARY where FAMILY_KEY = #{FAMILY_KEY} order by NUM DESC
 	</select>
 
-	<select id="showDiaryOne" parameterType="int" resultType="DiaryDTO">
-		select * from INFANT_DIARY where NUM = #{num}
+	<select id="showDiaryOne" parameterType="DiaryDTO" resultType="DiaryDTO">
+		select * from INFANT_DIARY where NUM = #{num} and FAMILY_KEY = #{FAMILY_KEY}
 	</select>
 	
 	<update id="updateDiary" parameterType="DiaryDTO">
-		update INFANT_DIARY set TITLE=#{TITLE}, DIARY=#{DIARY}, FILENAME=#{FILENAME} where NUM=#{NUM}
+		update INFANT_DIARY set TITLE=#{TITLE}, DIARY=#{DIARY}, FILENAME=#{FILENAME} where NUM=#{NUM} and FAMILY_KEY = #{FAMILY_KEY}
 	</update>
 	
-	<delete id="deleteDiary" parameterType="int">
-		delete from INFANT_DIARY where NUM = #{num}
+	<delete id="deleteDiary" parameterType="DiaryDTO">
+		delete from INFANT_DIARY where NUM = #{num} and FAMILY_KEY = #{FAMILY_KEY}
 	</delete>
 </mapper>

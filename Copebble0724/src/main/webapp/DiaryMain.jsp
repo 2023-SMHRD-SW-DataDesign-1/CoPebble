@@ -68,7 +68,8 @@
 		</div>
 	</header>
 	<p></p>
-	<c:set var="DIARY_list" value="${DiaryDAO.showDiary()}"></c:set>
+<% String FAMILY_KEY = (String)session.getAttribute("FAMILY_KEY"); %>
+	<c:set var="DIARY_list" value="${DiaryDAO.showDiary(FAMILY_KEY)}"></c:set>
 	<div class="diary_top_div">
 
 		<!-- 상단바 -->
