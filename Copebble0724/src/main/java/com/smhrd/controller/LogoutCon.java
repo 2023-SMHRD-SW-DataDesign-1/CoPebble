@@ -25,7 +25,11 @@ public class LogoutCon extends HttpServlet {
       session.removeAttribute("accesstoken"); // 세션삭제
       session.removeAttribute("ID"); // 세션삭제
       session.removeAttribute("NAME"); // 세션삭제
+      session.removeAttribute("FAMLIY_KEY"); // 세션삭제
       System.out.println("삭제 후 토큰: "+session.getAttribute("accesstoken"));
+      System.out.println("ID:"+session.getAttribute("ID"));
+      System.out.println("NAME:"+session.getAttribute("NAME"));
+      System.out.println("FAMLIY_KEY:"+session.getAttribute("FAMLIY_KEY"));
       response.sendRedirect("IntroModal.jsp");
 
    }
