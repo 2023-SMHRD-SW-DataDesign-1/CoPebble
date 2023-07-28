@@ -20,12 +20,13 @@
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
-	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+<link
+	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
+	rel="stylesheet">
 <style>
- * {
-            font-family: 'NanumSquareAcb';
-        }
-
+* {
+	font-family: 'NanumSquareAcb';
+}
 </style>
 </head>
 <body>
@@ -68,28 +69,28 @@
 		</div>
 	</header>
 	<p></p>
-
-
-	<% String FAMILY_KEY = (String)session.getAttribute("FAMILY_KEY"); %>
+	<%
+	String FAMILY_KEY = (String) session.getAttribute("FAMILY_KEY");
+	%>
 	<c:set var="DIARY_list" value="${DiaryDAO.showDiary_DESC(FAMILY_KEY)}"></c:set>
 	<div class="diary_top_div">
+
 		<!-- 상단바 -->
 		<div class="diary_header">
 			<img src="./img/포대기아기.png" alt="포대기 아기 사진">
 			<div class="diary_baby_div">육아 다이어리</div>
 			<div class="diary_icon_div">
 				<div>
-					<span>최신순</span> <i class="fa-solid fa-caret-down" onclick="ASC()"></i>
+					<span>최신순 </span><i class="fa-solid fa-caret-down" onclick="ASC()"></i>
 				</div>
 				<div class="plus_icon_div" onclick="goToWrite()">
+					<!-- <img alt="" src="./img.png"> -->
 					<i class="fa-solid fa-plus"></i>
 				</div>
 			</div>
 		</div>
 
-
 		<!-- 아래 큰 div -->
-
 		<div class="diary_main_div">
 			<div class="diary_name_div">김민국(만9세)</div>
 			<div class="diary_card_container">
@@ -115,7 +116,6 @@
 					</div>
 				</c:forEach>
 			</div>
-
 			<!-- Pagination navigation -->
 			<div class="pagination">
 				<i class="fa-solid fa-circle-chevron-left fa-2x"
@@ -125,7 +125,10 @@
 			</div>
 		</div>
 
-		<script>
+	</div>
+
+
+	<script>
     // JavaScript code for pagination
     const diaryCards = document.querySelectorAll('.diary_card');
     const itemsPerPage = 5;
@@ -160,7 +163,7 @@
     // Show the first page on initial load
     showPage(currentPage);
 </script>
-		<script>
+	<script>
 
 		function goToDetail(index) {
 			console.log(index)
@@ -171,12 +174,15 @@
 			location.href = 'DiaryWrite.jsp'
 		}
 		
-		  function ASC(){
-				location.href = 'DiaryMain.jsp'
-			}
+		function ASC(){
+			location.href = 'DiaryMain.jsp'
+		}
+
+		
+		
 
 	</script>
 
-		</script>
+	</script>
 </body>
 </html>

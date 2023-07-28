@@ -30,9 +30,9 @@ public class DiaryDAO {
 
 	// 다이어리 전체 조회 메소드 최신순
 	// select * from INFANT_DIARY order by NUM DESC
-	public static ArrayList<DiaryDTO> showDiary_DESC() {
+	public static ArrayList<DiaryDTO> showDiary_DESC(String FAMILY_KEY) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		ArrayList<DiaryDTO> DIARY_list = (ArrayList) session.selectList("showDiary_DESC");
+		ArrayList<DiaryDTO> DIARY_list = (ArrayList) session.selectList("showDiary_DESC",FAMILY_KEY);
 		session.close();
 		return DIARY_list;
 	}
