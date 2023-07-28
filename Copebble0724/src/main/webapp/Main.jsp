@@ -20,6 +20,14 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="./css/main.css">
 <link rel="stylesheet" href="css/main_style.css">
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+<style>
+ * {
+            font-family: 'NanumSquareAcb';
+        }
+
+</style>
+
 </head>
 
 <body>
@@ -34,7 +42,12 @@
 			<a href="Main.jsp"> <img class="header_logo" src="mainlogo.png"
 				alt="">
 			</a>
-		</div>
+		</div><style>
+ * {
+            font-family: 'NanumSquareAcb';
+        }
+
+</style>
 		<div style="width: 20px;"></div>
 		<div style="min-width: 140px;">
 			<a href="DiaryMain.jsp" class="baby_diary">

@@ -9,6 +9,14 @@
 <title>Insert title here</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+<style>
+ * {
+            font-family: 'NanumSquareAcb';
+        }
+
+</style>
 </head>
 
 

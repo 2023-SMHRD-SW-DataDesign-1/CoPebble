@@ -1,8 +1,11 @@
 @charset "UTF-8";
 
-* {
-    font-family: nanumsquare; 
-}
+
+ * {
+            font-family: 'NanumSquareAcb';
+        }
+
+
 
 /*************************************************************** 메인 동작하는 버튼 */
 

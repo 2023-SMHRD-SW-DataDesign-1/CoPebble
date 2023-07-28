@@ -20,12 +20,12 @@
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
 <style>
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+ * {
+            font-family: 'NanumSquareAcb';
+        }
 
-* {
-	font-family: "Noto Sans KR", sans-serif;
-}
 </style>
 </head>
 <body>

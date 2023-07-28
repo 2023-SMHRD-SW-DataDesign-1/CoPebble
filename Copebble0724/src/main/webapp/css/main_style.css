@@ -1,6 +1,9 @@
-* {
-	font-family: nanumsquare;
-}
+
+ * {
+            font-family: 'NanumSquareAcb';
+        }
+
+
 
 /* 평일 날짜 검은색 */
 .fc-col-header-cell-cushion, .fc-daygrid-day-number,

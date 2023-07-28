@@ -28,6 +28,14 @@
 <link rel="stylesheet" href="./css/main.css">
 <link rel="stylesheet" href="css/main_style.css">
 <link rel="stylesheet" href="./css/IntroModal.css">
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+<style>
+ * {
+            font-family: 'NanumSquareAcb';
+        }
+
+</style>
+
 
 </head>
 

@@ -34,7 +34,14 @@
 <!-- 외부 CSS -->
 <link rel="stylesheet" href="./css/main.css" />
 <link rel="stylesheet" href="./css/MyPage.css" />
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
 
+<style>
+ * {
+            font-family: 'NanumSquareAcb';
+        }
+
+</style>
 </head>
 
 <body>

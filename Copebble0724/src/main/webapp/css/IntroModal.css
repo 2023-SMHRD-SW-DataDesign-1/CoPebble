@@ -1,8 +1,10 @@
 @charset "UTF-8";
 
-* {
-    font-family: nanumsquare; 
-}
+
+ * {
+            font-family: 'NanumSquareAcb';
+        }
+
 
 /*************************************************************** 헤더 동작하는 버튼 */
 

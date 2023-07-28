@@ -29,12 +29,12 @@
 <script
    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
    crossorigin="anonymous"></script>
+   <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
 <style>
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+ * {
+            font-family: 'NanumSquareAcb';
+        }
 
-* {
-   font-family: "Noto Sans KR", sans-serif;
-}
 </style>
 
 </head>

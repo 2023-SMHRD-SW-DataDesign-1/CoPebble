@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+
+ * {
+            font-family: 'NanumSquareAcb';
+        }
+
+
+
 /*헤더 값*/
 .header_main {
    height: 75px;
