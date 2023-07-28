@@ -32,14 +32,14 @@ function loadingEvents(jsondata) {
 }
 
 
-
 document.addEventListener('DOMContentLoaded', function() {
 	var calendarEl = document.getElementById('calendar');
 	calendar = new FullCalendar.Calendar(calendarEl, {
-		header: {
-			left: 'prev,next today', // 왼쪽에 이전, 다음 버튼과 오늘 버튼
-			center: 'title', // 가운데에 년/월 정보
-			right: 'month,agendaWeek,agendaDay' // 오른쪽에 월 뷰, 주 뷰, 일 뷰 버튼
+		themeSystem: 'bootstrap5',
+		headerToolbar: {
+			left: 'today',
+			center: 'title',
+			right: 'prev,next'
 		},
 		locale: 'ko', // 한글로 월과 요일 표시
 		dayCellContent: function(info) { // 1일 > 1로  숫자만 표현
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		editable: true,
 		allDay: true,
 		dayMaxEventRows: true,
-		 eventColor: 'blue',
+		eventColor: 'blue',
 		events: loadingEvents(),
 		eventDrop: function(info) {
 			console.log('드래그 앤 드랍이 완료되었습니다.');

@@ -1,7 +1,9 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +25,31 @@ public class todoDeleteCon extends HttpServlet {
 		String eventTodoStart = request.getParameter("start");
 		String eventTodoEnd = request.getParameter("end");
 		String eventTodoManager = request.getParameter("name");
+		
+		try {
+            // SimpleDateFormat을 사용하여 문자열을 날짜로 파싱
+            SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
+            Date date = sdf.parse(eventTodoEnd);
+
+            // Calendar를 사용하여 날짜 조작
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date);
+            calendar.add(Calendar.DATE, 1); 
+
+            // 변경된 날짜를 다시 문자열로 포맷
+            String modifiedDate = sdf.format(calendar.getTime());
+            eventTodoEnd = modifiedDate;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+		
+		
+		
+		
 		int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+		
+		
+			
 		eventTodoStart = currentYear + "-" + eventTodoStart;
 		eventTodoEnd = currentYear + "-" + eventTodoEnd;
 		System.out.println("TODO 삭제용 데이터 수신 - Title: " + eventTodoTitle + ", Start: " + eventTodoStart + ", End: "

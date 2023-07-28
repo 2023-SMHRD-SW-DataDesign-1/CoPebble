@@ -18,8 +18,8 @@
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
-<link rel="stylesheet ver1" href="./css/main.css">
-<link rel="stylesheet ver1" href="css/main_style.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="css/main_style.css">
 </head>
 
 <body>
@@ -28,39 +28,40 @@
 	<!--헤더-->
 
 	<header class="header_main mt-3 ">
-		<div style="width: 20%;"></div>
+		<div style="width: 300px;"></div>
 
-		<div style="width: 10%; min-width: 150px;">
+		<div style="width: 5%; min-width: 150px;">
 			<a href="Main.jsp"> <img class="header_logo" src="mainlogo.png"
 				alt="">
 			</a>
 		</div>
-		<div style="width: 50px;"></div>
-		<div style="width: 10%; min-width: 150px;">
+		<div style="width: 20px;"></div>
+		<div style="width: 130px;">
 			<a href="DiaryMain.jsp" class="baby_diary">
 				<p>육아 다이어리</p>
 			</a>
 		</div>
 
-		<div style="width: 30%; min-width: 150px;">
+		<div style="width: 130px;">
 			<a href="DiaryMain.jsp" class="baby_diary">
 				<p>집안일 관리</p>
 			</a>
 		</div>
 
-		<div style="width: 2%; min-width: 20px;">
+		<div style="width: 41%;"></div>
+
+		<div style="width: 50px;">
 			<a href="mypage.html" class="header_icon_mypage"> <i
 				class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
 			</a>
 		</div>
-		<div style="width: 2%; min-width: 20px;">
+		<div style="width: 50px;">
 
 			<a href="LogoutCon" class="header_icon_logout"> <i
 				class="fa-solid fa-right-from-bracket"
 				style="font-size: 30px; color: #000000;"></i>
 			</a>
 		</div>
-		<div style="width: 15%;"></div>
 	</header>
 
 
@@ -176,8 +177,8 @@
 				type="date" id="eventTodoEnd" placeholder="날짜를 입력하세요">
 		</div>
 		<div class="form-group">
-			<label for="eventManager"></label>
-			<label><input type="radio" name="Manager" value="🧑">🧑</label><label><input
+			<label for="eventManager"></label> <label><input type="radio"
+				name="Manager" value="🧑">🧑</label><label><input
 				type="radio" name="Manager" value="👩">👩</label>
 		</div>
 		<div class="btn-container">
@@ -193,8 +194,8 @@
 				id="eventMemo" placeholder="내용을 입력하세요">
 		</div>
 		<div class="form-group">
-			<label for="eventManager"></label> <label><input
-				type="radio" name="memoManager" value="🧑">🧑</label><label><input
+			<label for="eventManager"></label> <label><input type="radio"
+				name="memoManager" value="🧑">🧑</label><label><input
 				type="radio" name="memoManager" value="👩">👩</label>
 		</div>
 		<div class="btn-container">

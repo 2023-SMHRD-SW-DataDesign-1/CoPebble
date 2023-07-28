@@ -25,7 +25,8 @@ $(document).ready(function() {
 					const startDay = String(startDate.getDate()).padStart(2, '0');
 
 					const endMonth = String(endDate.getMonth() + 1).padStart(2, '0');
-					const endDay = String(endDate.getDate()).padStart(2, '0');
+					// 수정본 -1 추가
+					const endDay = String(endDate.getDate() - 1).padStart(2, '0');
 
 					const formattedStart = `${startMonth}-${startDay}`;
 					const formattedEnd = `${endMonth}-${endDay}`;

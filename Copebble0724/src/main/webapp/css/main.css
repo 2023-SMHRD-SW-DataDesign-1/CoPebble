@@ -5,25 +5,19 @@ button {
 
 /*헤더 값*/
 .header_main {
-	height: 75px;
-	border-bottom: 1px solid #eee;
-	background: #fff;
-	display: flex;
+  background: #fff;
+  display: flex;
 }
-/* .header_main 내부의 div 요소들을 가로로 일렬로 배치하기 위한 스타일 */
+
 .header_main div {
-	display: flex;
-	align-items: center;
-	/* div 요소 내부의 콘텐츠를 수직 가운데 정렬 */
-	margin-right: 15px;
-	/* div 요소들 사이에 간격을 주기 위해 우측 마진 추가 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* .header_main 내부의 마지막 div 요소는 마진을 주지 않습니다. */
-.header_main div:last-child {
-	margin-right: 0;
+.header_main a p {
+  margin: 0;
 }
-
 /* 헤더 내 withday 로고 */
 .header_logo {
 	width: 165px;
