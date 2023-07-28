@@ -14,11 +14,6 @@
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"
    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
    crossorigin="anonymous"></script>
-<link
-   href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-   rel="stylesheet"
-   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-   crossorigin="anonymous">
 <!-- 부트스트랩 태그 및 무료 아이콘 태그 모으는 곳 -->
 <script src="https://kit.fontawesome.com/a34da1aa1b.js"
    crossorigin="anonymous"></script>

@@ -14,6 +14,11 @@
     
     <!-- 부트스트랩 태그 및 무료 아이콘 태그 모으는 곳 -->
     <script src="https://kit.fontawesome.com/a34da1aa1b.js" crossorigin="anonymous"></script>
+    <link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/MyPage.css" />
     <link rel="stylesheet" href="./css/Household.css" />
