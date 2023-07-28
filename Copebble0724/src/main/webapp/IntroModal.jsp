@@ -106,7 +106,7 @@
       <div id="modal2" class="modalBack">
          <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <div class="header_logo2"></div>
+            <div class="header_logo2"></div><br>
             <p style="margin-bottom: 1%; font-weight: bold;">아이디</p>
             <input type="text" name="ID" id="joinID" placeholder="  아이디를 입력하세요">
             <p style="margin-bottom: 1%; font-weight: bold;">비밀번호</p>
@@ -129,10 +129,9 @@
             <h2>회원이 되셨습니다</h2>
             <a href="FamilyKey.jsp"> 
                <input type="submit" value="패밀리키 등록하기" id="goFamily">
-            </a>
-            <a href="Main.jsp"> 
-               <input type="submit" value="withDAY 이용하기" id="goMain">
-            </a> 
+            </a><br>
+            <h5>패밀리키 등록 후 이용 바랍니다.</h5>
+          
          </div>
       </div>
    </main>

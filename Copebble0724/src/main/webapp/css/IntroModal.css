@@ -1,10 +1,8 @@
 @charset "UTF-8";
 
-
- * {
-            font-family: 'NanumSquareAcb';
-        }
-
+* {
+    font-family: 'NanumSquareAcb';
+}
 
 /*************************************************************** 헤더 동작하는 버튼 */
 
@@ -64,7 +62,7 @@ header.header_main.mt-3 {
 
 /*************************************************************** 모달창 내부 input */
 input[type=text] { 
-    width: 100%; height: 50px; border-radius: 5px;
+    width: 100%; height: 40px; border-radius: 5px;
     font-size: 15px;
     margin-top: none; margin-bottom: 15px;
     background-color: white;
@@ -73,7 +71,7 @@ input[type=text] {
 }
 
 input[type=password] {
-    width: 100%; height: 50px; border-radius: 5px;
+    width: 100%; height: 40px; border-radius: 5px;
     font-size: 15px; 
     margin-top: none; margin-bottom: 15px;
     border: 1px;
@@ -118,7 +116,7 @@ input[id=join_btn] { /* 회원가입 모달창 안에 회원가입버튼 */
 input[id=goFamily] { /* 회원가입 완료 모달창 내에 패밀리키 만들러 가는 버튼 */
     font-weight: bold; color: #F6F4F4;
     background-color: #DC6721;
-    position: absolute; top: 71%; left: 27%;
+    position: absolute; top: 81%; left: 28%;
     width: 200px; height: 40px; border-radius: 5px;
     font-size: 15px; 
     margin-top: none; margin-bottom: 15px;
@@ -185,7 +183,7 @@ input[id=goMain] { /* 회원가입 완료 모달창 내에 메인페이지로 �
 /*************************************************************** 모달창 내부 닫기 버튼 */
 .close-btn {
     color: #aaa;
-    position: absolute; top: 88%; left: 88%;
+    position: absolute; top: 2%; left: 88%;
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
@@ -212,25 +210,47 @@ input[id=goMain] { /* 회원가입 완료 모달창 내에 메인페이지로 �
         }
 
 
-/* ****************************************************************************************************************************          여기아래는 소개 이미지 넣기        */
 
+/* *****************************************************************************************************          여기아래는 소개 이미지 넣기        */
 .leftSlide{
     position: absolute;
     width: 800px;
     margin-top: none;
-    top: 30%; left: 10%;
+    top: 33%; left: 10%;
     font-size: 3em;
-    animation: leftSlide2 3s;
+    animation: leftSlide2 6s;
 }
 
-.rightSlide{
+.leftSlide2{
     position: absolute;
     width: 800px;
     margin-top: none;
-    top: 30%; right: 10%;
+    top: 33%; left: 10%;
     font-size: 3em;
-    animation: rightSlide2 5s;
+    animation: leftSlide2 4s;
 }
+
+
+.rightSlide{
+    position: absolute;
+    width: 1000px;
+    margin-top: none;
+    top: 50%; right: 10%;
+    font-size: 3em;
+    animation: rightSlide2 3s;
+}
+
+.rightSlide2{
+    position: absolute;
+    width: 1000px;
+    margin-top: none;
+    top: 50%; right: 10%;
+    font-size: 3em;
+    animation: rightSlide3 3s;
+}
+
+
+
 
 @keyframes leftSlide2 {
     from {
@@ -244,6 +264,18 @@ input[id=goMain] { /* 회원가입 완료 모달창 내에 메인페이지로 �
 }
 
 @keyframes rightSlide2 {
+from {
+top: 100%;
+opacity: 0;
+}
+to {
+top: 50%;
+opacity: 1;
+}
+}
+
+
+@keyframes rightSlide3 {
     from {
         right: -20%;
         opacity: 0;
@@ -252,4 +284,23 @@ input[id=goMain] { /* 회원가입 완료 모달창 내에 메인페이지로 �
         right: 10%;
         opacity: 1;
     }
+}
+
+
+/*********************************************** */
+
+ 
+#slide1{
+   
+   width:25%;
+
+}
+
+#img2{
+   
+   margin-left:10%
+   
+}
+#img1{
+   margin-left:10%;
 }

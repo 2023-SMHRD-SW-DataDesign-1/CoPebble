@@ -32,10 +32,9 @@
    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
    crossorigin="anonymous">
 <!-- 외부 CSS -->
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
 <link rel="stylesheet" href="./css/main.css" />
 <link rel="stylesheet" href="./css/MyPage.css" />
-<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
-
 <style>
  * {
             font-family: 'NanumSquareAcb';
@@ -46,35 +45,47 @@
 
 <body>
    <!--헤더-->
-   <header class="header_main mt-3 ">
-      <div style="width: 20%;"></div>
 
-      <div style="width: 10%; min-width: 150px;">
-         <a href="Main.jsp"> 
-            <img class="header_logo" src="./img/header_logo.png" alt="">
+   <header class="header_main mt-3 ">
+      <div style="width: 300px;"></div>
+
+      <div style="width: 5%; min-width: 150px;">
+         <a href="Main.jsp"> <img class="header_logo" src="mainlogo.png"
+            alt="">
          </a>
       </div>
-      
-     <!-- 메인 육아 다이어리 -->   
-      <div style="width: 45%; min-width: 100px;">
+      <div style="width: 20px;"></div>
+      <div style="min-width: 140px;">
          <a href="DiaryMain.jsp" class="baby_diary">
             <p>육아 다이어리</p>
          </a>
       </div>
 
-      <!-- 메인 로그아웃 -->
-      <a href="./LogoutCon" class="header_icon_logout"> 
-         <i class="fa-solid fa-right-from-bracket" id="logoutLogo" style="font-size: 30px; color: #000000;"></i>
-      </a>
+      <div style="min-width: 140px;">
+         <a href="Household.jsp" class="baby_diary">
+            <p>집안일 관리</p>
+         </a>
+      </div>
 
-      <div style="width: 21%;"></div>
-   
+      <div style="width: 40%;"></div>
+
+      <div style="width: 70px;">
+         <a href="MyPage.jsp" class="header_icon_mypage"> <i
+            class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
+         </a>
+      </div>
+      <div style="width: 70px;">
+
+         <a href="LogoutCon" class="header_icon_logout"> <i
+            class="fa-solid fa-right-from-bracket"
+            style="font-size: 30px; color: #000000;"></i>
+         </a>
+      </div>
    </header>
+
    
    <!--메인-->
    <main class="fullmain">
-      <div class="mypage_box">
-         <div class="mypage_textbox"></div> <!-- 공백 -->
          <div class="mypage_textcontent">
             <div class="TableTitleBox">
                <br>
@@ -84,20 +95,20 @@
                MemberDTO info = (MemberDTO) session.getAttribute("info");
                %>
                <div>
-                  <p style="margin-bottom: 1%; font-weight: bold;">이름</p>
+                  <p style="margin-bottom: 1%; font-size: 20px;">이름</p>
                   <c:when test="${info!=null}">
                      <p><%=info.getNAME()%></p>
-                     <p style="margin-bottom: 1%; font-weight: bold;">아이디</p>
+                     <p style="margin-bottom: 1%; font-size: 20px;">아이디</p>
                      <p><%=info.getID()%></p>
                      <a href="FamilyKey.jsp" class="goFamilykey">
-                        <p style="margin-bottom: 1%; font-weight: bold;">패밀리키</p>
+                        <p style="margin-bottom: 1%; font-size: 20px;">패밀리키</p>
                      </a>
                      <p><%=info.getFAMILY_KEY()%></p>
                   </c:when>
                   <input type="hidden" name="ID" id="ID" value="${info.ID}">
-                  <p style="margin-bottom: 1%; font-weight: bold;">비밀번호</p>
+                  <p style="margin-bottom: 1%; font-size: 20px;">비밀번호</p>
                   <input type="password" name="PW" id="PW" placeholder="  비밀번호를 입력해주세요">
-                  <p style="margin-bottom: 1%; font-weight: bold;">비밀번호 확인</p>
+                  <p style="margin-bottom: 1%; font-size: 20px;">비밀번호 확인</p>
                   <input type="password" name="CheckPw" id="inputPasswordCheck" style="margin-bottom: 50px;" placeholder="  비밀번호를 확인해주세요"> 
                   <br>
                   <div style="display: flex; justify-content: center;">
@@ -110,11 +121,6 @@
                </div>
             </div>
          </div>
-         <div class="mypage_textbox" style="background-color: #fbfbfb;"></div><!-- 공백 -->
-         
-
-      </div>
-
    </main>
    </container>
    
@@ -124,7 +130,7 @@
             <span class="close-btn">&times;</span>
             <div class="headerLogo"></div>
             <br>
-            <h3>
+            <h3 style="text-align:center;">
                정말로<br>우리 헤어지나요..?
             </h3>
             <br>
@@ -139,8 +145,8 @@
          <div class="modal-content">
             <span class="close-btn" id="goMain2" >&times;</span>
             <div class="headerLogo"></div><br><br>
-            <h2>비밀번호가</h2>
-            <h3>변경되었습니다.</h3>
+            <h2 style="text-align:center;">비밀번호가</h2>
+            <h3 style="text-align:center;">변경되었습니다.</h3>
          </div>
       </div>
       

@@ -10,36 +10,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-<link rel="stylesheet" href="./css/familykey.css" />
-<link rel="stylesheet"
-   href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-<link
-   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-   rel="stylesheet"
-   integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-   crossorigin="anonymous">
 <!-- 부트스트랩 태그 및 무료 아이콘 태그 모으는 곳 -->
-<script src="https://kit.fontawesome.com/a34da1aa1b.js"
-   crossorigin="anonymous"></script>
-<script
-   src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-   crossorigin="anonymous">
-   
-</script>
-<script
-   src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-   crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/a34da1aa1b.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
-   <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+<!-- 외부 CSS -->
+<link rel="stylesheet" href="./css/familykey.css" />
+<link rel="stylesheet" href="./css/main.css" />
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+
 <style>
- * {
-            font-family: 'NanumSquareAcb';
-        }
-
+* {
+   font-family: 'NanumSquareAcb';
+}
 </style>
-
-=======
-
 </head>
 
 <body>
@@ -49,43 +36,45 @@
    MemberDTO info = (MemberDTO) session.getAttribute("info");
    %>
 
+   <!--헤더-->
 
-
-   <!-- 헤더 -->
    <header class="header_main mt-3 ">
-      <div style="width: 20%;"></div>
+      <div style="width: 300px;"></div>
 
-      <div style="width: 10%; min-width: 150px;">
-         <a href="main.html"> <img class="header_logo"
-            src="./img/header_logo.png" alt="">
+      <div style="width: 5%; min-width: 150px;">
+         <a href="Main.jsp"> <img class="header_logo" src="mainlogo.png"
+            alt="">
          </a>
-
+      </div>
+      <div style="width: 20px;"></div>
+      <div style="min-width: 140px;">
+         <a href="DiaryMain.jsp" class="baby_diary">
+            <p>육아 다이어리</p>
+         </a>
       </div>
 
-
-
-
-
-      <!--육아다이어리  메인 -->
-      <div style="width: 45%; min-width: 100px;">
-         <a href="babydiary.html" class="baby_diary"> </a>
+      <div style="min-width: 140px;">
+         <a href="DiaryMain.jsp" class="baby_diary">
+            <p>집안일 관리</p>
+         </a>
       </div>
 
-      <div style="width: 2%; min-width: 20px;">
-         <a href="mypage.html" class="header_icon_mypage"> <i
+      <div style="width: 40%;"></div>
+
+      <div style="width: 70px;">
+         <a href="MyPage.jsp" class="header_icon_mypage"> <i
             class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
          </a>
       </div>
+      <div style="width: 70px;">
 
-      <div style="width: 2%; min-width: 20px;">
-         <a href="#" class="header_icon_logout"> <i
+         <a href="LogoutCon" class="header_icon_logout"> <i
             class="fa-solid fa-right-from-bracket"
             style="font-size: 30px; color: #000000;"></i>
          </a>
       </div>
-
-
    </header>
+
 
 
 
@@ -145,10 +134,8 @@
    </main>
 
 
-
-
-
    </container>
+   
    <script>
       document
             .getElementById('familykey_make')
