@@ -126,3 +126,23 @@
 	display: table;
 	clear: both;
 }
+
+.fc .fc-button {
+    background-color:  #DC6721;
+    border: 1px solid transparent;
+    border-radius: 0.25em;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.4em 0.65em;
+    text-align: center;
+    user-select: none;
+    vertical-align: middle;
+}
+
+.fc .fc-button-primary:hover {
+    background-color: #ff3737;
+    border-color: #ff3737;
+    color: var(--fc-button-text-color);
+}
