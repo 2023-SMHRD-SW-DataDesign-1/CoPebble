@@ -17,15 +17,15 @@
 		select * from INFANT_DIARY where FAMILY_KEY = #{FAMILY_KEY} order by NUM DESC
 	</select>
 
-	<select id="showDiaryOne" parameterType="DiaryDTO" resultType="DiaryDTO">
-		select * from INFANT_DIARY where NUM = #{num} and FAMILY_KEY = #{FAMILY_KEY}
+	<select id="showDiaryOne" parameterType="int" resultType="DiaryDTO">
+		select * from INFANT_DIARY where NUM = #{num}
 	</select>
 	
 	<update id="updateDiary" parameterType="DiaryDTO">
-		update INFANT_DIARY set TITLE=#{TITLE}, DIARY=#{DIARY}, FILENAME=#{FILENAME} where NUM=#{NUM} and FAMILY_KEY = #{FAMILY_KEY}
+		update INFANT_DIARY set TITLE=#{TITLE}, DIARY=#{DIARY}, FILENAME=#{FILENAME} where NUM=#{NUM}
 	</update>
 	
-	<delete id="deleteDiary" parameterType="DiaryDTO">
-		delete from INFANT_DIARY where NUM = #{num} and FAMILY_KEY = #{FAMILY_KEY}
+	<delete id="deleteDiary" parameterType="int">
+		delete from INFANT_DIARY where NUM = #{num}
 	</delete>
 </mapper>

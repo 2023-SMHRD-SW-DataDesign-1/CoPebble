@@ -91,7 +91,8 @@
             <div class="diary_write_memo_div">
                 <textarea name="DIARY" cols="45" rows="12" style="resize: none;"></textarea>
             </div>
-            <input hidden type="text" name="FAMILY_KEY" value="패밀리키">
+            <% String FAMILY_KEY = (String)session.getAttribute("FAMILY_KEY"); %>
+            <input hidden type="text" name="FAMILY_KEY" value="<%= FAMILY_KEY%>">
             <div id="diary_button">
             </div>
                 <button id="diary_upload_btn">등록</button></form>

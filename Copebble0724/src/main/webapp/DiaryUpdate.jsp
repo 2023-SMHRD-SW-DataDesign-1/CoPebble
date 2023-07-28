@@ -10,60 +10,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="./css/main.css">
-<link rel="stylesheet" href="css/main_style.css">
 <link rel="stylesheet" href="./css/diary_update.css">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-	crossorigin="anonymous">
-
-	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
 <style>
- * {
-            font-family: 'NanumSquareAcb';
-        }
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* {
+	font-family: "Noto Sans KR", sans-serif;
+}
 </style>
-=======
-	<script src="https://kit.fontawesome.com/a34da1aa1b.js"
-	crossorigin="anonymous"></script>
 </head>
 
-<header class="header_main mt-3 ">
-		<div style="width: 300px;"></div>
+<body>
+	<!--헤더-->
 
-		<div style="width: 5%; min-width: 150px;">
-			<a href="Main.jsp"> <img class="header_logo" src="mainlogo.png"
-				alt="">
-			</a>
-		</div>
-		<div style="width: 20px;"></div>
-		<div style="min-width: 140px;">
-			<a href="DiaryMain.jsp" class="baby_diary">
-				<p>육아 다이어리</p>
-			</a>
-		</div>
+	<header class="header_main mt-3 ">
+		<div style="width: 20%;"></div>
 
-		<div style="min-width: 140px;">
-			<a href="Household.jsp" class="baby_diary">
-				<p>집안일 관리</p>
+		<div style="width: 10%; min-width: 150px;">
+			<a href="Main.jsp"> <img class="header_logo"
+				src="./img/mainLogo.png" alt="">
 			</a>
+
+
 		</div>
 
-		<div style="width: 40%;"></div>
+		<div style="width: 45%; min-width: 100px;">
+			<a href="DiaryMain.jsp" class="baby_diary"> <p1>육아 다이어리</p1>
+			</a>
+		</div>
 
-		<div style="width: 70px;">
-			<a href="MyPage.jsp" class="header_icon_mypage"> <i
+		<div style="width: 2%; min-width: 20px;">
+			<a href="mypage.html" class="header_icon_mypage"> <i
 				class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
 			</a>
 		</div>
-		<div style="width: 70px;">
+		<div style="width: 2%; min-width: 20px;">
 
-			<a href="LogoutCon" class="header_icon_logout"> <i
+			<a href="#" class="header_icon_logout"> <i
 				class="fa-solid fa-right-from-bracket"
 				style="font-size: 30px; color: #000000;"></i>
 			</a>
 		</div>
+		<div style="width: 21%;"></div>
 	</header>
 
 	<!-- 흰색 div -->
@@ -99,7 +87,9 @@
 			</div>
 			<div id="diary_button">
 				<input hidden name="num" type="text" value="${param.num}">
-				<input hidden name="FAMILY_KEY" type="text" value="패밀리키">
+				<% String FAMILY_KEY = (String)session.getAttribute("FAMILY_KEY"); %>
+            <input hidden type="text" name="FAMILY_KEY" value="<%= FAMILY_KEY%>">
+				<input hidden name="FAMILY_KEY" type="text" value="<%= FAMILY_KEY%>">
 				<button id="diary_modify_btn">수정하기</button>
 				</form>
 				<a href="./DiaryMain.jsp"><button id="diary_Main_btn">뒤로가기</button></a>
@@ -109,7 +99,7 @@
 	</div>
 
 </body>
-<script src="./js/diaryUpdate.js"></script>
+<script src="./js/diary_update.js"></script>
 <script>
 	
 </script>
