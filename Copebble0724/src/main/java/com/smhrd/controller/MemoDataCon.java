@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.MemoDAO;
 import com.smhrd.model.MemoDTO;
@@ -24,8 +25,10 @@ public class MemoDataCon extends HttpServlet {
         System.out.println("MemoManager: " + MemoManager);
         System.out.println("MemoTitle: " + MemoTitle);
 
-        String FK = "test0001";
-
+        HttpSession session = request.getSession();
+	    String FAMILY_KEY = (String) session.getAttribute("FAMILY_KEY");
+		System.out.println(FAMILY_KEY);
+		String FK = FAMILY_KEY;
 
 		int row = new MemoDAO().writeMemo(new MemoDTO(num,FK,MemoManager,MemoTitle));
 		 if(row>0) {

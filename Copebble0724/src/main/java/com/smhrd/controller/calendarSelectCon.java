@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import com.smhrd.model.calendarDAO;
 import com.smhrd.model.calendarDTO;
 import com.google.gson.Gson; // Import Gson library for JSON conversion
@@ -19,7 +21,11 @@ public class calendarSelectCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("캘린더 데이터 수신 확인");
-		String FK = "test0001";
+		HttpSession session = request.getSession();
+	    String FAMILY_KEY = (String) session.getAttribute("FAMILY_KEY");
+		System.out.println(FAMILY_KEY);
+// 패밀리키 값 and id 정보 가져오기
+		String FK = FAMILY_KEY;
 		ArrayList<calendarDTO> calendar_list = calendarDAO.selectCalendar(FK);
 
 		Gson gson = new Gson();

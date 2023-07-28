@@ -9,10 +9,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.smhrd.model.MemberDTO;
 import com.smhrd.model.calendarDAO;
 import com.smhrd.model.calendarDTO;
 
@@ -25,10 +27,15 @@ public class calendarDataCon extends HttpServlet {
 
 		String jsonData = request.getParameter("alldata");
 
-// 패밀리키 값 and id 정보 가져오기
-		String FK = "test0001";
+		HttpSession session = request.getSession();
+		String FAMILY_KEY = (String) session.getAttribute("FAMILY_KEY");
+		System.out.println(FAMILY_KEY);
+
+		String ID = "캘린더";
+
+		String FK = FAMILY_KEY;
+
 		String CAL = "C";
-		String ID = "TEST01";
 		int num = 1;
 		try {
 			new calendarDAO().deleteCalendar(FK);
@@ -47,7 +54,7 @@ public class calendarDataCon extends HttpServlet {
 			String start = dataObj.getString("start");
 			String end = dataObj.getString("end");
 			String color = dataObj.getString("color");
-			
+
 			DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 			DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 			LocalDateTime enddate = LocalDateTime.parse(end, formatter);
@@ -56,7 +63,7 @@ public class calendarDataCon extends HttpServlet {
 			end = enddate.format(dateFormatter);
 			start = startdate.format(dateFormatter);
 
-			System.out.println(title + " " + start + " " + end + " " + color);
+			System.out.println(title + " " + start + " " + end + " " + FK + " " + color);
 
 			int row = new calendarDAO().updateCalendar(new calendarDTO(num, FK, CAL, ID, title, start, end, color));
 			if (row > 0) {

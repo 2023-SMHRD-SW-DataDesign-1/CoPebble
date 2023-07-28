@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.TodoDAO;
 import com.smhrd.model.TodoDTO;
@@ -49,14 +50,13 @@ public class todoDeleteCon extends HttpServlet {
 		eventTodoStart = currentYear + "-" + eventTodoStart;
 		eventTodoEnd = currentYear + "-" + eventTodoEnd;
 
-		System.out.println("TODO 삭제용 데이터 수신 1차 - Title: " + eventTodoTitle + ", Start: " + eventTodoStart + ", End: "
-				+ eventTodoEnd + ", Manager: " + eventTodoManager);
-
-		System.out.println("TODO 삭제용 데이터 수신 2차 - Title: " + eventTodoTitle + ", Start: " + eventTodoStart + ", End: "
-				+ eventTodoEnd + ", Manager: " + eventTodoManager);
 		int n = 0;
 		int num = 1;
-		String FK = "test0001";
+
+        HttpSession session = request.getSession();
+	    String FAMILY_KEY = (String) session.getAttribute("FAMILY_KEY");
+		String FK = FAMILY_KEY;
+		
 		String ASSORT = "T";
 		String color = "0000";
 

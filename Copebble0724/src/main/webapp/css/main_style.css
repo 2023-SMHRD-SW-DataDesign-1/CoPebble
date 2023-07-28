@@ -149,3 +149,13 @@
     border-color: #ff3737;
     color: var(--fc-button-text-color);
 }
+
+
+.main_fa_img {
+	width: 40px;
+}
+
+.main_br_img {
+	width: 40px;
+}
+

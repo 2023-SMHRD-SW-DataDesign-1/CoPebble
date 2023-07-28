@@ -112,7 +112,7 @@
 					<button class="familynotice_add">
 						<img alt="" src="./img/MAIN_PLUS.png" style="width: 100%;">
 					</button>
-					<div class="text-center">가족 알림장</div>
+						<div class="text-center"><img class = "main_fa_img" src="./img/main_fa.png">가족 알림장</div>
 					<hr>
 					<div class="todoList"></div>
 				</div>
@@ -121,7 +121,7 @@
 					<button class="briefing_add">
 						<img alt="" src="./img/MAIN_PLUS.png" style="width: 100%;">
 					</button>
-					<div class="text-center">부부 브리핑</div>
+					<div class="text-center"> <img class = "main_br_img" src="./img/main_br.png"> 부부 브리핑</div>
 					<hr>
 					<div id="MemoList"></div>
 				</div>
