@@ -25,7 +25,8 @@
    crossorigin="anonymous">
 <link rel="stylesheet"
    href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
-<link rel="stylesheet" href="./css/main.css" />
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="css/main_style.css">
 <link rel="stylesheet" href="./css/IntroModal.css">
 
 </head>
@@ -33,33 +34,39 @@
 <body>
    <!--헤더-->
 
-   <header class="header_main mt-3 ">
-      <div style="width: 20%;"></div>
+  <header class="header_main mt-3 ">
+		<div style="width: 300px;"></div>
 
-      <div style="width: 10%; min-width: 150px;">
-         <a href="Main.jsp"> 
-            <img class="header_logo" src="./img/header_logo.png" alt="">
-         </a>
-      </div>
+		<div style="width: 5%; min-width: 150px;">
+			<a href="Main.jsp"> <img class="header_logo" src="mainlogo.png"
+				alt="">
+			</a>
+		</div>
+		<div style="width: 20px;"></div>
+		<div style="min-width: 140px;">
+			<a href="DiaryMain.jsp" class="baby_diary">
+				<p>육아 다이어리</p>
+			</a>
+		</div>
 
-      <div style="width: 45%; min-width: 100px;">
-         <a href="DiaryMain.jsp" class="baby_diary">
-            <p>육아 다이어리</p>
-         </a>
-      </div>
+		<div style="min-width: 140px;">
+			<a href="#" class="baby_diary">
+				<p>집안일 관리</p>
+			</a>
+		</div>
 
-       <!-- 로그인 로고 -->
-        <div style="width: 5%; min-width: 70px;">
+		<div style="width: 40%;"></div>
+
+		  <!-- 로그인 로고 -->
+        <div style="min-width: 70px;">
            <button id="loginModal_btn">로그인</button>
         </div>
 
          <!-- 회원가입 로고 -->
-        <div style="width: 3%; min-width: 90px;">
+        <div style="min-width: 90px;">
            <button id="joinModal_btn">회원가입</button>
         </div>
-
-        <div style="width: 21%;"></div>
-   </header>
+	</header>
    
    
    <!--메인-->

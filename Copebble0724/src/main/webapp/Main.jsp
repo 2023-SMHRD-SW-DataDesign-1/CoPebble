@@ -36,26 +36,26 @@
 			</a>
 		</div>
 		<div style="width: 20px;"></div>
-		<div style="width: 130px;">
+		<div style="min-width: 140px;">
 			<a href="DiaryMain.jsp" class="baby_diary">
 				<p>육아 다이어리</p>
 			</a>
 		</div>
 
-		<div style="width: 130px;">
+		<div style="min-width: 140px;">
 			<a href="DiaryMain.jsp" class="baby_diary">
 				<p>집안일 관리</p>
 			</a>
 		</div>
 
-		<div style="width: 41%;"></div>
+		<div style="width: 40%;"></div>
 
-		<div style="width: 50px;">
+		<div style="width: 70px;">
 			<a href="MyPage.jsp" class="header_icon_mypage"> <i
 				class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
 			</a>
 		</div>
-		<div style="width: 50px;">
+		<div style="width: 70px;">
 
 			<a href="LogoutCon" class="header_icon_logout"> <i
 				class="fa-solid fa-right-from-bracket"

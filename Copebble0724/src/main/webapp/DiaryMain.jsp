@@ -12,6 +12,7 @@
 <title>Document</title>
 <link rel="stylesheet" href="./css/diary_main.css">
 <link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="css/main_style.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
@@ -26,34 +27,40 @@
 	<!--헤더-->
 
 	<header class="header_main mt-3 ">
-		<div style="width: 20%;"></div>
+		<div style="width: 300px;"></div>
 
-		<div style="width: 10%; min-width: 150px;">
-			<a href="Main.jsp"> <img class="header_logo" src="./img/header_logo.png"
+		<div style="width: 5%; min-width: 150px;">
+			<a href="Main.jsp"> <img class="header_logo" src="mainlogo.png"
 				alt="">
 			</a>
-
-
 		</div>
-
-		<div style="width: 45%; min-width: 100px;">
-			<a href="DiaryMain.jsp" class="baby_diary"> <p1>육아 다이어리</p1>
+		<div style="width: 20px;"></div>
+		<div style="min-width: 140px;">
+			<a href="DiaryMain.jsp" class="baby_diary">
+				<p>육아 다이어리</p>
 			</a>
 		</div>
 
-		<div style="width: 2%; min-width: 20px;">
+		<div style="min-width: 140px;">
+			<a href="#" class="baby_diary">
+				<p>집안일 관리</p>
+			</a>
+		</div>
+
+		<div style="width: 40%;"></div>
+
+		<div style="width: 70px;">
 			<a href="MyPage.jsp" class="header_icon_mypage"> <i
 				class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
 			</a>
 		</div>
-		<div style="width: 2%; min-width: 20px;">
+		<div style="width: 70px;">
 
-			<a href="#" class="header_icon_logout"> <i
+			<a href="LogoutCon" class="header_icon_logout"> <i
 				class="fa-solid fa-right-from-bracket"
 				style="font-size: 30px; color: #000000;"></i>
 			</a>
 		</div>
-		<div style="width: 21%;"></div>
 	</header>
 	<p></p>
 	<c:set var="DIARY_list" value="${DiaryDAO.showDiary()}"></c:set>
