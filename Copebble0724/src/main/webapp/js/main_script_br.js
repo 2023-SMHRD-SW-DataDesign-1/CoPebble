@@ -18,7 +18,7 @@ $(document).ready(function() {
                         <div class="memo_box">
                             <div>${response[i].WRITER}</div>
                             <div>${response[i].B_CONTENT}</div>
-                            <button class="delete_btn">X</button>
+                            <button class="delete_btn">&times;</button>
                         </div>
                     `;
 				$('#MemoList').append(memoBox);
@@ -61,7 +61,7 @@ $('#addMemoBtn').click(function() {
             <div class="memo_box">
                 <div>${eventMemoManager}</div>
                 <div>${eventMemoTitle}</div>
-                <button class="delete_btn">X</button>
+                <button class="delete_btn">&times;</button>
             </div>
         `;
 	$('#MemoList').append(MemoList);

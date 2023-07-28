@@ -1,158 +1,157 @@
 button {
-   background-color: transparent;
-   border: 0;
+	background-color: transparent;
+	border: 0;
 }
 
 /*헤더 값*/
 .header_main {
-   height: 75px;
-   border-bottom: 1px solid #eee;
-   background: #fff;
-   display: flex;
+	height: 75px;
+	border-bottom: 1px solid #eee;
+	background: #fff;
+	display: flex;
 }
 /* .header_main 내부의 div 요소들을 가로로 일렬로 배치하기 위한 스타일 */
 .header_main div {
-   display: flex;
-   align-items: center;
-   /* div 요소 내부의 콘텐츠를 수직 가운데 정렬 */
-   margin-right: 15px;
-   /* div 요소들 사이에 간격을 주기 위해 우측 마진 추가 */
+	display: flex;
+	align-items: center;
+	/* div 요소 내부의 콘텐츠를 수직 가운데 정렬 */
+	margin-right: 15px;
+	/* div 요소들 사이에 간격을 주기 위해 우측 마진 추가 */
 }
 
 /* .header_main 내부의 마지막 div 요소는 마진을 주지 않습니다. */
 .header_main div:last-child {
-   margin-right: 0;
+	margin-right: 0;
 }
 
 /* 헤더 내 withday 로고 */
 .header_logo {
-   width: 165px;
-}
-
-/* 헤더 내 로그아웃 로고 */
-.familynotice_add, .briefing_add {
-   position: relative;
-   right: -90%;
-   top: 10%;
+	width: 165px;
 }
 
 /* 육아다이어리 메뉴태그 */
 .baby_diary {
-   text-decoration: none;
-   color: black;
+	text-decoration: none;
+	color: black;
 }
 
 /* 철수 영희님 안녕하세요 */
 .hello_name {
-   font-size: 20px;
-   vertical-align: middle;
-   line-height: 70px;
+	font-size: 20px;
+	vertical-align: middle;
+	line-height: 70px;
 }
-
-/* 날짜 적으면 박스 밖으로 글씨가넘어가서 이거 손봐야함
-            .today_01{
-                
-                font-size: 25px; 
-                vertical-align: middle;
-                line-height: 70px; 
-                padding: 280px;
-                white-space : nowrap;
-
-            }
-            */
 
 /* 철수 영희님 안녕하세요 넣을 박스 */
 .hello_what_box {
-   background-color: #FFDD7C;
-   border-radius: 20px;
-   box-shadow: 0 1px 1px rgba(88, 88, 88, 0.25), 0 2px 2px
-      rgba(144, 142, 142, 0.05), 0 4px 4px rgba(144, 142, 142, 0.05), 0 8px
-      8px rgba(144, 142, 142, 0.05), 0 16px 16px rgba(144, 142, 142, 0.05);
+	background-color: #FFDD7C;
+	border-radius: 20px;
+	box-shadow: 0 1px 1px rgba(88, 88, 88, 0.25), 0 2px 2px
+		rgba(144, 142, 142, 0.05), 0 4px 4px rgba(144, 142, 142, 0.05), 0 8px
+		8px rgba(144, 142, 142, 0.05), 0 16px 16px rgba(144, 142, 142, 0.05);
 }
 
 /* 우리 캘린더 들어갈 자리 */
 .calendar_box {
-   height: 100%;
-   background: linear-gradient(180deg, #fff 0, rgba(255, 255, 255, 0)
-      64.41%), rgba(255, 255, 255, .75);
-   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-   box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-   border: 1px solid #ffffff;
-   -webkit-border-radius: 13px;
-   border-radius: 40px;
+	height: 100%;
+	background: linear-gradient(180deg, #fff 0, rgba(255, 255, 255, 0)
+		64.41%), rgba(255, 255, 255, .75);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+	border: 1px solid #ffffff;
+	-webkit-border-radius: 13px;
+	border-radius: 40px;
 }
 
 /* 가족알림장 들어갈 자리 */
 .familynotice {
-   height: 45%;
-   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-   box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-   border: 1px solid #fff;
-   -webkit-border-radius: 13px;
-   border-radius: 40px;
-   padding: 3px;
-   font-size: 20px;
-   overflow-y: auto;
+	height: 48%;
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+	border: 1px solid #fff;
+	-webkit-border-radius: 13px;
+	border-radius: 40px;
+	font-size: 20px;
+	overflow-y: auto;
+}
+
+.familynotice_add  {
+	height : 0px;
+	width : 50px;
+	position: relative;
+	left: 85%;
+	top: 10%;
 }
 
 /* 스크롤바 디자인 */
 .familynotice::-webkit-scrollbar {
-   width: 10px; /* 스크롤바의 너비 */
+	width: 10px; /* 스크롤바의 너비 */
 }
 
 .familynotice::-webkit-scrollbar-track {
-   background-color: #f1f1f1; /* 스크롤바 트랙의 배경색 */
-   border-radius: 10px; /* 스크롤바 트랙의 모서리 둥글게 만들기 */
+	background-color: #f1f1f1; /* 스크롤바 트랙의 배경색 */
+	border-radius: 10px; /* 스크롤바 트랙의 모서리 둥글게 만들기 */
 }
 
 .familynotice::-webkit-scrollbar-thumb {
-   background-color: #c8c8c8; /* 스크롤바 썸의 색상 */
-   border-radius: 10px; /* 스크롤바 썸의 모서리 둥글게 만들기 */
-   height: 20px; /* 스크롤바 썸의 세로 길이 */
+	background-color: #c8c8c8; /* 스크롤바 썸의 색상 */
+	border-radius: 10px; /* 스크롤바 썸의 모서리 둥글게 만들기 */
+	height: 20px; /* 스크롤바 썸의 세로 길이 */
 }
 
 .familynotice::-webkit-scrollbar-thumb:hover {
-   background-color: #878787; /* 스크롤바 썸의 호버(hover) 상태 색상 */
+	background-color: #878787; /* 스크롤바 썸의 호버(hover) 상태 색상 */
 }
 
 /* 부부브리핑 들어갈 자리 */
 .briefing {
-   height: 50%;
-   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-   box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-   border: 1px solid #ffffff;
-   -webkit-border-radius: 13px;
-   border-radius: 40px;
+	height: 48%;
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+	border: 1px solid #fff;
+	-webkit-border-radius: 13px;
+	border-radius: 40px;
+	font-size: 20px;
+	overflow-y: auto;
 }
 
-
-
-.todo-item {
-   display: inline-block;
-   padding: 2px;
-   cursor: grab;
-   margin-bottom: 5px;
-   border: 1px solid #ccc; /* 테두리 속성 추가 */
-   border-radius: 5px; /* 테두리 모서리를 둥글게 만들기 위해 추가 (원하는 모양으로 조절 가능) */
-   font-size: 20px;
-   border-radius: 30px;
-   background-color: rgb(255, 246, 233);
+.briefing_add {
+	height : 0px;
+	width : 50px;
+	position: relative;
+	left: 85%;
+	top: 10%;
+}
+.briefing::-webkit-scrollbar {
+	width: 10px; /* 스크롤바의 너비 */
 }
 
-ul {
-   list-style: none;
+.briefing::-webkit-scrollbar-track {
+	background-color: #f1f1f1; /* 스크롤바 트랙의 배경색 */
+	border-radius: 10px; /* 스크롤바 트랙의 모서리 둥글게 만들기 */
 }
+
+.briefing::-webkit-scrollbar-thumb {
+	background-color: #c8c8c8; /* 스크롤바 썸의 색상 */
+	border-radius: 10px; /* 스크롤바 썸의 모서리 둥글게 만들기 */
+	height: 20px; /* 스크롤바 썸의 세로 길이 */
+}
+
+.briefing::-webkit-scrollbar-thumb:hover {
+	background-color: #878787; /* 스크롤바 썸의 호버(hover) 상태 색상 */
+}
+
 
 .hello_name {
-   /* 왼쪽에 위치하도록 설정 */
-   margin-left: 25%;
-   display: inline-block;
-   font-size: 20px;
+	/* 왼쪽에 위치하도록 설정 */
+	margin-left: 25%;
+	display: inline-block;
+	font-size: 20px;
 }
 
 .current_date4 {
-   /* 오른쪽에 위치하도록 설정 */
-   margin-right: 10%;
-   display: inline-block;
-   font-size: 17px;
+	/* 오른쪽에 위치하도록 설정 */
+	margin-right: 10%;
+	display: inline-block;
+	font-size: 17px;
 }

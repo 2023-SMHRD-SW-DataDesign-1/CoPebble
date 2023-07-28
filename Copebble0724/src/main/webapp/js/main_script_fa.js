@@ -31,12 +31,12 @@ $(document).ready(function() {
 					const formattedEnd = `${endMonth}-${endDay}`;
 
 					const todoItem = `
-          <div class="memo_box">
+          <div class="todo_box">
             <div>${response[i].WHO}</div>
             <div>${response[i].title}</div>
-            <div>${formattedStart}</div>
+            <div>${formattedStart}</div> ~
             <div>${formattedEnd}</div>
-            <button class="Todo_delete_btn">X</button>
+            <button class="Todo_delete_btn">&times;</button>
           </div>
         `;
 					$('.todoList').append(todoItem); // 새로운 목록 추가
@@ -89,12 +89,12 @@ $(document).ready(function() {
 
 		// To-do 리스트에 새로운 항목 추가 using jQuery
 		const todoItem = `
-      <div class="memo_box">
+      <div class="todo_box">
         <div>${manager}</div>
         <div>${title}</div>
-        <div>${start}</div>
+        <div>${start}</div> ~
         <div>${end}</div>
-        <button class="Todo_delete_btn">X</button>
+        <button class="Todo_delete_btn">&times;</button>
       </div>
     `;
 		$('.todoList').append(todoItem);
@@ -105,7 +105,7 @@ $(document).ready(function() {
 
 	// 삭제 버튼 클릭 이벤트 처리
 	$(document).on('click', '.Todo_delete_btn', function() {
-		const listItem = $(this).closest('.memo_box');
+		const listItem = $(this).closest('.todo_box');
 		const name = listItem.find('div').eq(0).text().trim();
 		const title = listItem.find('div').eq(1).text().trim();
 		const start = listItem.find('div').eq(2).text().trim();

@@ -18,8 +18,8 @@
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="./css/main.css" />
-<link rel="stylesheet" href="css/main_style.css">
+<link rel="stylesheet ver1" href="./css/main.css">
+<link rel="stylesheet ver1" href="css/main_style.css">
 </head>
 
 <body>
@@ -31,30 +31,36 @@
 		<div style="width: 20%;"></div>
 
 		<div style="width: 10%; min-width: 150px;">
-			<a href="Main.jsp"> <img class="header_logo" src="./img/header_logo.png"
+			<a href="Main.jsp"> <img class="header_logo" src="mainlogo.png"
 				alt="">
 			</a>
 		</div>
-
-		<div style="width: 45%; min-width: 100px;">
+		<div style="width: 50px;"></div>
+		<div style="width: 10%; min-width: 150px;">
 			<a href="DiaryMain.jsp" class="baby_diary">
 				<p>육아 다이어리</p>
 			</a>
 		</div>
 
-		<div style="width: 3%; min-width: 20px;">
-			<a href="MyPage.jsp" class="header_icon_mypage"> <i
+		<div style="width: 30%; min-width: 150px;">
+			<a href="DiaryMain.jsp" class="baby_diary">
+				<p>집안일 관리</p>
+			</a>
+		</div>
+
+		<div style="width: 2%; min-width: 20px;">
+			<a href="mypage.html" class="header_icon_mypage"> <i
 				class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
 			</a>
 		</div>
-		<div style="width: 3%; min-width: 20px;">
+		<div style="width: 2%; min-width: 20px;">
 
 			<a href="LogoutCon" class="header_icon_logout"> <i
 				class="fa-solid fa-right-from-bracket"
 				style="font-size: 30px; color: #000000;"></i>
 			</a>
 		</div>
-		<div style="width: 21%;"></div>
+		<div style="width: 15%;"></div>
 	</header>
 
 
@@ -62,57 +68,53 @@
 
 	<div class="container mt-3" style="margin: 0 auto;">
 		<div class="row">
-			<div class="col-12">
-				<!-- 안녕하세요 박스 전체 div -->
-				<div class="hello_what_box" id="myBox">
-					<!-- 철수님 은아님 안녕하세요 동그란 영역 -->
-					<!-- 철수님 은아님 안녕하세요 텍스트 -->
-					<div>
-						<span class="hello_name" style="width: 100%; max-width: 500px;">
-							${info.NAME}님 안녕하세요(●'◡'●)🧡🧡🧡🧡</span> <span id="current_date3"
-							class="current_date4" style="width: 100%; max-width: 200px;"></span>
-					</div>
-				</div>
 
-			</div>
-			<!-- row속성으로 12칸 지정 -->
-			<div class="row">
-				<!-- 캘린더 -->
-				<div class="col-xl-8 col-12 mt-3">
-					<div class="calendar_box p-3">
-						<br>
-						<div id="calendar"></div>
-					</div>
-				</div>
-
-				<!-- 가족 알림장 -->
-				<div class="col-xl-4 col-12">
-
-					<div class="familynotice mt-3 mb-3 p-3">
-						<button class="familynotice_add">
-							<i class="fa-regular fa-square-plus"
-								style="font-size: 33px; color: #DC6721;"></i>
-						</button>
-						<div class="text-center">
-							<a id="current_date"></a> 가족알림장
-						</div>
-						<hr>
-						<div class="todoList"></div>
-					</div>
-
-					<div class="briefing p-2">
-						<button class="briefing_add">
-							<i class="fa-regular fa-square-plus"
-								style="font-size: 33px; color: #DC6721;"></i>
-						</button>
-						<div class="text-center">부부 브리핑</div>
-						<hr>
-						<div id="MemoList"></div>
-					</div>
-					
-					
+			<!-- 안녕하세요 박스 전체 div -->
+			<div class="hello_what_box col-12" id="myBox">
+				<!-- 철수님 은아님 안녕하세요 동그란 영역 -->
+				<!-- 철수님 은아님 안녕하세요 텍스트 -->
+				<div>
+					<span class="hello_name" style="width: 100%; max-width: 500px;">
+						${info.NAME}님 안녕하세요(●'◡'●)🧡🧡🧡🧡</span> <span id="current_date3"
+						class="current_date4" style="width: 100%; max-width: 200px;"></span>
 				</div>
 			</div>
+
+
+
+
+			<!-- 캘린더 -->
+			<div class="col-xl-8 col-12 mt-3">
+				<div class="calendar_box p-3">
+					<br>
+					<div id="calendar"></div>
+				</div>
+			</div>
+
+			<!-- 가족 알림장 -->
+			<div class="col-xl-4 col-12">
+
+				<div class="familynotice mt-3 mb-3 p-3">
+					<button class="familynotice_add">
+						<img alt="" src="./img/MAIN_PLUS.png" style="width: 100%;">
+					</button>
+					<div class="text-center">가족 알림장</div>
+					<hr>
+					<div class="todoList"></div>
+				</div>
+
+				<div class="briefing mt-3 p-3">
+					<button class="briefing_add">
+						<img alt="" src="./img/MAIN_PLUS.png" style="width: 100%;">
+					</button>
+					<div class="text-center">부부 브리핑</div>
+					<hr>
+					<div id="MemoList"></div>
+				</div>
+
+
+			</div>
+
 		</div>
 	</div>
 	<!-- 여기부터는 팝업창 디자인 -->
@@ -124,21 +126,23 @@
 				id="eventTitle" placeholder="일정 제목을 입력하세요">
 		</div>
 		<div class="form-group">
-			<label for="eventStart">시작일</label> <input type="text"
-				id="eventStart" placeholder="YYYY-MM-DD 형식으로 입력하세요">
+			<label for="eventStart">시작일</label> <input class="date_input"
+				type="date" id="eventStart" placeholder="날짜를 입력하세요">
 		</div>
 		<div class="form-group">
-			<label for="eventEnd">종료일</label> <input type="text" id="eventEnd"
-				placeholder="YYYY-MM-DD 형식으로 입력하세요">
+			<label for="eventEnd">종료일</label> <input class="date_input"
+				type="date" id="eventEnd" placeholder="날짜를 입력하세요">
 		</div>
-		<select id="eventColor">
-			<option value="" disabled selected>색상 선택</option>
-			<option value="#808080">회색</option>
-			<option value="#00FF00">초록색</option>
-			<option value="#50bcdf">하늘색</option>
-			<option value="#FFC0CB">분홍색</option>
-			<option value="#FFFF00">노란색</option>
-		</select>
+		<div class="form-group">
+			<label>색상 선택</label> <select id="eventColor">
+				<option value="" disabled selected>색상을 골라주세요</option>
+				<option value="#808080">회색</option>
+				<option value="#00FF00">초록색</option>
+				<option value="#50bcdf">하늘색</option>
+				<option value="#FFC0CB">분홍색</option>
+				<option value="#FFFF00">노란색</option>
+			</select>
+		</div>
 		<div class="btn-container">
 			<button id="addEventBtn">일정 추가</button>
 			<button id="cancelBtn">취소</button>
@@ -164,16 +168,16 @@
 				id="eventTodoTitle" placeholder="내용을 입력하세요">
 		</div>
 		<div class="form-group">
-			<label for="eventTodoStart">시작일</label> <input type="text"
-				id="eventTodoStart" placeholder="MM-DD 형식으로 입력하세요">
+			<label for="eventTodoStart">시작일</label> <input class="date_input"
+				type="date" id="eventTodoStart" placeholder="날짜를 입력하세요">
 		</div>
 		<div class="form-group">
-			<label for="eventTodoEnd">종료일</label> <input type="text"
-				id="eventTodoEnd" placeholder="MM-DD 형식으로 입력하세요">
+			<label for="eventTodoEnd">종료일</label> <input class="date_input"
+				type="date" id="eventTodoEnd" placeholder="날짜를 입력하세요">
 		</div>
 		<div class="form-group">
-			<label for="eventManager">담당자</label> <label><input
-				type="radio" name="Manager" value="🧑">🧑</label> <label><input
+			<label for="eventManager"></label>
+			<label><input type="radio" name="Manager" value="🧑">🧑</label><label><input
 				type="radio" name="Manager" value="👩">👩</label>
 		</div>
 		<div class="btn-container">
@@ -189,7 +193,7 @@
 				id="eventMemo" placeholder="내용을 입력하세요">
 		</div>
 		<div class="form-group">
-			<label for="eventManager">담당자</label> <label><input
+			<label for="eventManager"></label> <label><input
 				type="radio" name="memoManager" value="🧑">🧑</label><label><input
 				type="radio" name="memoManager" value="👩">👩</label>
 		</div>

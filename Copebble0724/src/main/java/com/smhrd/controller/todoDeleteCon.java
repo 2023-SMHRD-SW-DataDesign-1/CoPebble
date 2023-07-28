@@ -23,7 +23,9 @@ public class todoDeleteCon extends HttpServlet {
 		String eventTodoStart = request.getParameter("start");
 		String eventTodoEnd = request.getParameter("end");
 		String eventTodoManager = request.getParameter("name");
-
+		int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+		eventTodoStart = currentYear + "-" + eventTodoStart;
+		eventTodoEnd = currentYear + "-" + eventTodoEnd;
 		System.out.println("TODO 삭제용 데이터 수신 - Title: " + eventTodoTitle + ", Start: " + eventTodoStart + ", End: "
 				+ eventTodoEnd + ", Manager: " + eventTodoManager);
 		int n = 0;
@@ -41,9 +43,6 @@ public class todoDeleteCon extends HttpServlet {
 			ASSORT = "C";
 			String[] colors = { "#808080", "#00FF00", "#50bcdf", "#FFC0CB", "#FFFF00" };
 			int colorIndex = 0;
-			int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-			eventTodoStart = currentYear + "-" + eventTodoStart;
-			eventTodoEnd = currentYear + "-" + eventTodoEnd;
 			
 			while (true) {
 				color = colors[colorIndex];

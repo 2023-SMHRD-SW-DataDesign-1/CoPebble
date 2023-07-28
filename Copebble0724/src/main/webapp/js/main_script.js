@@ -36,7 +36,11 @@ function loadingEvents(jsondata) {
 document.addEventListener('DOMContentLoaded', function() {
 	var calendarEl = document.getElementById('calendar');
 	calendar = new FullCalendar.Calendar(calendarEl, {
-		// 달력 설정 및 옵션
+		header: {
+			left: 'prev,next today', // 왼쪽에 이전, 다음 버튼과 오늘 버튼
+			center: 'title', // 가운데에 년/월 정보
+			right: 'month,agendaWeek,agendaDay' // 오른쪽에 월 뷰, 주 뷰, 일 뷰 버튼
+		},
 		locale: 'ko', // 한글로 월과 요일 표시
 		dayCellContent: function(info) { // 1일 > 1로  숫자만 표현
 			var number = document.createElement("a");
@@ -54,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		editable: true,
 		allDay: true,
 		dayMaxEventRows: true,
+		 eventColor: 'blue',
 		events: loadingEvents(),
 		eventDrop: function(info) {
 			console.log('드래그 앤 드랍이 완료되었습니다.');
@@ -265,12 +270,6 @@ document.addEventListener('mouseup', deletePopupEndDrag);
 
 
 
-// 날짜 받아오기
-date = new Date();
-year = date.getFullYear();
-month = date.getMonth() + 1;
-day = date.getDate();
-document.getElementById("current_date").innerHTML = month + "월 " + day + "일";
 
 //////////////////////////메인 박스 색깔 랜덤
 const myBox = document.getElementById('myBox');
@@ -298,4 +297,7 @@ function getRandomYellowColor() {
 	const randomIndex = Math.floor(Math.random() * yellowColors.length);
 	return yellowColors[randomIndex];
 }
+
+
+
 
