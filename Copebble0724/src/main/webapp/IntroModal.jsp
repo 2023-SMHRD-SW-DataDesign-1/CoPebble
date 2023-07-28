@@ -78,13 +78,28 @@
    
    
    <!--메인-->
+  
+   <!--메인-->
+
    <main>
-      <!-- 소개 이미지 또는 글 넣기 -->
       <div>
-         <img src="mainlogo.png" class="leftSlide"> 
-         <img src="mainlogo.png" class="rightSlide">
+         <img id="img1" src="./img/main0728_02-01.png"
+            style="width: 1728px; height: 972px;"> <img id="img2"
+            src="./img/family09-01.png" style="width: 1728ppx; height: 972px;">
       </div>
 
+      <div>
+         <img src="./img/main_02.png" class="leftSlide" id="slide1"> <img
+            src="./img/re_computer4-01.png" class="rightSlide" id="slide2"
+            style="width: 40%;">
+      </div>
+
+      <div>
+         <img src="./img/3slide-01.png" class="leftSlide2" id="img3"
+            style="width: 650px;"> <img src="./img/re_computer4-01.png"
+            class="rightSlide2" id="img4" style="width: 40%;">
+      </div>
+   </main>
       <!-- 로그인 모달창 -->
         <div id="modal1" class="modalBack">
             <div class="modal-content">
@@ -251,6 +266,37 @@
        });
     });
     </script>
+    
+    <Script>
+      $(document).ready(function() {
+         /*웹페이지 열었을 때*/
+         $("#img1").show();
+         $("#img2").hide();
+         $("#img3").hide();
+         $("#img4").hide();
+
+         /*img1을 클릭했을 때 img2를 보여줌*/
+         $("#img1").click(function() {
+            $("#img1").fadeOut();
+            $("#img2").fadeIn(2000);
+            $("#slide1").hide();
+            $("#img3").fadeIn(3000);
+            $("#slide2").fadeOut();
+            $("#img4").fadeIn(1000);
+
+         });
+
+         /*img2를 클릭했을 때 img1을 보여줌*/
+         $("#img2").click(function() {
+            $("#img1").fadeIn(1000);
+            $("#img2").fadeOut(1000);
+      
+
+         });
+      });
+
+   
+   </Script>
 
 
 
