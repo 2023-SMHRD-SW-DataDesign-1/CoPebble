@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="./css/main.css">
 <link rel="stylesheet" href="css/main_style.css">
 <link rel="stylesheet" href="./css/diary_detail.css">
+
 <script src="https://kit.fontawesome.com/a34da1aa1b.js"
    crossorigin="anonymous"></script>
    <link
@@ -19,13 +20,6 @@
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
-<style>
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-
-* {
-	font-family: "Noto Sans KR", sans-serif;
-}
-</style>
 <style>
 
 button {
@@ -48,7 +42,7 @@ button {
 		</div>
 
 		<div style="min-width: 140px;">
-			<a href="#" class="baby_diary">
+			<a href="Household" class="baby_diary">
 				<p>집안일 관리</p>
 			</a>
 		</div>

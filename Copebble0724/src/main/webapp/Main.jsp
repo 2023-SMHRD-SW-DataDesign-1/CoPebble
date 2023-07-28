@@ -43,7 +43,7 @@
 		</div>
 
 		<div style="min-width: 140px;">
-			<a href="DiaryMain.jsp" class="baby_diary">
+			<a href="Household" class="baby_diary">
 				<p>집안일 관리</p>
 			</a>
 		</div>

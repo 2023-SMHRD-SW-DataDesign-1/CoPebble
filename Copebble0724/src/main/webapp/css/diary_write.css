@@ -1,8 +1,7 @@
-@font-face {
-    font-family: 'NanumSquareNeo-Variable';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+/* 링크의 기본 스타일 제거 */
+#diary_Main_btn a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: black; /* 글자색 검은색으로 설정 */
 }
 
 :root {
@@ -54,7 +53,7 @@ header.header_main.mt-3 {
 
 #diary_write_date_p {
     width: 200px;
-    height: 14px;
+    height: 25px;
     padding-top: 5px;
     padding-bottom: 5px;
     margin-left: auto;

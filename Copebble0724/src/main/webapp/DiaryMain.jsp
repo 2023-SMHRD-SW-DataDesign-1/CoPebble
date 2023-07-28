@@ -20,13 +20,7 @@
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
-<style>
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-* {
-	font-family: "Noto Sans KR", sans-serif;
-}
-</style>
 </head>
 <body>
 	<!--헤더-->
@@ -47,7 +41,7 @@
 		</div>
 
 		<div style="min-width: 140px;">
-			<a href="#" class="baby_diary">
+			<a href="Household" class="baby_diary">
 				<p>집안일 관리</p>
 			</a>
 		</div>
@@ -68,8 +62,7 @@
 		</div>
 	</header>
 	<p></p>
-<% String FAMILY_KEY = (String)session.getAttribute("FAMILY_KEY"); %>
-	<c:set var="DIARY_list" value="${DiaryDAO.showDiary(FAMILY_KEY)}"></c:set>
+	<c:set var="DIARY_list" value="${DiaryDAO.showDiary()}"></c:set>
 	<div class="diary_top_div">
 
 		<!-- 상단바 -->

@@ -7,6 +7,13 @@
 	font-style: normal;
 }
 
+/* 링크의 기본 스타일 제거 */
+
+#diary_Main_btn a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: black; /* 글자색 검은색으로 설정 */
+}
+
 :root {
 	--mainColor: rgb(253, 221, 126);
 	--subColor: rgb(253, 177, 64);
@@ -54,7 +61,7 @@ header.header_main.mt-3 {
 
 #diary_write_date_p {
 	width: 200px;
-	height: 14px;
+	height: 25px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	margin-left: auto;
@@ -143,12 +150,11 @@ button:hover {
 	background-color: rgb(245, 149, 59);
 	border: 1px solid whitesmoke;
 	border-radius: 50%;
-	font-family: 'NanumSquareNeo-Variable';
 	font-weight: 600;
 }
 
 #download_btn {
-	margin-left: 400px;
+	margin-left: 350px;
 	width: 100px;
 	justify-content: center;
 	color: blue;

@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: 'NanumSquareNeo-Variable';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
@@ -39,18 +41,20 @@ body{
     padding-bottom: 24px;
     position: relative;
 }
+
 .diary_header>img{
     position: absolute;
-    top: -10px;
+    top: -5px;
     left: -10px;
-    width: 80px;
+    width: 70px;
 }
 .diary_header>div{
     display: flex;
 }
+
 .diary_baby_div{
     background-color: white;
-    width: 30%;
+    width: 40%;
     margin-left:10px;
     padding: 8px 16px;
     display: flex;
@@ -60,6 +64,7 @@ body{
     border-radius: 16px;
     box-shadow: 2px 2px 2px var(--shadowColor);
 }
+
 .diary_icon_div{
     font-size: 24px;
     display: flex;
