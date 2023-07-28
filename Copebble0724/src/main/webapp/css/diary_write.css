@@ -1,8 +1,16 @@
 
+
  * {
             font-family: 'NanumSquareAcb';
         }
 
+
+
+/* 링크의 기본 스타일 제거 */
+#diary_Main_btn a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: black; /* 글자색 검은색으로 설정 */
+}
 
 
 :root {
@@ -54,7 +62,7 @@ header.header_main.mt-3 {
 
 #diary_write_date_p {
     width: 200px;
-    height: 14px;
+    height: 25px;
     padding-top: 5px;
     padding-bottom: 5px;
     margin-left: auto;

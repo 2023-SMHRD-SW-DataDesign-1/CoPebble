@@ -17,6 +17,7 @@
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
+<<<<<<< HEAD
 	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
 <style>
  * {
@@ -24,6 +25,10 @@
         }
 
 </style>
+=======
+	<script src="https://kit.fontawesome.com/a34da1aa1b.js"
+	crossorigin="anonymous"></script>
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble.git
 </head>
 
 <header class="header_main mt-3 ">
@@ -42,7 +47,7 @@
 		</div>
 
 		<div style="min-width: 140px;">
-			<a href="#" class="baby_diary">
+			<a href="Household" class="baby_diary">
 				<p>집안일 관리</p>
 			</a>
 		</div>

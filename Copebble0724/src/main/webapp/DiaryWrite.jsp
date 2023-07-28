@@ -13,6 +13,7 @@
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
+<<<<<<< HEAD
 	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
 <style>
  * {
@@ -20,43 +21,51 @@
         }
 
 </style>
+=======
+	<script src="https://kit.fontawesome.com/a34da1aa1b.js"
+	crossorigin="anonymous"></script>
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble.git
 </head>
 
 <body>
    <!--헤더-->
 
-    <header class="header_main mt-3 ">
-        <div style="width: 20%;">
-        </div>
+   <header class="header_main mt-3 ">
+		<div style="width: 300px;"></div>
 
-        <div style="width: 10%; min-width: 150px;">
-            <a href="Main.jsp">
-                <img class="header_logo" src="./img/header_logo.png" alt="">
-            </a>
+		<div style="width: 5%; min-width: 150px;">
+			<a href="Main.jsp"> <img class="header_logo" src="mainlogo.png"
+				alt="">
+			</a>
+		</div>
+		<div style="width: 20px;"></div>
+		<div style="min-width: 140px;">
+			<a href="DiaryMain.jsp" class="baby_diary">
+				<p>육아 다이어리</p>
+			</a>
+		</div>
 
+		<div style="min-width: 140px;">
+			<a href="Household" class="baby_diary">
+				<p>집안일 관리</p>
+			</a>
+		</div>
 
-        </div>
+		<div style="width: 40%;"></div>
 
-        <div style="width: 45%; min-width: 100px;">
-            <a href="DiaryMain.jsp" class="baby_diary">
-                <p1>육아 다이어리</p1>
-            </a>
-        </div>
+		<div style="width: 70px;">
+			<a href="MyPage.jsp" class="header_icon_mypage"> <i
+				class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
+			</a>
+		</div>
+		<div style="width: 70px;">
 
-        <div style="width: 2%; min-width: 20px;">
-            <a href="mypage.html" class="header_icon_mypage">
-                <i class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
-            </a>
-        </div>
-        <div style="width: 2%; min-width: 20px;">
-
-            <a href="#" class="header_icon_logout">
-                <i class="fa-solid fa-right-from-bracket" style="font-size: 30px; color: #000000;"></i>
-            </a>
-        </div>
-        <div style="width: 21%;">
-        </div>
-    </header>
+			<a href="LogoutCon" class="header_icon_logout"> <i
+				class="fa-solid fa-right-from-bracket"
+				style="font-size: 30px; color: #000000;"></i>
+			</a>
+		</div>
+	</header>
     <!-- 흰색 div -->
 	<p></p>
     <div class="diary_write_top_div">
@@ -80,7 +89,7 @@
             </div>
             <input type="file" name="FILENAME" id="file_input">
             <div class="diary_write_memo_div">
-                <textarea name="DIARY" cols="60" rows="12" style="resize: none;"></textarea>
+                <textarea name="DIARY" cols="45" rows="12" style="resize: none;"></textarea>
             </div>
             <input hidden type="text" name="FAMILY_KEY" value="패밀리키">
             <div id="diary_button">
