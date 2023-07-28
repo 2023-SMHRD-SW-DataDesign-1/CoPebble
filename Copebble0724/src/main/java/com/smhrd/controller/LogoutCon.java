@@ -30,6 +30,7 @@ public class LogoutCon extends HttpServlet {
       System.out.println("ID:"+session.getAttribute("ID"));
       System.out.println("NAME:"+session.getAttribute("NAME"));
       System.out.println("FAMLIY_KEY:"+session.getAttribute("FAMLIY_KEY"));
+      
       response.sendRedirect("IntroModal.jsp");
 
    }
