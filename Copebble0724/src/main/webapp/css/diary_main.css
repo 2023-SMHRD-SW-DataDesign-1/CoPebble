@@ -11,6 +11,11 @@
     --shadowColor :rgb(122, 122, 122);
     font-family:'NanumSquareNeo-Variable';
 }
+
+header.header_main.mt-3 {
+    margin-top: 1rem;
+}
+
 body{
     margin: 0;
 }

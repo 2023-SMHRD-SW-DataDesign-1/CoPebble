@@ -49,7 +49,7 @@
 
       <div style="width: 10%; min-width: 150px;">
          <a href="Main.jsp"> 
-            <img class="header_logo" src="mainlogo.png" alt="">
+            <img class="header_logo" src="./img/header_logo.png" alt="">
          </a>
       </div>
       

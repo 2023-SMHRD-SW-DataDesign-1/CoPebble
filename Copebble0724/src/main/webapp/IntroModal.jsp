@@ -38,7 +38,7 @@
 
       <div style="width: 10%; min-width: 150px;">
          <a href="Main.jsp"> 
-            <img class="header_logo" src="mainlogo.png" alt="">
+            <img class="header_logo" src="./img/header_logo.png" alt="">
          </a>
       </div>
 
@@ -49,7 +49,7 @@
       </div>
 
        <!-- 로그인 로고 -->
-        <div style="width: 3%; min-width: 70px;">
+        <div style="width: 5%; min-width: 70px;">
            <button id="loginModal_btn">로그인</button>
         </div>
 

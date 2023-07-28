@@ -2,6 +2,10 @@
   font-family: nanumsquare;
 }
 
+header.header_main.mt-3 {
+    margin-top: 1rem;
+}
+
 /* 평일 날짜 검은색 */
 .fc-col-header-cell-cushion,
 .fc-daygrid-day-number,

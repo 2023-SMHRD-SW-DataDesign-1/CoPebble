@@ -6,9 +6,15 @@
 
 /*************************************************************** 헤더 동작하는 버튼 */
 
+header.header_main.mt-3 {
+    margin-top: 1rem;
+}
+
 #loginModal_btn { /* 로그인 */
     font-size: 17px; font-weight: bold;
     text-decoration: none;
+    padding-left: 10px; padding-right: 10px;
+    margin-right: 0;
     color: black;
     text-align: center;
     border:none;
@@ -22,11 +28,11 @@
 #joinModal_btn { /* 회원가입 */
     font-size: 17px; font-weight: bold;
     text-decoration: none;
+    padding-left: 10px; padding-right: 10px;
     color: black;
     text-align: center;
     border:none;
 }
-
 #joinModal_btn:hover {
     background-color: #f8b03a;
     border-radius: 5px;

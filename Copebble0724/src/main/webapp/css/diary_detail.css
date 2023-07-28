@@ -15,6 +15,9 @@
 	font-family: 'NanumSquareNeo-Variable';
 }
 
+header.header_main.mt-3 {
+    margin-top: 1rem;
+}
 .diary_write_top_div {
 	display: flex;
 	flex-direction: column;
