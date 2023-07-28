@@ -20,19 +20,13 @@
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
-<<<<<<< HEAD
 <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
 <style>
  * {
             font-family: 'NanumSquareAcb';
         }
-=======
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble.git
 
-<<<<<<< HEAD
 </style>
-=======
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble.git
 </head>
 <body>
 	<!--헤더-->
@@ -53,7 +47,7 @@
 		</div>
 
 		<div style="min-width: 140px;">
-			<a href="Household" class="baby_diary">
+			<a href="#" class="baby_diary">
 				<p>집안일 관리</p>
 			</a>
 		</div>
@@ -74,7 +68,8 @@
 		</div>
 	</header>
 	<p></p>
-	<c:set var="DIARY_list" value="${DiaryDAO.showDiary()}"></c:set>
+<% String FAMILY_KEY = (String)session.getAttribute("FAMILY_KEY"); %>
+	<c:set var="DIARY_list" value="${DiaryDAO.showDiary(FAMILY_KEY)}"></c:set>
 	<div class="diary_top_div">
 
 		<!-- 상단바 -->
