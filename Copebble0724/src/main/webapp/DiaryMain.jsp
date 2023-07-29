@@ -88,7 +88,7 @@
 
 		<!-- 아래 큰 div -->
 		<div class="diary_main_div">
-			<div class="diary_name_div">김민국(만9세)</div>
+			<div class="diary_name_div">BABY DIARY</div>
 			<div class="diary_card_container">
 
 				<c:set var="prevDate" value="" />

@@ -80,7 +80,7 @@ button {
 	<div class="diary_write_top_div">
 	<button id="diary_Main_btn"><a href="./DiaryMain.jsp"> <img alt="" src="./img/diaryClose.png"> </a></button>
 		<div class="diary_babyname_div">
-			<p id="diary_babyname_p">김민국(만9세)</p>
+			<p id="diary_babyname_p">BABY DIARY</p>
 		</div>
 		<div class="diary_br_div"></div>
 		<div class="diary_write_date_div">

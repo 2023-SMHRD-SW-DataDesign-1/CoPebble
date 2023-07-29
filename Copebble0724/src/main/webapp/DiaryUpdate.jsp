@@ -66,7 +66,7 @@
 	<c:set var="Diary" value="${DiaryDAO.showDiaryOne(param.num)}"></c:set>
 	<div class="diary_write_top_div">
 		<div class="diary_babyname_div">
-			<p id="diary_babyname_p">김민국(만9세)</p>
+			<p id="diary_babyname_p">BABY DIARY</p>
 		</div>
 		<div class="diary_br_div"></div>
 		<div class="diary_write_date_div">
@@ -81,10 +81,9 @@
 		<div>
 			<div class="diary_picture_div">
 				<div id="image_preview_div">
-					<img id="image_preview" alt="미리보기 이미지"
-						src="./img/${Diary.FILENAME}"> <input type="file"
-						name="FILENAME" id="file_input">
-
+					<img id="image_preview" alt="미리보기 이미지" src="./img/${Diary.TITLE}.png">
+                    <p></p>
+						<input type="file" name="FILENAME" id="file_input">
 					<p></p>
 				</div>
 			</div>
