@@ -84,8 +84,7 @@
 					<span>최신순 </span><i class="fa-solid fa-caret-down" onclick="ASC()"></i>
 				</div>
 				<div class="plus_icon_div" onclick="goToWrite()">
-					<!-- <img alt="" src="./img.png"> -->
-					<i class="fa-solid fa-plus"></i>
+					<img id="diaryPlus" alt="다이어리추가" src="./img/diaryplus.png">
 				</div>
 			</div>
 		</div>
