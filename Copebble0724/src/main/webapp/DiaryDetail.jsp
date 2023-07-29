@@ -78,7 +78,7 @@ button {
 
 	<c:set var="Diary" value="${DiaryDAO.showDiaryOne(param.num)}"></c:set>
 	<div class="diary_write_top_div">
-	<button id="diary_Main_btn"><a href="./DiaryMain.jsp">&times;</a></button>
+	<button id="diary_Main_btn"><a href="./DiaryMain.jsp"> <img alt="" src="./img/diaryClose.png"> </a></button>
 		<div class="diary_babyname_div">
 			<p id="diary_babyname_p">김민국(만9세)</p>
 		</div>
@@ -117,7 +117,7 @@ button {
     	<div id="alert">
     	<i class="fa-solid fa-triangle-exclamation fa-2xl" style="color: #e22222; font-size: 55px;"></i>
     	</div>
-        <h3>정말 해당 다이어리를 삭제하시겠습니까?</h3>
+        <h4>정말 해당 다이어리를 삭제하시겠습니까?</h4>
         <div>
             <form action="DiaryDeleteCon.do" method="post" enctype="multipart/form-data" id="DiaryDeleteForm">
                 <input type="hidden" name="num" value="${param.num}">

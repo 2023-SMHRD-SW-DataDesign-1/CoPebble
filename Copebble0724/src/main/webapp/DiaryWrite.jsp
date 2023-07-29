@@ -69,10 +69,8 @@
     <!-- 흰색 div -->
 	<p></p>
     <div class="diary_write_top_div">
-    	<a href="./DiaryMain.jsp"><span id="diary_Main_btn_div">
-				 <img id="diaryClose" alt="" src="./img/diaryClose.png">
-		</span>
-				</a>
+    	<button id="diary_Main_btn"><a href="./DiaryMain.jsp"> <img alt="" src="./img/diaryClose.png"> </a></button>
+				
         <div class="diary_babyname_div">
             <p id="diary_babyname_p">김민국(만9세)</p>
         </div>
