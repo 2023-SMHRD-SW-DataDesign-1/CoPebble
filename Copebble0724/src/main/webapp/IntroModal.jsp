@@ -170,7 +170,6 @@
           },success: function(res) {
              var id = res.id;
             scope : 'profile_nickname, account_email';
-            alert('로그인성공');
        
             var param = {
             NAME : res.kakao_account.profile.nickname,
@@ -193,6 +192,7 @@
         },
         fail: function(err) {
         alert(JSON.stringify(err));
+        location.href="./introModal.jsp";
         }
       });    
 }) 

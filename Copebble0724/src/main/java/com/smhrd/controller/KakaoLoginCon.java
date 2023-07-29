@@ -73,6 +73,8 @@ public class KakaoLoginCon implements Command {
 	          // session객체 생성
 	          HttpSession session = request.getSession();
 	          session.setAttribute("info", info);
+	          String FAMILY_KEY = info.getFAMILY_KEY();
+	          session.setAttribute("FAMILY_KEY",FAMILY_KEY);
 	      } else {
 	         result = "오라클 로그인 연결 실패";
 	          System.out.println("오라클 로그인 연결 실패");
