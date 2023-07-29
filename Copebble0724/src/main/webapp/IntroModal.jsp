@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="./css/IntroModal.css">
 <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
 <style>
+
  * {
             font-family: 'NanumSquareAcb';
         }
@@ -43,29 +44,29 @@
    <!--헤더-->
 
   <header class="header_main mt-3 ">
-		<div style="width: 300px;"></div>
+      <div style="width: 300px;"></div>
 
-		<div style="width: 5%; min-width: 150px;">
-			<a href="Main.jsp"> <img class="header_logo" src="mainlogo.png"
-				alt="">
-			</a>
-		</div>
-		<div style="width: 20px;"></div>
-		<div style="min-width: 140px;">
-			<a href="DiaryMain.jsp" class="baby_diary">
-				<p>육아 다이어리</p>
-			</a>
-		</div>
+      <div style="width: 5%; min-width: 150px;">
+         <a href="Main.jsp"> <img class="header_logo" src="0729logomain-01.png"
+            alt="">
+         </a>
+      </div>
+      <div style="width: 20px;"></div>
+      <div style="min-width: 140px;">
+         <a href="DiaryMain.jsp" class="baby_diary">
+            <p>육아 다이어리</p>
+         </a>
+      </div>
 
-		<div style="min-width: 140px;">
-			<a href="Household.jsp" class="baby_diary">
-				<p>집안일 관리</p>
-			</a>
-		</div>
+      <div style="min-width: 140px;">
+         <a href="Household" class="baby_diary">
+            <p>집안일 관리</p>
+         </a>
+      </div>
 
-		<div style="width: 40%;"></div>
+      <div style="width: 40%;"></div>
 
-		  <!-- 로그인 로고 -->
+        <!-- 로그인 로고 -->
         <div style="min-width: 70px;">
            <button id="loginModal_btn">로그인</button>
         </div>
@@ -74,7 +75,7 @@
         <div style="min-width: 90px;">
            <button id="joinModal_btn">회원가입</button>
         </div>
-	</header>
+   </header>
    
    
    <!--메인-->
@@ -105,13 +106,15 @@
             <div class="modal-content">
                 <span class="close-btn">&times;</span>
                 <div class="header_logo2"></div> <br>
+                <p style="margin-bottom: 1%; font-weight: bold; text-align:center; font-size:40px">Login</p>
                 <p style="margin-bottom: 1%; font-weight: bold;">아이디</p>
                 <input type="text" name="id" id="loginID" placeholder="  아이디를 입력하세요">
                 <p style="margin-bottom: 1%; font-weight: bold;">비밀번호</p>
                 <input type="password" name="pw" id="loginPW" placeholder="  비밀번호를 입력하세요">
-        
-                <input type="submit" value="로 그 인" id="login_btn">
-                <input type="submit" value="카 카 오 로 그 인" id="kakao-login-btn">
+                <input type="submit" value="로 그 인" id="login_btn"> 
+                <!-- <input type="submit" value="카 카 오 로 그 인" id="kakao-login-btn"> -->
+                <img src="https://i.ibb.co/Wxf8vSJ/0729re-01.png" id="kakao-login-btn" style="cursor: pointer;">
+
                 <hr class="hr">
                 <input type="submit" value="회 원 가 입" id="joinModal_btn2"> <!-- 회원가입 모달창 열기 -->
             </div>
@@ -140,11 +143,10 @@
             <span class="close-btn">&times;</span>
             <div class="header_logo3"></div>
               <h1 id="join_name"></h1> <!------------------------------- ajax로 값 가져오기 -->
-            <h1>withDAY의</h1><br>
-            <h2>회원이 되셨습니다</h2>
+            <h2>WithDAY<br>가입을 축하드립니다.</h2>
             <a href="FamilyKey.jsp"> 
                <input type="submit" value="패밀리키 등록하기" id="goFamily">
-            </a><br>
+            </a>
             <h5>패밀리키 등록 후 이용 바랍니다.</h5>
           
          </div>
@@ -170,6 +172,7 @@
           },success: function(res) {
              var id = res.id;
             scope : 'profile_nickname, account_email';
+            alert('로그인성공');
        
             var param = {
             NAME : res.kakao_account.profile.nickname,
@@ -192,7 +195,6 @@
         },
         fail: function(err) {
         alert(JSON.stringify(err));
-        location.href="./introModal.jsp";
         }
       });    
 }) 

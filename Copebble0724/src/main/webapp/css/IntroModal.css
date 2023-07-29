@@ -1,255 +1,341 @@
 @charset "UTF-8";
 
 * {
-    font-family: 'NanumSquareAcb';
+   font-family: 'NanumSquareAcb';
 }
 
 /*************************************************************** 헤더 동작하는 버튼 */
 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 10px;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    line-height: 1.0;
+    text-align: center;
+}
+
+
 header.header_main.mt-3 {
-    margin-top: 1rem;
+   margin-top: 1rem;
 }
 
 #loginModal_btn { /* 로그인 */
-    font-size: 17px; font-weight: bold;
-    text-decoration: none;
-    padding-left: 10px; padding-right: 10px;
-    margin-right: 0;
-    color: black;
-    text-align: center;
-    border:none;
+   font-size: 17px;
+   font-weight: bold;
+   text-decoration: none;
+   padding-left: 10px;
+   padding-right: 10px;
+   margin-right: 0;
+   color: black;
+   text-align: center;
+   border: none;
 }
 
 #loginModal_btn:hover {
-    background-color: #f8b03a;
-    border-radius: 5px;
+   background-color: #f8b03a;
+   border-radius: 5px;
 }
 
 #joinModal_btn { /* 회원가입 */
-    font-size: 17px; font-weight: bold;
-    text-decoration: none;
-    padding-left: 10px; padding-right: 10px;
-    color: black;
-    text-align: center;
-    border:none;
+   font-size: 17px;
+   font-weight: bold;
+   text-decoration: none;
+   padding-left: 10px;
+   padding-right: 10px;
+   color: black;
+   text-align: center;
+   border: none;
 }
+
 #joinModal_btn:hover {
-    background-color: #f8b03a;
-    border-radius: 5px;
+   background-color: #f8b03a;
+   border-radius: 5px;
 }
 
-
-.modalBack { /**************************************************** 모달창 뒷배경 */
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    
+.modalBack {
+   /**************************************************** 모달창 뒷배경 */
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.modal-content { /************************************************ 모달창 화면 */
-    background-color: white;
-    padding: 60px; border-radius: 30px;
-    width: 450px; height: 650px; max-width: 400%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.modal-content {
+   background-color: white;
+   padding: 60px;
+   border-radius: 30px;
+   width: 450px;
+   height: 700px;
+   max-width: 400%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   box-shadow: 2px 1px 1px 1px #7b7b7b;
 }
 
 /*************************************************************** 모달창 내부 input */
-input[type=text] { 
-    width: 100%; height: 40px; border-radius: 5px;
-    font-size: 15px;
-    margin-top: none; margin-bottom: 15px;
-    background-color: white;
-    padding-left: 2px;
-    border: 1px;
+input[type=text] {
+   width: 100%;
+   height: 40px;
+   border-radius: 5px;
+   font-size: 15px;
+   margin-top: none;
+   margin-bottom: 15px;
+   background-color: white;
+   padding-left: 2px;
+   border: 1px;
 }
 
 input[type=password] {
-    width: 100%; height: 40px; border-radius: 5px;
-    font-size: 15px; 
-    margin-top: none; margin-bottom: 15px;
-    border: 1px;
+   width: 100%;
+   height: 40px;
+   border-radius: 5px;
+   font-size: 15px;
+   margin-top: none;
+   margin-bottom: 15px;
+   border: 1px;
+}
 
-}
 input[id=login_btn] {
-    font-weight: bold; color: #F6F4F4;
-    background-color: #DC6721;
-    position: absolute; top: 63%; left: 27%;
-    width: 200px; height: 40px; border-radius: 5px;
-    font-size: 15px;
-    margin-top: none; margin-bottom: 15px;
-    border: none;
-    box-shadow: 1px 1px 3px 1px #8f8e8e;
+   FONT-WEIGHT: 100;
+   font-weight: bold;
+   color: #F6F4F4;
+   background-color: #DC6721;
+   position: absolute;
+   top: 70%;
+   left: 23%;
+   width: 250px;
+   height: 40px;
+   border-radius: 5px;
+   font-size: 15px;
+   margin-top: none;
+   margin-bottom: 15px;
+   border: none;
+   box-shadow: 1px 1px 0px 0px #adadad;
 }
-input[id=kakao-login-btn] {
-    font-weight: bold; color: #F6F4F4;
-    background-color: #F9E000; 
-    position: absolute; top: 73%; left: 27%;
-    width: 200px; height: 40px; border-radius: 5px;
-    font-size: 15px; 
-    margin-top: none; margin-bottom: 15px;
-    border: none;
-    box-shadow: 1px 1px 3px 1px #8f8e8e;
+
+img[id=kakao-login-btn] {
+   font-weight: bold;
+   /*     color: #F6F4F4; */
+   position: absolute;
+   background-color: #FEE500;
+   top: 78%;
+   left: 23%;
+   width: 250px;
+   height: 40px;
+   border-radius: 5px;
+   font-size: 15px;
+   margin-top: none;
+   margin-bottom: 15px;
+   border: none;
+   box-shadow: 1px 1px 0px 0px #adadad;
+   background-size: 30px;
+   background-img: url('../kakaotest.png');
 }
 
 .hr { /* 왜 안 나와ㅠㅠㅠㅠㅠㅠㅠㅠ */
-    position: absolute; top: 80%; left: 27%;
+   position: absolute;
+   top: 80%;
+   left: 27%;
 }
 
 input[id=join_btn] { /* 회원가입 모달창 안에 회원가입버튼 */
-    font-weight: bold; color: #F6F4F4;
-    background-color: #DC6721; 
-    position: absolute; top: 84%; left: 27%;
-    width: 200px; height: 40px; border-radius: 5px;
-    font-size: 15px; 
-    margin-top: none; margin-bottom: 15px;
-    border: none;
-    box-shadow: 1px 1px 3px 1px #8f8e8e;
+   font-weight: bold;
+   color: #F6F4F4;
+   background-color: #DC6721;
+   position: absolute;
+   top: 84%;
+   left: 27%;
+   width: 200px;
+   height: 40px;
+   border-radius: 5px;
+   font-size: 15px;
+   margin-top: none;
+   margin-bottom: 15px;
+   border: none;
+   box-shadow: 1px 1px 0px 0px #adadad;
 }
 
-input[id=goFamily] { /* 회원가입 완료 모달창 내에 패밀리키 만들러 가는 버튼 */
-    font-weight: bold; color: #F6F4F4;
+input[id=goFamily] {
+    font-weight: bold;
+    color: #F6F4F4;
     background-color: #DC6721;
-    position: absolute; top: 81%; left: 28%;
-    width: 200px; height: 40px; border-radius: 5px;
-    font-size: 15px; 
-    margin-top: none; margin-bottom: 15px;
+    position: absolute;
+    top: 71%;
+    left: 28%;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-top: none;
+    margin-bottom: 15px;
     border: none;
-    box-shadow: 1px 1px 3px 1px #8f8e8e;
+    box-shadow: 1px 1px 0px 0px #adadad;
 }
 
 input[id=goMain] { /* 회원가입 완료 모달창 내에 메인페이지로 가는 버튼 */
-    font-weight: bold; color: #F6F4F4;
-    background-color: #DC6721;
-    position: absolute; top: 81%; left: 27%;
-    width: 200px; height: 40px; border-radius: 5px;
-    font-size: 15px; 
-    margin-top: none; margin-bottom: 15px;
-    border: none;
-    box-shadow: 1px 1px 3px 1px #8f8e8e;
+   font-weight: bold;
+   color: #F6F4F4;
+   background-color: #DC6721;
+   position: absolute;
+   top: 81%;
+   left: 27%;
+   width: 200px;
+   height: 40px;
+   border-radius: 5px;
+   font-size: 15px;
+   margin-top: none;
+   margin-bottom: 15px;
+   border: none;
+   box-shadow: 1px 1px 0px 0px #adadad;
 }
 
-
-#login_btn:hover{
-    background-color: #f8b03a;
-    padding: 3px; padding-left: 10px; padding-right: 10px; 
-    border-radius: 5px;
+#login_btn:hover {
+   background-color: #f8b03a;
+   padding: 3px;
+   padding-left: 10px;
+   padding-right: 10px;
+   border-radius: 5px;
 }
+
 #kakao-login-btn:hover {
-    background-color: #f8b03a;
-    padding: 3px; padding-left: 10px; padding-right: 10px; 
-    border-radius: 5px;
+   background-color: #FEE500;
+   padding: 1px;
+   padding-left: 5px;
+   padding-right: 5px;
+   border-radius: 5px;
 }
+
 #join_btn:hover {
-    background-color: #f8b03a;
-    padding: 3px; padding-left: 10px; padding-right: 10px; 
-    border-radius: 5px;
+   background-color: #f8b03a;
+   padding: 3px;
+   padding-left: 10px;
+   padding-right: 10px;
+   border-radius: 5px;
 }
+
 #goMain:hover {
-    background-color: #f8b03a;
-    padding: 3px; padding-left: 10px; padding-right: 10px; 
-    border-radius: 5px;
+   background-color: #f8b03a;
+   padding: 3px;
+   padding-left: 10px;
+   padding-right: 10px;
+   border-radius: 5px;
 }
+
 #goFamily:hover {
-    background-color: #f8b03a;
-    padding: 3px; padding-left: 10px; padding-right: 10px; 
-    border-radius: 5px;
+   background-color: #f8b03a;
+   padding: 3px;
+   padding-left: 10px;
+   padding-right: 10px;
+   border-radius: 5px;
 }
 /*************************************************************** 로그인 모달창 내부 회원가입 버튼 */
 
-#joinModal_btn2 { /* 로그인 모달창 안에 회원가입버튼 */
-    font-weight: bold; color: #F6F4F4;
-    background-color: #DC6721;
-    position: absolute; top: 84%; left: 27%;
-    width: 200px; height: 40px; border-radius: 5px;
-    font-size: 15px; 
-    margin-top: none; margin-bottom: 15px;
-    border: none;
-    box-shadow: 1px 1px 3px 1px #8f8e8e;
+/* 로그인 모달창 안에 회원가입버튼 */
+#joinModal_btn2 {
+   font-weight: bold;
+   color: #F6F4F4;
+   background-color: #DC6721;
+   position: absolute;
+   top: 86%;
+   left: 23%;
+   width: 250px;
+   height: 40px;
+   border-radius: 5px;
+   font-size: 15px;
+   margin-top: none;
+   margin-bottom: 15px;
+   border: none;
+   box-shadow: 1px 1px 1px 1px #c3c3c3;
 }
 
 #joinModal_btn2:hover {
-    background-color: #f8b03a;
-    padding: 3px; padding-left: 10px; padding-right: 10px; 
-    border-radius: 5px;
+   background-color: #f8b03a;
+   padding: 3px;
+   padding-left: 10px;
+   padding-right: 10px;
+   border-radius: 5px;
 }
 
 /*************************************************************** 모달창 내부 닫기 버튼 */
 .close-btn {
-    color: #aaa;
-    position: absolute; top: 2%; left: 88%;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
+   color: #aaa;
+   position: absolute;
+   top: 2%;
+   left: 88%;
+   font-size: 40px;
+   font-weight: bold;
+   cursor: pointer;
 }
 
 .close-btn:hover {
-    color: black;
+   color: black;
 }
 
+.header_logo2 {
+   background-image: url(../img/logo0729-01.png);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: 150px;
+   height: 150px;
+}
 
-.header_logo2 { /*********************************************** 로그인/회원가입 모달창 안에 로고*/
-            background-image: url("../mainlogo.png");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size : cover;
-            height: 120px;
-        }
-.header_logo3 { /*********************************************** 회원가입완료 모달창 안에 로고*/
-            background-image: url("../mainlogo.png");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size : cover;
-            height: 180px;
-        }
+.header_logo3 {
+   /*********************************************** 회원가입완료 모달창 안에 로고*/
+   background-image: url(../img/logo0729-01.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px;
+    height: 150px;
+    margin-top: 10%;
 
-
+}
 
 /* *****************************************************************************************************          여기아래는 소개 이미지 넣기        */
 /* ****************************************************************************************************************************          여기아래는 소개 이미지 넣기        */
-.leftSlide{
-    position: absolute;
-    width: 800px;
-    margin-top: none;
-    top: 33%; left: 10%;
-    font-size: 3em;
-    animation: leftSlide2 6s;
+.leftSlide {
+   position: absolute;
+   width: 800px;
+   margin-top: none;
+   top: 33%;
+   left: 10%;
+   font-size: 3em;
+   animation: leftSlide2 6s;
 }
 
-.leftSlide2{
-    position: absolute;
-    width: 800px;
-    margin-top: none;
-    top: 33%; left: 10%;
-    font-size: 3em;
-    animation: leftSlide2 4s;
+.leftSlide2 {
+   position: absolute;
+   width: 800px;
+   margin-top: none;
+   top: 33%;
+   left: 10%;
+   font-size: 3em;
+   animation: leftSlide2 4s;
 }
 
-
-.rightSlide{
-    position: absolute;
-    width: 1000px;
-    margin-top: none;
-    top: 50%; right: 10%;
-    font-size: 3em;
-    animation: rightSlide2 3s;
+.rightSlide {
+   position: absolute;
+   width: 1000px;
+   margin-top: none;
+   top: 50%;
+   right: 10%;
+   font-size: 3em;
+   animation: rightSlide2 3s;
 }
 
-.rightSlide2{
-    position: absolute;
-    width: 1000px;
-    margin-top: none;
-    top: 50%; right: 10%;
-    font-size: 3em;
-    animation: rightSlide3 3s;
+.rightSlide2 {
+   position: absolute;
+   width: 1000px;
+   margin-top: none;
+   top: 50%;
+   right: 10%;
+   font-size: 3em;
+   animation: rightSlide3 3s;
 }
-
 
 
 
@@ -289,21 +375,19 @@ opacity: 1;
 
 
 /*********************************************** */
-
- 
-#slide1{
-   
-   width:25%;
-
+#slide1 {
+   width: 25%;
 }
 
-#img2{
-   
-   margin-left:10%
-   
-}
-#img1{
-   margin-left:10%;
+#img2 {
+   margin-left: 10%
 }
 
+#img1 {
+   margin-left: 10%;
+}
 
+#join_name{
+   
+   margin-top: 3%;
+}
