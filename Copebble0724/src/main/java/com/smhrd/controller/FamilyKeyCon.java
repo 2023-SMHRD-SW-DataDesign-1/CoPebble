@@ -29,25 +29,28 @@ public class FamilyKeyCon extends HttpServlet {
       String ID = info.getID();
       String PW = info.getPW();
       String NAME = info.getNAME();
+      
       session.setAttribute("FAMILY_KEY", FAMILY_KEY);
       
 
       System.out.println(ID);
       System.out.println(PW);
       System.out.println(NAME);
-      System.out.println(FAMILY_KEY);
+      System.out.println("패밀리콘 패밀리키 : "+ FAMILY_KEY);
 
       // 4. (MemberDTO에서의)family메소드 호출
 
       MemberDTO dto = new MemberDTO(ID, FAMILY_KEY, PW, NAME);
       MemberDAO dao = new MemberDAO();
-      int row = dao.familykey(dto);
+      int row = dao.insertfamilykey(FAMILY_KEY);
+      int row1 = dao.familykey(dto);
+      
 
       // 5. update 결과값에 따라 출력
 
    
 
-      if (row > 0) {
+      if (row1 > 0) {
 
          System.out.println("패밀리키 업데이트 성공");
 

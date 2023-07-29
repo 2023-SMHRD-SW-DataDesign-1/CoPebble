@@ -37,11 +37,22 @@ public class MemberDAO {
       return row;
    }
    
-   public int familykey(MemberDTO dto) { 
+   public int familykey(MemberDTO dto) { //로그인 후에 member 테이블에 넣는 용이라 update
        SqlSession session = sqlSessionFactory.openSession(true); 
-       int row = session.insert("familykey", dto); 
+       int row = session.update("familykey", dto); 
        session.close(); 
        return row; 
        } 
+   
+   public int insertfamilykey(String FAMILY_KEY) {  //family 테이블에 넣는 용 insert
+	   SqlSession session = sqlSessionFactory.openSession(true); 
+	   int row = session.insert("insertfamilykey", FAMILY_KEY); 
+	   session.close(); 
+	   return row; 
+   } 
 
 }
+
+
+
+

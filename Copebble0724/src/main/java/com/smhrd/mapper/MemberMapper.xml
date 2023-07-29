@@ -22,6 +22,10 @@
     where ID = #{ID, jdbcType=VARCHAR}
   </update>
   
+  <insert id="insertfamilykey" parameterType="String">
+  	insert into FAMILY(FAMILY_KEY) values(#{FAMILY_KEY})
+  </insert>
+  
   <update id="update" parameterType="MemberDTO">
    update MEMBER set PW=#{PW} where ID =#{ID}
   </update>
