@@ -24,34 +24,40 @@
 	<!--헤더-->
 
 	<header class="header_main mt-3 ">
-		<div style="width: 20%;"></div>
+		<div style="width: 300px;"></div>
 
-		<div style="width: 10%; min-width: 150px;">
-			<a href="Main.jsp"> <img class="header_logo"
-				src="./img/mainLogo.png" alt="">
-			</a>
-
-
-		</div>
-
-		<div style="width: 45%; min-width: 100px;">
-			<a href="DiaryMain.jsp" class="baby_diary"> <p1>육아 다이어리</p1>
+		<div style="width: 5%; min-width: 150px;">
+			<a href="Main.jsp"> <img class="header_logo" src="mainlogo.png"
+				alt="">
 			</a>
 		</div>
+		<div style="width: 20px;"></div>
+		<div style="min-width: 140px;">
+			<a href="DiaryMain.jsp" class="baby_diary">
+				<p>육아 다이어리</p>
+			</a>
+		</div>
 
-		<div style="width: 2%; min-width: 20px;">
-			<a href="mypage.html" class="header_icon_mypage"> <i
+		<div style="min-width: 140px;">
+			<a href="Household.jsp" class="baby_diary">
+				<p>집안일 관리</p>
+			</a>
+		</div>
+
+		<div style="width: 40%;"></div>
+
+		<div style="width: 70px;">
+			<a href="MyPage.jsp" class="header_icon_mypage"> <i
 				class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
 			</a>
 		</div>
-		<div style="width: 2%; min-width: 20px;">
+		<div style="width: 70px;">
 
-			<a href="#" class="header_icon_logout"> <i
+			<a href="LogoutCon" class="header_icon_logout"> <i
 				class="fa-solid fa-right-from-bracket"
 				style="font-size: 30px; color: #000000;"></i>
 			</a>
 		</div>
-		<div style="width: 21%;"></div>
 	</header>
 
 	<!-- 흰색 div -->
@@ -83,7 +89,7 @@
 				</div>
 			</div>
 			<div class="diary_write_memo_div">
-				<textarea name="DIARY" cols="60" rows="12" style="resize: none;">${Diary.DIARY}</textarea>
+				<textarea name="DIARY" cols="45" rows="6" style="resize: none;">${Diary.DIARY}</textarea>
 			</div>
 			<div id="diary_button">
 				<input hidden name="num" type="text" value="${param.num}">

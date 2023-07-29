@@ -69,7 +69,10 @@
     <!-- 흰색 div -->
 	<p></p>
     <div class="diary_write_top_div">
-               <button id="diary_Main_btn"><a href="./DiaryMain.jsp">&times;</a></button>
+    	<a href="./DiaryMain.jsp"><span id="diary_Main_btn_div">
+				 <img id="diaryClose" alt="" src="./img/diaryClose.png">
+		</span>
+				</a>
         <div class="diary_babyname_div">
             <p id="diary_babyname_p">김민국(만9세)</p>
         </div>
@@ -89,7 +92,7 @@
             </div>
             <input type="file" name="FILENAME" id="file_input">
             <div class="diary_write_memo_div">
-                <textarea name="DIARY" cols="45" rows="12" style="resize: none;"></textarea>
+                <textarea name="DIARY" cols="45" rows="6" style="resize: none;"></textarea>
             </div>
             <% String FAMILY_KEY = (String)session.getAttribute("FAMILY_KEY"); %>
             <input hidden type="text" name="FAMILY_KEY" value="<%= FAMILY_KEY%>">
