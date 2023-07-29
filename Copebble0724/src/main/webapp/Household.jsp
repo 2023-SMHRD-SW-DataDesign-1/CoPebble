@@ -6,36 +6,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- jquery 불러오기 -->
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    
-    <!-- 부트스트랩 태그 및 무료 아이콘 태그 모으는 곳 -->
-    <script src="https://kit.fontawesome.com/a34da1aa1b.js" crossorigin="anonymous"></script>
-    <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-	crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/MyPage.css" />
-    <link rel="stylesheet" href="./css/Household.css" />
-    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<!-- jquery 불러오기 -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+   integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+   crossorigin="anonymous"></script>
 
+<!-- 부트스트랩 태그 및 무료 아이콘 태그 모으는 곳 -->
+<script src="https://kit.fontawesome.com/a34da1aa1b.js"
+   crossorigin="anonymous"></script>
+<link
+   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+   rel="stylesheet"
+   integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+   crossorigin="anonymous">
+<link
+   href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
+   rel="stylesheet">
+<link rel="stylesheet" href="./css/main.css" />
+<link rel="stylesheet" href="./css/MyPage.css" />
+<link rel="stylesheet" href="./css/Household.css" />
 <style>
- * {
-            font-family: 'NanumSquareAcb';
-        }
-
+* {
+   font-family: 'NanumSquareAcb';
+}
 </style>
-
 </head>
 <body>
 
-   <!--헤더-->
-   <header class="header_main mt-3 ">
+  <!--헤더-->
+
+	<header class="header_main mt-3 ">
 		<div style="width: 300px;"></div>
 
 		<div style="width: 5%; min-width: 150px;">
@@ -71,84 +74,127 @@
 			</a>
 		</div>
 	</header>
-   
+
+
+   <c:set var="household_list" value="${HouseholdDAO.showHousehold()}"></c:set>
    <!-- 메인 -->
-    <main class="fullmain">       
-        <div class="TableTitleBox">
+   <main class="fullmain">
+      <div class="TableTitleBox">
+         <br>
+         <h2 style="text-align: center;">집안일 관리</h2>
+         <hr>
+         <br>
+         <div id="showBox">
             <br>
-            <h2 style="text-align: center; font-weight: bold;">가사일</h2>
-            <hr>
+            <h5>&nbsp;해야할 일들</h5>
+            
+         </div>
+
+         <div style="height: 2%;"></div>
+         <div id="addBox">
+            <!-- 추가 버튼 -->
+            
             <br>
-            <div class="button-container">
-                <button id="btn" class="modal1" onclick="showImage1()">방</button>       
-                <button id="btn" class="modal2" onclick="showImage2()">거 실</button>
-                <button id="btn" class="modal3" onclick="showImage3()">주 방</button>
-                <button id="btn" class="modal4" onclick="showImage4()">화장실</button>
-                <button id="btn" class="modal5" onclick="showImage5()">식재료</button>
-            </div>
-       
-            <div id="imageContainer">
-                <!-- 이미지가 보여질 영역 -->
-            </div>
-            <div class="mypage_textbox"></div><!-- 공백 -->
-        </div>
+            <h5>&nbsp;새로 해야할 일이 있나요?</h5>
+            <input type="text" id="myInput" id="newItem"
+               placeholder="   해야할 집안일을 적어주세요">
+            <button id="add_btn" onclick="addCheckbox()">추가</button>
+            <br>
+            <!-- 추가된 체크박스 -->
+            <input type="checkbox" name="defaultCheckbox" value="default">
+            <label>어디의 어떤 일을 누가 할까요?</label>
+         </div>
+         <button id="Delete_btn"
+            onclick="this.parentElement.parentElement.removeChild(this.parentElement)">삭제</button>
 
-        <!-- 가사일 -->
-        <div id="checkboxContainer">
-            <div id="eventWhose">
-                <!-- 내용 -->
-                &nbsp;&nbsp;&nbsp;장소 <br>
-                <input type="button" value="거실" onclick="insertValue(' 거실')">
-                <input type="button" value="주방" onclick="insertValue(' 주방')">
-                <input type="button" value="화장실" onclick="insertValue(' 화장실')">
-                <input type="button" value="방" onclick="insertValue(' 방')">
-                <input type="button" value="세탁기" onclick="insertValue(' 세탁기')">
-                <br><br>
-                &nbsp;&nbsp;&nbsp;하기 <br>
-                <input type="button" value="청소기 밀기" onclick="insertValue(' 청소기 밀기 ')">
-                <input type="button" value="빗자루질 하기" onclick="insertValue(' 빗자루질 하기 ')">
-                <input type="button" value="청소하기" onclick="insertValue(' 청소하기 ')">
-                <input type="button" value="걸레질 하기" onclick="insertValue(' 걸레질 하기 ')">
-                <input type="button" value="환기하기" onclick="insertValue(' 환기하기 ')">
-                <input type="button" value="빨래개서 넣기" onclick="insertValue(' 빨래개서 넣기 ')">
-                <input type="button" value="설거지 하기" onclick="insertValue(' 설거지 하기 ')">
-                <input type="button" value="분리수거 하기" onclick="insertValue(' 분리수거 하기 ')">
-                <input type="button" value="음쓰버리기" onclick="insertValue(' 음쓰버리기 ')">
-                <br><br>
-                &nbsp;&nbsp;&nbsp;누가 <br>
-                <input type="button" value="👩" onclick="insertValue(' 👩 ')">
-                <input type="button" value="🧑" onclick="insertValue(' 🧑 ')">
-                <br><br>     
-            </div>
+      </div>
 
-            <div id="addBox">
-                <!-- 추가 버튼 -->
-                <br>
-                <h3>&nbsp;작성</h3>
-                <input type="text" id="myInput" id="newItem">
-                <button id="addDelete" onclick="addCheckbox()">추가</button><br>
-                <!-- 추가된 체크박스 -->
-                <input type="checkbox" name="defaultCheckbox" value="default">
-                <label>어디의 어떤 일을 누가 할까요?</label>
-                <button id="addDelete" onclick="this.parentElement.parentElement.removeChild(this.parentElement)">삭제</button>
-            </div>
-        </div>
-    </main>
-    
-    <!-- 장소 별 모달창 -->
-    <div class="modal modalBack" id="modal1">
-        <span class="close-btn">&times;</span>
-        
-    </div>
-
-
-     
-   
-    
+      <!-- 가사일 -->
+      <div id="checkboxContainer">
+         <div id="eventWhose">
+            <!-- 내용 -->
+            &nbsp;&nbsp;&nbsp;어디의 <br> <input type="button" value="거실"
+               onclick="insertValue(' 거실')"> <input type="button"
+               value="주방" onclick="insertValue(' 주방')"> <input
+               type="button" value="화장실" onclick="insertValue(' 화장실')"> <input
+               type="button" value="방" onclick="insertValue(' 방')"> <input
+               type="button" value="세탁기" onclick="insertValue(' 세탁기')"> <input
+               type="button" value="베란다" onclick="insertValue(' 베란다')"> <br>
+            <br> &nbsp;&nbsp;&nbsp;뭘해야하나요? <br> <input type="button"
+               value="청소기 밀기" onclick="insertValue(' 청소기 밀기 ')"> <input
+               type="button" value="빗자루질 하기" onclick="insertValue(' 빗자루질 하기 ')">
+            <input type="button" value="청소하기" onclick="insertValue(' 청소하기 ')">
+            <input type="button" value="걸레질 하기"
+               onclick="insertValue(' 걸레질 하기 ')"> <input type="button"
+               value="환기하기" onclick="insertValue(' 환기하기 ')"> <input
+               type="button" value="빨래개서 넣기" onclick="insertValue(' 빨래개서 넣기 ')">
+            <input type="button" value="설거지 하기"
+               onclick="insertValue(' 설거지 하기 ')"> <input type="button"
+               value="분리수거 하기" onclick="insertValue(' 분리수거 하기 ')"> <input
+               type="button" value="음쓰버리기" onclick="insertValue(' 음쓰버리기 ')">
+            <br>
+            <br> &nbsp;&nbsp;&nbsp;누가 <br> <input type="button"
+               value="👩" onclick="insertValue(' 👩 ')"> <input
+               type="button" value="🧑" onclick="insertValue(' 🧑 ')"> <br>
+            <br> &nbsp;&nbsp;&nbsp;구분선 <br> <input type="button"
+               value="_" onclick="insertValue(' _ ')"> <input
+               type="button" value="/" onclick="insertValue(' / ')"> <br>
+            <br> &nbsp;&nbsp;&nbsp;언제까지하면 되나요? <br> <input
+               type="button" value="월" onclick="insertValue(' 월 ')"> <input
+               type="button" value="일" onclick="insertValue(' 일 ')"> <input
+               type="button" value="오전" onclick="insertValue(' 오전 ')"> <input
+               type="button" value="오후" onclick="insertValue(' 오후 ')"> <input
+               type="button" value="0" onclick="insertValue(' 0 ')"> <input
+               type="button" value="1" onclick="insertValue(' 1 ')"> <input
+               type="button" value="2" onclick="insertValue(' 2 ')"> <input
+               type="button" value="3" onclick="insertValue(' 3 ')"> <input
+               type="button" value="4" onclick="insertValue(' 4 ')"> <input
+               type="button" value="5" onclick="insertValue(' 5 ')"> <input
+               type="button" value="6" onclick="insertValue(' 6 ')"> <input
+               type="button" value="7" onclick="insertValue(' 7 ')"> <input
+               type="button" value="8" onclick="insertValue(' 8 ')"> <input
+               type="button" value="9" onclick="insertValue(' 9 ')"> <br>
+            <br>
+         </div>
 
 
+      </div>
+   </main>
 
-    <!-- 외부 자바스크립트 연결 -->
+   <!-- 집안일 보여주기 ajax -->
+   <script>
+   $(document).ready(function(){
+      $.ajax({
+         type: 'POST',
+         url : "HouseholdShowCon",
+         dataType : "json",
+          //여기까지 통신하고 Con으로 이동
+         success : function(response) {
+            console.log("집안일 조회 성공", response);
+                     for (i = 0; i < response.length; i++) {
+                        
+                        const Box = `
+                                    <div class="showWork">
+                                        <div>${response[i].WORK}</div>
+                                    </div>
+                                `;
+                        $('#household_List').append(showWork);
+                     }
+                  },
+         error : function(e) {
+            alert('집안일 조회 실패', error);
+         }
+      });
+            
+   </script>
+
+
+
+
+
+
+
+   <!-- 외부 자바스크립트 연결 -->
    <script src="./js/Household.js"></script>
 </body>
 </html>

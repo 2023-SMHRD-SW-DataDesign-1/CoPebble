@@ -11,6 +11,7 @@
 		<typeAlias type="com.smhrd.model.calendarDTO" alias="calendarDTO" />
 		<typeAlias type="com.smhrd.model.MemoDTO" alias="MemoDTO" />
 		<typeAlias type="com.smhrd.model.TodoDTO" alias="TodoDTO" />
+		<typeAlias type="com.smhrd.model.HouseholdDTO" alias="HouseholdDTO" />
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
