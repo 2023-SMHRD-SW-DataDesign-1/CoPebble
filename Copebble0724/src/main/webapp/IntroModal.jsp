@@ -47,7 +47,7 @@
       <div style="width: 300px;"></div>
 
       <div style="width: 5%; min-width: 150px;">
-         <a href="Main.jsp"> <img class="header_logo" src="0729logomain-01.png"
+         <a href="Main.jsp"> <img class="header_logo" src="./img/0729logomain-01.png"
             alt="">
          </a>
       </div>
@@ -59,7 +59,7 @@
       </div>
 
       <div style="min-width: 140px;">
-         <a href="Household" class="baby_diary">
+         <a href="Household.jsp" class="baby_diary">
             <p>집안일 관리</p>
          </a>
       </div>

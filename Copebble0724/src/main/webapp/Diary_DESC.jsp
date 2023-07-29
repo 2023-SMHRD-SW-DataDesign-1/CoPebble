@@ -36,7 +36,7 @@
 		<div style="width: 300px;"></div>
 
 		<div style="width: 5%; min-width: 150px;">
-			<a href="Main.jsp"> <img class="header_logo" src="mainlogo.png"
+			<a href="Main.jsp"> <img class="header_logo" src="./img/0729logomain-01.png"
 				alt="">
 			</a>
 		</div>
