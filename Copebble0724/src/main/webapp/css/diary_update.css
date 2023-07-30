@@ -15,27 +15,27 @@ header.header_main.mt-3 {
 }
 
 .diary_write_top_div {
-	display: flex;
-	flex-direction: column;
-	background-color: rgb(241, 241, 241);
-	width: 500px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 24px;
-	box-shadow: 2px 2px 2px var(--shadowColor);
-	border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(241, 241, 241);
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px;
+    box-shadow: 2px 2px 2px var(--shadowColor);
+    border-radius: 20px;
 }
 
 
 .diary_babyname_div {
-	width: 250px;
-	height: 20px;
-	padding-bottom: 24px;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: rgb(252, 233, 176);
-	border-radius: 20px;
-	box-shadow: 2px 2px 2px var(--shadowColor);
+    width: 250px;
+    height: 20px;
+    padding-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(252, 233, 176);
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px var(--shadowColor);
 }
 
 #diary_babyname_p {
@@ -119,23 +119,30 @@ button:hover {
 }
 
 #diary_modify_btn {
-	width: 150px;
-	height: 30px;
-	background-color: rgb(245, 149, 59);
-	border: 1px solid whitesmoke;
-	border-radius: 20%;
-	font-family: 'NanumSquareNeo-Variable';
-	font-weight: 600;
+ display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    background-color: rgb(245, 149, 59);
+    border: 1px solid whitesmoke;
+    border-radius: 20%;
+     font-family: 'NanumSquareNeo-Variable';
+    font-weight: 600;
 }
 
 #diary_Main_btn {
-	width: 150px;
-	height: 30px;
-	background-color: rgb(245, 149, 59);
-	border: 1px solid whitesmoke;
-	border-radius: 20%;
-	font-family: 'NanumSquareNeo-Variable';
-	font-weight: 600;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 30px;
+    background-color: rgb(245, 149, 59);
+    border: 1px solid whitesmoke;
+    border-radius: 20%;
+    font-weight: 600;
 }
 
 .diary_write_memo_div {

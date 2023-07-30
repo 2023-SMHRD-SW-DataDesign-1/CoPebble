@@ -1,6 +1,4 @@
-
-
- * {
+* {
             font-family: 'NanumSquareAcb';
         }
 
@@ -146,7 +144,6 @@ button:hover{
     background-color: rgb(245, 149, 59);
     border: 1px solid whitesmoke;
     border-radius: 20%;
-    font-family: 'NanumSquareNeo-Variable';
     font-weight: 600;
 
 }
@@ -184,7 +181,7 @@ button:hover{
 
 input[type=text] {
     width: 300px;
-    height: 20px;
+    height: 40px;
     padding-top: 12px;
     padding-bottom: 12px;
     margin-left: auto;

@@ -36,74 +36,75 @@
 </head>
 <body>
 
- <!--헤더-->
+   <!--헤더-->
 
-	<header class="header_main mt-3 ">
-		<div style="width: 300px;"></div>
+   <header class="header_main mt-3 ">
+      <div style="width: 300px;"></div>
 
-		<div style="width: 5%; min-width: 150px;">
-			<a href="Main.jsp"> <img class="header_logo" src="./img/0729logomain-01.png"
-				alt="">
-			</a>
-		</div>
-		<div style="width: 20px;"></div>
-		<div style="min-width: 140px;">
-			<a href="DiaryMain.jsp" class="baby_diary">
-				<p>육아 다이어리</p>
-			</a>
-		</div>
+      <div style="width: 5%; min-width: 150px;">
+         <a href="Main.jsp"> <img class="header_logo" src="./img/0729logomain-01.png"
+            alt="">
+         </a>
+      </div>
+      <div style="width: 20px;"></div>
+      <div style="min-width: 140px;">
+         <a href="DiaryMain.jsp" class="baby_diary">
+            <p>육아 다이어리</p>
+         </a>
+      </div>
 
-		<div style="min-width: 140px;">
-			<a href="Household.jsp" class="baby_diary">
-				<p>집안일 관리</p>
-			</a>
-		</div>
+      <div style="min-width: 140px;">
+         <a href="DiaryMain.jsp" class="baby_diary">
+            <p>집안일 관리</p>
+         </a>
+      </div>
 
-		<div style="width: 40%;"></div>
+      <div style="width: 40%;"></div>
 
-		<div style="width: 70px;">
-			<a href="MyPage.jsp" class="header_icon_mypage"> <i
-				class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
-			</a>
-		</div>
-		<div style="width: 70px;">
+      <div style="width: 70px;">
+         <a href="MyPage.jsp" class="header_icon_mypage"> <i
+            class="fa-solid fa-gear" style="font-size: 30px; color: #000000;"></i>
+         </a>
+      </div>
+      <div style="width: 70px;">
 
-			<a href="LogoutCon" class="header_icon_logout"> <i
-				class="fa-solid fa-right-from-bracket"
-				style="font-size: 30px; color: #000000;"></i>
-			</a>
-		</div>
-	</header>
+         <a href="LogoutCon" class="header_icon_logout"> <i
+            class="fa-solid fa-right-from-bracket"
+            style="font-size: 30px; color: #000000;"></i>
+         </a>
+      </div>
+   </header>
 
 
-   <c:set var="household_list" value="${HouseholdDAO.showHousehold()}"></c:set>
    <!-- 메인 -->
    <main class="fullmain">
-      <div class="TableTitleBox">
-         <br>
-         <h2 style="text-align: center;">집안일 관리</h2>
-         <hr>
-         <br>
-         <div id="showBox">
+      <!-- 배경 이미지 태그-이게 전체 배경이 될 예정 -->
+      
+      <img src="./img/household.png" class="householdimage"> <br>
+      <!-- 이거는 그 배경안에 내용물들을 하나로 묶어서 배경 안에 묶일 컨텐트 박스-->
+      <div class="todocontent">
+
+
+         <div id="householdBox">
             <br>
-            <h5>&nbsp;해야할 일들</h5>
-            
+            <h5>&nbsp;&nbsp;해야할 일들</h5>
+            <div id="household_list"></div><!-- 저장된 집안일 보여주는 곳 -->
          </div>
+
 
          <div style="height: 2%;"></div>
          <div id="addBox">
             <!-- 추가 버튼 -->
-            
             <br>
             <h5>&nbsp;새로 해야할 일이 있나요?</h5>
-            <input type="text" id="myInput" id="newItem"
-               placeholder="   해야할 집안일을 적어주세요">
+            <input type="text" id="myInput" id="newItem" placeholder="   해야할 집안일을 적어주세요">
             <button id="add_btn" onclick="addCheckbox()">추가</button>
             <br>
             <!-- 추가된 체크박스 -->
             <input type="checkbox" name="defaultCheckbox" value="default">
             <label>어디의 어떤 일을 누가 할까요?</label>
          </div>
+         
          <button id="Delete_btn"
             onclick="this.parentElement.parentElement.removeChild(this.parentElement)">삭제</button>
 
@@ -132,9 +133,8 @@
                onclick="insertValue(' 설거지 하기 ')"> <input type="button"
                value="분리수거 하기" onclick="insertValue(' 분리수거 하기 ')"> <input
                type="button" value="음쓰버리기" onclick="insertValue(' 음쓰버리기 ')">
-            <br>
-            <br> &nbsp;&nbsp;&nbsp;누가 <br> <input type="button"
-               value="👩" onclick="insertValue(' 👩 ')"> <input
+            <br> <br> &nbsp;&nbsp;&nbsp;누가 <br> <input
+               type="button" value="👩" onclick="insertValue(' 👩 ')"> <input
                type="button" value="🧑" onclick="insertValue(' 🧑 ')"> <br>
             <br> &nbsp;&nbsp;&nbsp;구분선 <br> <input type="button"
                value="_" onclick="insertValue(' _ ')"> <input
@@ -160,33 +160,36 @@
 
       </div>
    </main>
+   
+<script>
+// 저장된 집안일 보여주는 ajax *****************************************************
 
-   <!-- 집안일 보여주기 ajax -->
-   <script>
-   $(document).ready(function(){
-      $.ajax({
-         type: 'POST',
-         url : "HouseholdShowCon",
-         dataType : "json",
-          //여기까지 통신하고 Con으로 이동
-         success : function(response) {
-            console.log("집안일 조회 성공", response);
-                     for (i = 0; i < response.length; i++) {
-                        
-                        const Box = `
-                                    <div class="showWork">
-                                        <div>${response[i].WORK}</div>
-                                    </div>
-                                `;
-                        $('#household_List').append(showWork);
-                     }
-                  },
-         error : function(e) {
-            alert('집안일 조회 실패', error);
-         }
-      });
-            
-   </script>
+$(document).ready(function(){
+  $.ajax({
+     type: 'POST',
+     url : "HouseholdShowCon",
+     dataType : "json",
+     //여기까지 통신하고 Con으로 이동
+     
+     success : function(response) {
+        console.log("집안일 조회 성공", response);
+            for (i = 0; i < response.length; i++) {  
+               const showBox = `
+               <div class="showBox">
+                <span class="close-btn">&times;</span>
+                    <div>${response[i].WORK}</div>
+                </div>
+               `;
+              $('#household_list').append(showBox);
+                 }
+              },
+     error : function(e) {
+        alert('집안일 조회 실패', error);
+     }
+  });
+}
+</script>   
+
 
 
 

@@ -11,18 +11,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="./css/main.css">
 <link rel="stylesheet" href="./css/diary_update.css">
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
 <style>
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+ * {
+            font-family: 'NanumSquareAcb';
+        }
 
-* {
-	font-family: "Noto Sans KR", sans-serif;
-}
 </style>
 </head>
 
 <body>
-	<!--헤더-->
-
 	<header class="header_main mt-3 ">
 		<div style="width: 300px;"></div>
 
@@ -104,7 +102,7 @@
 	</div>
 
 </body>
-<script src="./js/diary_update.js"></script>
+<script src="./js/diaryUpdate.js"></script>
 <script>
 	
 </script>
