@@ -79,6 +79,7 @@ header.header_main.mt-3 {
     border-color: rgb(192, 192, 192);
     /* border-radius: 20px; */
     font-weight: 900;
+    font-family: 'NanumSquareAceb';
 }
 
 .diary_write_title_div {
@@ -86,6 +87,7 @@ header.header_main.mt-3 {
 	 margin-top:5px;
 	margin-left: auto;
 	margin-right: auto;
+	
 }
 
 .diary_write_memo_div {

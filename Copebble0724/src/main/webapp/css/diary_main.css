@@ -120,7 +120,7 @@ body{
     margin: 0px 12px;
 }
 .diary_date_div{
-    font-weight: bold;
+    font-weight: 600;
     padding: 12px;
     /* background-color: var(--thirdColor); */
     width: 160px;
@@ -128,7 +128,10 @@ body{
     border-top-right-radius: 16px;
     /* box-shadow: 2px 2px 2px var(--shadowColor); */
     margin-top: 36px;
+    font-family: 'NanumSquareAceb';
 }
+
+
 .diary_card_item_div{
     display: flex;
     /* background-color: var(--thirdColor); */
@@ -153,6 +156,7 @@ body{
 .diary_card_detail_title_div{
     margin-bottom: 12px;
     font-weight: 600;
+    font-family: 'NanumSquareAceb';
 }
 .diary_card_item_div img{
     width: 120px;

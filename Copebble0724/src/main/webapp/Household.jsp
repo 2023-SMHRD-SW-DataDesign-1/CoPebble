@@ -110,21 +110,24 @@
 
       </div>
 
-      <!-- 가사일 -->
+         <!-- 가사일 -->
       <div id="checkboxContainer">
          <div id="eventWhose">
             <!-- 내용 -->
-            &nbsp;&nbsp;&nbsp;어디의 <br> <input type="button" value="거실"
+            <span class="where" style="background-color: #b1e9ff73;">🏠집안일
+               구역 선택</span> <br> <input type="button" value="거실"
                onclick="insertValue(' 거실')"> <input type="button"
                value="주방" onclick="insertValue(' 주방')"> <input
                type="button" value="화장실" onclick="insertValue(' 화장실')"> <input
                type="button" value="방" onclick="insertValue(' 방')"> <input
                type="button" value="세탁기" onclick="insertValue(' 세탁기')"> <input
                type="button" value="베란다" onclick="insertValue(' 베란다')"> <br>
-            <br> &nbsp;&nbsp;&nbsp;뭘해야하나요? <br> <input type="button"
-               value="청소기 밀기" onclick="insertValue(' 청소기 밀기 ')"> <input
-               type="button" value="빗자루질 하기" onclick="insertValue(' 빗자루질 하기 ')">
-            <input type="button" value="청소하기" onclick="insertValue(' 청소하기 ')">
+            <br>
+            <span class=whattodo " style="background-color: #fff7076b;">🔎집안일
+               선택</span><br> <input type="button" value="청소기 밀기"
+               onclick="insertValue(' 청소기 밀기 ')"> <input type="button"
+               value="빗자루질 하기" onclick="insertValue(' 빗자루질 하기 ')"> <input
+               type="button" value="청소하기" onclick="insertValue(' 청소하기 ')">
             <input type="button" value="걸레질 하기"
                onclick="insertValue(' 걸레질 하기 ')"> <input type="button"
                value="환기하기" onclick="insertValue(' 환기하기 ')"> <input
@@ -133,13 +136,16 @@
                onclick="insertValue(' 설거지 하기 ')"> <input type="button"
                value="분리수거 하기" onclick="insertValue(' 분리수거 하기 ')"> <input
                type="button" value="음쓰버리기" onclick="insertValue(' 음쓰버리기 ')">
-            <br> <br> &nbsp;&nbsp;&nbsp;누가 <br> <input
-               type="button" value="👩" onclick="insertValue(' 👩 ')"> <input
-               type="button" value="🧑" onclick="insertValue(' 🧑 ')"> <br>
-            <br> &nbsp;&nbsp;&nbsp;구분선 <br> <input type="button"
-               value="_" onclick="insertValue(' _ ')"> <input
+            <br> <br>
+            <span class="who" style="background-color: #00ff1414;">✔담당자
+               선택</span> <br> <input type="button" value="👩"
+               onclick="insertValue(' 👩 ')"> <input type="button"
+               value="🧑" onclick="insertValue(' 🧑 ')"> <br> <br>
+            <span class="chooseline" style="background-color: #ff5e0029;">📏구분선 선택</span> <br> <input
+               type="button" value="_" onclick="insertValue(' _ ')"> <input
                type="button" value="/" onclick="insertValue(' / ')"> <br>
-            <br> &nbsp;&nbsp;&nbsp;언제까지하면 되나요? <br> <input
+            <br>
+            <span class="whenwedo" style="background-color: #e7b9ff52;">📆마감 기한 선택</span><br> <input
                type="button" value="월" onclick="insertValue(' 월 ')"> <input
                type="button" value="일" onclick="insertValue(' 일 ')"> <input
                type="button" value="오전" onclick="insertValue(' 오전 ')"> <input
@@ -159,6 +165,9 @@
 
 
       </div>
+      </div>
+   </main>
+   
    </main>
    
 <script>

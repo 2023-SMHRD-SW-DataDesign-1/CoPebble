@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
@@ -109,7 +110,16 @@
 							<img src="./img/${DIARY.FILENAME}" alt="아이이미지">
 							<div class="diary_card_detail_div">
 								<div class="diary_card_detail_title_div">${DIARY.TITLE}</div>
-								<div>${DIARY.DIARY}</div>
+								<div>
+                        <c:choose>
+                            <c:when test="${fn:length(DIARY.DIARY) > 104}">
+                                ${fn:substring(DIARY.DIARY, 0, 104)}.....더보기
+                            </c:when>
+                            <c:otherwise>
+                                ${DIARY.DIARY}
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
 							</div>
 						</div>
 					</div>
