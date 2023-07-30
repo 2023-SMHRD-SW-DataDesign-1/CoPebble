@@ -1,4 +1,6 @@
-* {
+
+
+ * {
             font-family: 'NanumSquareAcb';
         }
 
@@ -33,8 +35,9 @@ header.header_main.mt-3 {
 
 .diary_babyname_div {
     width: 250px;
-    height: 20px;
-    padding-bottom: 24px;
+    height: 30px;
+    padding-top: 10px;
+    padding-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(252, 233, 176);
@@ -46,12 +49,6 @@ header.header_main.mt-3 {
     text-align: center;
 }
 
-.diary_br_div {
-    margin-top: 15px;
-    border: 1px solid;
-    border-color: rgb(128, 128, 128);
-    border-bottom: 1px;
-}
 
 #diary_write_date_p {
     width: 200px;
@@ -107,19 +104,21 @@ button:hover{
 }
 
 #image_preview {
-    text-align: center;
+   text-align: center;
     margin-top: 50px;
-    margin-left: 120px;
-    width: 50%;
-    height: 100%;
-    max-width: 400px;
-    max-height: 400px;
-    display: block;
+    margin-right:auto;
+    margin-left:auto;
+    margin-bottom:20px;
+    width: 400px;
+    height: 300px;
     object-fit: contain;
+    border-radius: 60px;
 
 }
 
 .image_preview_div{
+	    margin-right:auto;
+    margin-left:auto;
 	display: flex;
     justify-content: center;
 }
@@ -144,6 +143,7 @@ button:hover{
     background-color: rgb(245, 149, 59);
     border: 1px solid whitesmoke;
     border-radius: 20%;
+    font-family: 'NanumSquareNeo-Variable';
     font-weight: 600;
 
 }
@@ -166,11 +166,6 @@ button:hover{
 	margin-right:auto;
 }
 
-#diaryClose{
-	width: 47px;
-	height: 50px;
-	margin-left: 400px;
-}
 
 #diary_button button:hover{
     cursor: pointer;
@@ -181,7 +176,7 @@ button:hover{
 
 input[type=text] {
     width: 300px;
-    height: 40px;
+    height: 35px;
     padding-top: 12px;
     padding-bottom: 12px;
     margin-left: auto;

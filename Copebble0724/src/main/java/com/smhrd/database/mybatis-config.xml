@@ -31,5 +31,6 @@
 		<mapper resource="com/smhrd/mapper/calendarMapper.xml" />
 		<mapper resource="com/smhrd/mapper/MemoMapper.xml" />
 		<mapper resource="com/smhrd/mapper/TodoMapper.xml" />
+		<mapper resource="com/smhrd/mapper/HouseholdMapper.xml" />
 	</mappers>
 </configuration>

@@ -36,6 +36,8 @@ button {
 	margin-right: 10px;
 }
 </style>
+</head>
+
 <header class="header_main mt-3 ">
 		<div style="width: 300px;"></div>
 
@@ -82,7 +84,7 @@ button {
 		<div class="diary_babyname_div">
 			<p id="diary_babyname_p">BABY DIARY</p>
 		</div>
-		<div class="diary_br_div"></div>
+		
 		<div class="diary_write_date_div">
 			<p id="diary_write_date_p">${Diary.ALLDATE.substring(0, 10)}</p>
 		</div>

@@ -21,6 +21,8 @@
 </head>
 
 <body>
+	<!--헤더-->
+
 	<header class="header_main mt-3 ">
 		<div style="width: 300px;"></div>
 
@@ -63,10 +65,10 @@
 
 	<c:set var="Diary" value="${DiaryDAO.showDiaryOne(param.num)}"></c:set>
 	<div class="diary_write_top_div">
+	<button id="diary_Main_btn"><a href="./DiaryMain.jsp"> <img alt="" src="./img/diaryClose.png"> </a></button>
 		<div class="diary_babyname_div">
 			<p id="diary_babyname_p">BABY DIARY</p>
 		</div>
-		<div class="diary_br_div"></div>
 		<div class="diary_write_date_div">
 			<p id="diary_write_date_p">${Diary.ALLDATE.substring(0, 10)}</p>
 		</div>
@@ -86,7 +88,7 @@
 				</div>
 			</div>
 			<div class="diary_write_memo_div">
-				<textarea name="DIARY" cols="45" rows="6" style="resize: none;">${Diary.DIARY}</textarea>
+				<textarea name="DIARY" cols="50" rows="7" style="resize: none;">${Diary.DIARY}</textarea>
 			</div>
 			<div id="diary_button">
 				<input hidden name="num" type="text" value="${param.num}">
@@ -95,7 +97,6 @@
 				<input hidden name="FAMILY_KEY" type="text" value="<%= FAMILY_KEY%>">
 				<button id="diary_modify_btn">수정하기</button>
 				</form>
-				<a href="./DiaryMain.jsp"><button id="diary_Main_btn">뒤로가기</button></a>
 			</div>
 
 		</div>

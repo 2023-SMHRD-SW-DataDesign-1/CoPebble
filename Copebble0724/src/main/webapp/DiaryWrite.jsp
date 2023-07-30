@@ -74,7 +74,6 @@
         <div class="diary_babyname_div">
             <p id="diary_babyname_p">BABY DIARY</p>
         </div>
-        <div class="diary_br_div"></div>
         <div class="diary_write_date_div">
             <p id="diary_write_date_p"></p>
         </div>

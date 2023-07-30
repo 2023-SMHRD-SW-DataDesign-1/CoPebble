@@ -27,3 +27,11 @@ function showPreviewImage() {
 
 var diary_modify_btn = document.getElementById("diary_modify_btn");
 diary_modify_btn.addEventListener("click", submitForm);
+
+var diary_Main_btn_div = document.getElementById("diary_Main_btn_div");
+diary_Main_btn_div.addEventListener("click", redirectToSpecificURL);
+
+function redirectToSpecificURL() {
+  // 특정 URL로 이동하도록 설정
+  location.href = "./DiaryMain.jsp"; // 여기에 원하는 URL을 입력하세요.
+}
