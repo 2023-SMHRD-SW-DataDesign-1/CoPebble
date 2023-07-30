@@ -5,7 +5,7 @@
 <mapper namespace="com.smhrd.mapper.MemberMapper">
 
   <insert id="join" parameterType="MemberDTO">
-      insert into MEMBER values(#{ID},'패밀리키',#{PW},#{NAME})
+      insert into MEMBER values(#{ID},'패밀리키를 등록해주세요',#{PW},#{NAME})
   </insert>
   
   <select id="login" parameterType="MemberDTO" resultType="MemberDTO">

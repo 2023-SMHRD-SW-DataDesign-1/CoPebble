@@ -5,7 +5,7 @@
 <mapper namespace="com.smhrd.mapper.DiaryMapper">
 	
 	<insert id="writeDiary" parameterType="DiaryDTO">
-		insert into INFANT_DIARY values(NUM_DIARY2.nextval,
+		insert into INFANT_DIARY values(NUM2.nextval,
 		#{FAMILY_KEY}, #{TITLE}, #{DIARY}, #{FILENAME},to_char(sysdate,'YYYY-MM-DD'))
 	</insert>
 

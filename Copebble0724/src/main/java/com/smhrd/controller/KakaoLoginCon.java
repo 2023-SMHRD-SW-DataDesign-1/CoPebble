@@ -41,6 +41,7 @@ public class KakaoLoginCon implements Command {
 		
 		
 		String user_id = new KakaoDAO().KakaoLoginCheck(new KakaoDTO(ID,NAME));
+		System.out.println("유저아이디: "+user_id);
 		int row = 0;
 		if(user_id == null) {
 			row = new KakaoDAO().KakaoLogin(new KakaoDTO(ID,NAME));
@@ -62,7 +63,7 @@ public class KakaoLoginCon implements Command {
 			System.out.println("로그인 실패");
 		}
 		
-		String PW = "카카오로그인회원입니다.";
+		String PW = "KAKAO";
 		 MemberDAO dao = new MemberDAO();
 	      MemberDTO info = dao.login(new MemberDTO(ID, PW));
 	      

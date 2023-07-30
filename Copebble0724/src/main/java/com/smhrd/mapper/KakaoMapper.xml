@@ -9,7 +9,7 @@
 	</select>
 	
 	<insert id="KakaoLogin" parameterType="KakaoDTO">
-		insert into MEMBER values(#{ID},' ','카카오',#{NAME})
+		insert into MEMBER values(#{ID},'패밀리키를 등록해주세요','KAKAO',#{NAME})
 	</insert>
 
 </mapper>

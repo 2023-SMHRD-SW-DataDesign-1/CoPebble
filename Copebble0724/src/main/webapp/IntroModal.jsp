@@ -170,13 +170,14 @@
        data: {
        property_keys: ["kakao_account.email","kakao_account.profile.nickname"]
           },success: function(res) {
+        	  console.log(res);
              var id = res.id;
             scope : 'profile_nickname, account_email';
-            alert('로그인성공');
        
             var param = {
             NAME : res.kakao_account.profile.nickname,
             ID : res.kakao_account.email,
+            accesstoken : authObj.access_token
             //user_id : id,  
           }
        

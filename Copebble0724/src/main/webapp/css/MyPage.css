@@ -133,14 +133,19 @@ input[class=pwChange] { /* 회원정보 수정 버튼 */
 
 
 #deleteMember { /* 모달창 안에 회원 삭제 버튼 */
-   font-weight: bold; color: #F6F4F4;
-   background-color: #DC6721;
-   text-align: center;
-   width: 200px; height: 40px; border-radius: 5px;
-   font-size: 15px; 
-   margin-top: none; margin-bottom: 15px;
-   border: none;
-   box-shadow: 1px 1px 1px 1px #c3c3c3;
+    font-weight: bold;
+    color: #F6F4F4;
+    background-color: #DC6721;
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-top: none;
+    margin-bottom: 15px;
+    border: none;
+    box-shadow: 1px 1px 1px 1px #c3c3c3;
+    padding: 10px;
 }
 
 #deleteMember:hover {
@@ -199,11 +204,11 @@ input[class=pwChange] { /* 회원정보 수정 버튼 */
     }
 
 .headerLogo { /*********************************************** 가입완료 모달창 안에 로고*/
-            background-image: url(../img/logo0729-01.png);
+            background-image: url(../img/0729logomain-01.png);
             background-repeat: no-repeat;
             background-position: center;
             background-size : cover;
-            height: 150px;
+            height: 200px;
         }
 
 
