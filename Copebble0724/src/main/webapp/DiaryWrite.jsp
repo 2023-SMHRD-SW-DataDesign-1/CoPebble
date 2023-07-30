@@ -83,7 +83,7 @@
         <div>
             <div class="diary_picture_div">
                 <div id="image_preview_div">
-                    <img id="image_preview" alt="미리보기 이미지" src="./img/사진아이콘.png">
+                    <img id="image_preview" alt="미리보기 이미지" src="./img/image.png">
                     <p></p>
                 </div>
             </div>
