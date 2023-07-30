@@ -50,6 +50,13 @@ public class MemberDAO {
 	   session.close(); 
 	   return row; 
    } 
+   
+   public String CheckFM(String FM) {
+	      SqlSession session = sqlSessionFactory.openSession(true);
+	      String check = session.selectOne("CheckFM", FM);
+	      session.close();
+	      return check;
+	   }
 
 }
 

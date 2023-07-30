@@ -12,6 +12,10 @@
       select * from MEMBER where ID=#{ID} and PW=#{PW}
   </select>
   
+  <select id="CheckFM" parameterType="String" resultType="String">
+      select FAMILY_KEY from FAMILY where FAMILY_KEY = #{FAMILY_KEY}
+  </select>
+  
   <update id="familykey" parameterType="MemberDTO">
     update MEMBER
     set

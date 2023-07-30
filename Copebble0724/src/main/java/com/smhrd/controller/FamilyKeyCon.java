@@ -18,57 +18,76 @@ public class FamilyKeyCon extends HttpServlet {
    protected void service(HttpServletRequest request, HttpServletResponse response)
          throws ServletException, IOException {
 
-      System.out.println("[Familykey]");
-      request.setCharacterEncoding("UTF-8");
+	   System.out.println("[Familykey]");
+		request.setCharacterEncoding("UTF-8");
 
-   
-      String FAMILY_KEY = request.getParameter("FAMILY_KEY");
-      HttpSession session = request.getSession();
-      MemberDTO info = (MemberDTO) session.getAttribute("info");
+		String FAMILY_KEY = request.getParameter("FAMILY_KEY");
+		HttpSession session = request.getSession();
+		MemberDTO info = (MemberDTO) session.getAttribute("info");
 
-      String ID = info.getID();
-      String PW = info.getPW();
-      String NAME = info.getNAME();
-      
-      session.setAttribute("FAMILY_KEY", FAMILY_KEY);
-      
+		String ID = info.getID();
+		String PW = info.getPW();
+		String NAME = info.getNAME();
 
-      System.out.println(ID);
-      System.out.println(PW);
-      System.out.println(NAME);
-      System.out.println("패밀리콘 패밀리키 : "+ FAMILY_KEY);
+		session.setAttribute("FAMILY_KEY", FAMILY_KEY);
 
-      // 4. (MemberDTO에서의)family메소드 호출
+		System.out.println(ID);
+		System.out.println(PW);
+		System.out.println(NAME);
+		System.out.println("패밀리콘 패밀리키 : " + FAMILY_KEY);
 
-      MemberDTO dto = new MemberDTO(ID, FAMILY_KEY, PW, NAME);
-      MemberDAO dao = new MemberDAO();
-      int row = dao.insertfamilykey(FAMILY_KEY);
-      int row1 = dao.familykey(dto);
-      
+		// 4. (MemberDTO에서의)family메소드 호출
 
-      // 5. update 결과값에 따라 출력
+		MemberDTO dto = new MemberDTO(ID, FAMILY_KEY, PW, NAME);
+		MemberDAO dao = new MemberDAO();
+		int row1 = 0;
+		String check = dao.CheckFM(FAMILY_KEY);
+		if (check == null) {
+			int row = dao.insertfamilykey(FAMILY_KEY);
+			row1 = dao.familykey(dto);
+			if (row1 > 0) {
+				
+				System.out.println("패밀리테이블 insert 성공");
+				System.out.println("패밀리키 업데이트 성공");
 
-   
+				response.sendRedirect("Main.jsp");
 
-      if (row1 > 0) {
+				// 수정 성공 시 session의 info도 업데이트
 
-         System.out.println("패밀리키 업데이트 성공");
+				request.getSession().setAttribute("info", dto);
 
-         response.sendRedirect("Main.jsp");
+			}
 
-         // 수정 성공 시 session의 info도 업데이트
+			else {
 
-         request.getSession().setAttribute("info", dto);
+				System.out.println("입력한 정보가 일치하지 않습니다");
 
-      }
+				response.sendRedirect("FamilyKey.jsp");
 
-      else {
+			}
 
-         System.out.println("입력한 정보가 일치하지 않습니다");
+		} else {
+			row1 = dao.familykey(dto);
+			if (row1 > 0) {
 
-         response.sendRedirect("FamilyKey.jsp");
+				System.out.println("패밀리키 업데이트 성공");
 
-      }
+				response.sendRedirect("Main.jsp");
+
+				// 수정 성공 시 session의 info도 업데이트
+
+				request.getSession().setAttribute("info", dto);
+
+			}
+
+			else {
+
+				System.out.println("입력한 정보가 일치하지 않습니다");
+
+				response.sendRedirect("FamilyKey.jsp");
+
+			}
+		}
 
    }
 }
