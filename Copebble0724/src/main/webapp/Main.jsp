@@ -150,11 +150,11 @@
 		<div class="form-group">
 			<label>색상 선택</label> <select id="eventColor">
 				<option value="" disabled selected>색상을 골라주세요</option>
-				<option value="#808080">회색</option>
-				<option value="#00FF00">초록색</option>
-				<option value="#50bcdf">하늘색</option>
-				<option value="#FFC0CB">분홍색</option>
-				<option value="#FFFF00">노란색</option>
+				<option value="#c8ffc3">녹색</option>
+				<option value="#c3e7ff">파란색</option>
+				<option value="#ffc3c3">분홍색</option>
+				<option value="#c6c3ff">보라색</option>
+				<option value="#fffb96">노란색</option>
 			</select>
 		</div>
 		<div class="btn-container">

@@ -67,7 +67,7 @@ public class todoDeleteCon extends HttpServlet {
 		} else {
 			System.out.println("가족알림장 삭제 실패");
 			ASSORT = "C";
-			String[] colors = { "#808080", "#00FF00", "#50bcdf", "#FFC0CB", "#FFFF00" };
+			String[] colors = { "#c8ffc3", "#c3e7ff", "#ffc3c3", "#c6c3ff", "#fffb96" };
 			int colorIndex = 0;
 
 			while (true) {
