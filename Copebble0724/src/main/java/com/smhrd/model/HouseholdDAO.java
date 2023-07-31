@@ -30,9 +30,9 @@ public class HouseholdDAO {
 
     
     // 집안일 삭제 메소드
-    public int deleteHousehold(int num) {
+    public int deleteHousehold(String Family_key) {
        SqlSession session = sqlSessionFactory.openSession(true);
-       int row = session.delete("deleteHousehold", num);
+       int row = session.delete("deleteHousehold", Family_key);
        session.close();
        return row;
     }
