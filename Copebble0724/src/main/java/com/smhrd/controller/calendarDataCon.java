@@ -31,7 +31,7 @@ public class calendarDataCon extends HttpServlet {
 		String FAMILY_KEY = (String) session.getAttribute("FAMILY_KEY");
 		System.out.println(FAMILY_KEY);
 
-		String ID = "캘린더";
+		String ID = "📃";
 
 		String FK = FAMILY_KEY;
 
