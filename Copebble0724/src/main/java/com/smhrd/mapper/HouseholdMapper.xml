@@ -14,7 +14,7 @@
 	</select>
 
 	<delete id="deleteHousehold">
-		DELETE from HOUSEHOLD where Family_key = #{FAMILY_KEY}
+		DELETE from HOUSEHOLD where (Family_key = #{FAMILY_KEY} and WORK = #{WORK})
 	</delete>
 
 

@@ -9,11 +9,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-<!-- jquery 불러오기 -->
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"
-	integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
-	crossorigin="anonymous"></script>
-
 <!-- 부트스트랩 태그 및 무료 아이콘 태그 모으는 곳 -->
 <script src="https://kit.fontawesome.com/a34da1aa1b.js"
 	crossorigin="anonymous"></script>
@@ -84,32 +79,19 @@
 		<!-- 이거는 그 배경안에 내용물들을 하나로 묶어서 배경 안에 묶일 컨텐트 박스-->
 		<div class="todocontent">
 
-
-			<div id="householdBox">
+			<div style="height: 2%;"></div>
+			<div id="addBox">
+				
 				<br>
-				<h5>&nbsp;&nbsp;해야할 일들</h5>
+				<h5>새로 해야할 일이 있나요?</h5>
+				<input type="text" id="myInput" id="newItem"
+					placeholder="   해야할 집안일을 적어주세요">
+				<button id="add_btn">추가</button>
+				<br>
+				<h5>해야할 일들</h5>
 				<div id="household_list"></div>
 				<!-- 저장된 집안일 보여주는 곳 -->
 			</div>
-
-
-			<div style="height: 2%;"></div>
-			<div id="addBox">
-				<!-- 추가 버튼 -->
-				<br>
-				<h5>&nbsp;새로 해야할 일이 있나요?</h5>
-				<input type="text" id="myInput" id="newItem"
-					placeholder="   해야할 집안일을 적어주세요">
-				<button id="add_btn" onclick="addCheckbox()">추가</button>
-				<br>
-				<!-- 추가된 체크박스 -->
-				<input type="checkbox" name="defaultCheckbox" value="default">
-				<label>어디의 어떤 일을 누가 할까요?</label>
-			</div>
-
-			<button id="Delete_btn"
-				onclick="this.parentElement.parentElement.removeChild(this.parentElement)">삭제</button>
-
 		</div>
 
 		<!-- 가사일 -->
@@ -171,6 +153,7 @@
 
 
 	<!-- 외부 자바스크립트 연결 -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="./js/Household.js"></script>
 </body>
 </html>
