@@ -83,19 +83,19 @@
 			<!-- 폼태그 시작 -->
 			<form action="DiaryUpdateCon.do" method="post"
 				enctype="multipart/form-data" id="DiaryUpdateForm">
-				<input type="text" name="TITLE" value="${Diary.TITLE}">
+				<input type="text" name="TITLE" value="${Diary.TITLE}" required>
 		</div>
 		<div>
 			<div class="diary_picture_div">
 				<div id="image_preview_div">
-					<img id="image_preview" alt="미리보기 이미지" src="./img/${Diary.FILENAME}">
+					<img id="image_preview" alt="미리보기 이미지" src="./img/${Diary.FILENAME}"> 
                     <p></p>
-						<input type="file" name="FILENAME" id="file_input">
+						<input type="file" name="FILENAME" id="file_input" required>
 					<p></p>
 				</div>
 			</div>
 			<div class="diary_write_memo_div">
-				<textarea name="DIARY" cols="50" rows="7" style="resize: none;">${Diary.DIARY}</textarea>
+				<textarea name="DIARY" cols="50" rows="7" style="resize: none;" required>${Diary.DIARY}</textarea>
 			</div>
 			<div id="diary_button">
 				<input hidden name="num" type="text" value="${param.num}">
