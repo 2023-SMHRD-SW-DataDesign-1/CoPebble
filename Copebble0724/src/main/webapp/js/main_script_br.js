@@ -47,7 +47,6 @@ $(document).on('click', '.delete_btn', function() {
 		dataType: 'text',
 		success: function(response) {
 			console.log('메모 삭제 성공', response);
-			$('#MemoList').html(response);
 		},
 		error: function(error) {
 			console.error('메모 삭제 실패', error);
