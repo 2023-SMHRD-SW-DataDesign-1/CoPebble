@@ -143,6 +143,7 @@
             <span class="close-btn">&times;</span>
             <div class="header_logo3"></div>
               <h1 id="join_name"></h1> <!------------------------------- ajax로 값 가져오기 -->
+            <br><br>
             <h2>WithDAY<br>가입을 축하드립니다.</h2>
             <a href="FamilyKey.jsp"> 
                <input type="submit" value="패밀리키 등록하기" id="goFamily">
