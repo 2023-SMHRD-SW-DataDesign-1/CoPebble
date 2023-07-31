@@ -23,6 +23,7 @@ $(document).ready(function() {
 
 			success: function(response) {
 				console.log("오라클 저장 완료");
+				 $('#myInput').val('');
 			},
 			error: function(e) {
 				console.log("오라클 저장 실패");
@@ -35,24 +36,24 @@ $(document).ready(function() {
 // 집안일 삭제 코드 *************************************
 $(document).on('click', '.Delete_btn', function() {
 	console.log("클릭");
-    var deleteItem = $(this).closest('.showBox');
-    var WORK = deleteItem.find('div:first-child').text().trim();
-    console.log(WORK);
-    $.ajax({
-        type: 'POST',
-        url: "HouseholdDeleteCon",
-        dataType: "text",
-        data: {
-            "WORK" : WORK
-        },
-        success: function(response) {
-            console.log("집안일 삭제 성공");
-            deleteItem.remove();
-        },
-        error: function(e) {
-           	console.error('집안일 삭제 실패', error);
-        }
-    });
+	var deleteItem = $(this).closest('.showBox');
+	var WORK = deleteItem.find('div:first-child').text().trim();
+	console.log(WORK);
+	$.ajax({
+		type: 'POST',
+		url: "HouseholdDeleteCon",
+		dataType: "text",
+		data: {
+			"WORK": WORK
+		},
+		success: function(response) {
+			console.log("집안일 삭제 성공");
+			deleteItem.remove();
+		},
+		error: function(e) {
+			console.error('집안일 삭제 실패', error);
+		}
+	});
 });
 
 // 저장된 집안일 보여주는 ajax *******************************************
@@ -79,4 +80,22 @@ $(document).ready(function() {
 			alert('집안일 조회 실패', error);
 		}
 	});
-}); 
+});
+
+
+// 버튼클릭시 집안일 텍스트창 *******************************************
+function insertValue(value) {
+    const myInput = document.getElementById('myInput');
+    myInput.value = myInput.value + value + ' '; 
+  }
+
+ 
+  const buttons = document.querySelectorAll('#checkboxContainer input[type="button"]');
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      const value = this.value;
+      insertValue(value);
+    });
+  });
+
+
