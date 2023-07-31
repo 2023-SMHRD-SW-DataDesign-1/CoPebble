@@ -85,7 +85,7 @@ a.deleteMember_btn:link { color: red; text-decoration: none;}
 a.deleteMember_btn:visited { color: black; text-decoration: none;}
 a.deleteMember_btn:hover { color: blue; text-decoration: underline;}
 
-a.goFamilykey:link { color: red; text-decoration: none;}
+a.goFamilykey:link { color: #DC6721; text-decoration: none;}
 a.goFamilykey:visited { color: black; text-decoration: none;}
 a.goFamilykey:hover { color: blue; text-decoration: underline;}
 
