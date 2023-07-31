@@ -88,7 +88,11 @@
 		<div>
 			<div class="diary_picture_div">
 				<div id="image_preview_div">
+<<<<<<< HEAD
 					<img id="image_preview" alt="미리보기 이미지" src="./img/${Diary.FILENAME}"> 
+=======
+					<img id="image_preview" alt="미리보기 이미지" src="./img/${Diary.FILENAME}" >
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble.git
                     <p></p>
 						<input type="file" name="FILENAME" id="file_input" required>
 					<p></p>
