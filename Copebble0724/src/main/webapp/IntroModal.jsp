@@ -91,13 +91,13 @@
 
       <div>
          <img src="./img/main_02.png" class="leftSlide" id="slide1"> <img
-            src="./img/re_computer4-01.png" class="rightSlide" id="slide2"
+            src="./img/1computer.png" class="rightSlide" id="slide2"
             style="width: 40%;">
       </div>
 
       <div>
          <img src="./img/3slide-01.png" class="leftSlide2" id="img3"
-            style="width: 650px;"> <img src="./img/re_computer4-01.png"
+            style="width: 650px;"> <img src="./img/2computer.png"
             class="rightSlide2" id="img4" style="width: 40%;">
       </div>
    </main>
@@ -170,7 +170,7 @@
        data: {
        property_keys: ["kakao_account.email","kakao_account.profile.nickname"]
           },success: function(res) {
-        	  console.log(res);
+             console.log(res);
              var id = res.id;
             scope : 'profile_nickname, account_email';
        
