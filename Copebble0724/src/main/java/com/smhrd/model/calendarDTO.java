@@ -12,10 +12,10 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 
 public class calendarDTO {
-	private int NUM;
-	private String FAMILY_KEY;
-	private String ASSORT;
-	private String WHO;
+	private String NUM;
+	@NonNull private String FAMILY_KEY;
+	@NonNull private String ASSORT;
+	@NonNull private String WHO;
 	@NonNull private String title;
 	@NonNull private String start;
 	@NonNull private String end;

@@ -11,9 +11,12 @@ import lombok.RequiredArgsConstructor;
 @NoArgsConstructor
 @RequiredArgsConstructor
 public class TodoDTO {
-	private int NUM;
+	private String num;
+	@NonNull
 	private String FAMILY_KEY;
+	@NonNull
 	private String ASSORT;
+	@NonNull
 	private String WHO;
 	@NonNull
 	private String title;

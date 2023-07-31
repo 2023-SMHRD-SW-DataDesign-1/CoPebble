@@ -20,9 +20,9 @@ public class TodoDAO {
 	}
 
 	// Todo 조회삭제
-	public int deleteTodo(TodoDTO dto) {
+	public int deleteTodo(String num) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int row = session.delete("deleteTodo", dto);
+		int row = session.delete("deleteTodo", num);
 		System.out.println("Todo 삭제 메소드");
 		session.close();
 		return row;

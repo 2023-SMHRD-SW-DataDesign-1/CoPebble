@@ -47,7 +47,7 @@ $(document).on('click', '.delete_btn', function() {
 		dataType: 'text',
 		success: function(response) {
 			console.log('메모 삭제 성공', response);
-			memoBox.remove();
+			$('#MemoList').html(response);
 		},
 		error: function(error) {
 			console.error('메모 삭제 실패', error);
@@ -65,8 +65,6 @@ $('#addMemoBtn').click(function() {
             alert("모두 입력해주세요.");
             return;
         }
-
-
 
 	const MemoList = `
             <div class="memo_box">
@@ -87,12 +85,13 @@ $('#addMemoBtn').click(function() {
 		dataType: 'text',
 		success: function(response) {
 			console.log('브리핑 DB 서버 응답 성공', response);
+			$('#MemoList').html(response);
 		},
 		error: function(error) {
 			console.error('브리핑 DB 서버 응답 실패', error);
 		}
 	});
-
+	location.reload();
 	$('#addEventPopup3').hide();
 	document.getElementById('eventMemo').value = '';
 	$('input[name=memoManager]').prop('checked', false);

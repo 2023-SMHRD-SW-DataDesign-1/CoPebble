@@ -5,7 +5,7 @@
 <mapper namespace="com.smhrd.mapper.DiaryMapper">
 
 	<insert id="updateCalendar" parameterType="calendarDTO">
-		insert into calendar VALUES(#{NUM},#{FAMILY_KEY},#{ASSORT},#{WHO},#{title},#{start},#{end},#{color})
+		insert into calendar VALUES(NUM2.nextval,#{FAMILY_KEY},#{ASSORT},#{WHO},#{title},#{start},#{end},#{color})
 	</insert>
 
     <select id="selectCalendar" resultType="calendarDTO">

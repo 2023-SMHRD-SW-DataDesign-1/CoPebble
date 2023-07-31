@@ -7,18 +7,15 @@
 
 
 	<insert id="insertTodo" parameterType="TodoDTO">
-		insert into calendar VALUES(#{NUM},#{FAMILY_KEY},#{ASSORT},#{WHO},#{title},#{start},#{end},#{color})
+		insert into calendar VALUES(NUM2.nextval,#{FAMILY_KEY},#{ASSORT},#{WHO},#{title},#{start},#{end},#{color})
 	</insert>
 
 	<select id="showTodo" resultType="TodoDTO">
-		select title, S_DATE AS "start", E_DATE AS "end", WHO from calendar where Family_key = #{FAMILY_KEY}
+		select num, title, S_DATE AS "start", E_DATE AS "end", WHO from calendar where Family_key = #{FAMILY_KEY}
 	</select>
 
 	<delete id="deleteTodo">
-		DELETE from calendar where (NUM = #{NUM} and
-		FAMILY_KEY = #{FAMILY_KEY} and
-		who = #{WHO} and title = #{title} and
-		S_DATE = #{start} and E_DATE = #{end} and color = #{color})
+		DELETE from calendar where NUM = #{NUM}
 	</delete>
 
 </mapper>

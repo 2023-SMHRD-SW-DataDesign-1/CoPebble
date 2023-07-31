@@ -43,39 +43,56 @@
 <body>
    <!--헤더-->
 
-  <header class="header_main mt-3 ">
-      <div style="width: 300px;"></div>
-
-      <div style="width: 5%; min-width: 150px;">
-         <a href="Main.jsp"> <img class="header_logo" src="./img/0729logomain-01.png"
-            alt="">
-         </a>
-      </div>
-      <div style="width: 20px;"></div>
-      <div style="min-width: 140px;">
-         <a href="DiaryMain.jsp" class="baby_diary">
-            <p>육아 다이어리</p>
-         </a>
-      </div>
-
-      <div style="min-width: 140px;">
-         <a href="Household.jsp" class="baby_diary">
-            <p>집안일 관리</p>
-         </a>
-      </div>
-
-      <div style="width: 40%;"></div>
-
-        <!-- 로그인 로고 -->
-        <div style="min-width: 70px;">
-           <button id="loginModal_btn">로그인</button>
-        </div>
-
-         <!-- 회원가입 로고 -->
-        <div style="min-width: 90px;">
-           <button id="joinModal_btn">회원가입</button>
-        </div>
-   </header>
+  <header class="header_main mt-3">
+    <div style="width: 300px;"></div>
+    <c:choose>
+        <c:when test="${info!=null}">
+            <div style="width: 5%; min-width: 150px;">
+                <a href="Main.jsp">
+                    <img class="header_logo" src="./img/0729logomain-01.png" alt="">
+                </a>
+            </div>
+            <div style="width: 20px;"></div>
+            <div style="min-width: 140px;">
+                <a href="DiaryMain.jsp" class="baby_diary">
+                    <p>육아 다이어리</p>
+                </a>
+            </div>
+            <div style="min-width: 140px;">
+                <a href="Household.jsp" class="baby_diary">
+                    <p>집안일 관리</p>
+                </a>
+            </div>
+        </c:when>
+        <c:otherwise>
+            <div style="width: 5%; min-width: 150px;">
+                <a href="#">
+                    <img class="header_logo" src="./img/0729logomain-01.png" alt="">
+                </a>
+            </div>
+            <div style="width: 20px;"></div>
+            <div style="min-width: 140px;">
+                <a href="#" class="baby_diary">
+                    <p>육아 다이어리</p>
+                </a>
+            </div>
+            <div style="min-width: 140px;">
+                <a href="#" class="baby_diary">
+                    <p>집안일 관리</p>
+                </a>
+            </div>
+        </c:otherwise>
+    </c:choose>
+    <div style="width: 40%;"></div>
+    <!-- 로그인 로고 -->
+    <div style="min-width: 70px;">
+        <button id="loginModal_btn">로그인</button>
+    </div>
+    <!-- 회원가입 로고 -->
+    <div style="min-width: 90px;">
+        <button id="joinModal_btn">회원가입</button>
+    </div>
+</header>
    
    
    <!--메인-->

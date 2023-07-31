@@ -32,11 +32,9 @@ public class calendarDataCon extends HttpServlet {
 		System.out.println(FAMILY_KEY);
 
 		String ID = "📃";
-
 		String FK = FAMILY_KEY;
-
 		String CAL = "C";
-		int num = 1;
+
 		try {
 			new calendarDAO().deleteCalendar(FK);
 			System.out.println("캘린더 초기화 완료!");
@@ -65,7 +63,7 @@ public class calendarDataCon extends HttpServlet {
 
 			System.out.println(title + " " + start + " " + end + " " + FK + " " + color);
 
-			int row = new calendarDAO().updateCalendar(new calendarDTO(num, FK, CAL, ID, title, start, end, color));
+			int row = new calendarDAO().updateCalendar(new calendarDTO(FK, CAL, ID, title, start, end, color));
 			if (row > 0) {
 				System.out.println("캘린더 업데이트 성공");
 			} else {

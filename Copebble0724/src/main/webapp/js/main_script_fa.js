@@ -14,35 +14,20 @@ $(document).ready(function() {
 			url: './todoSelectCon',
 			data: { lastTimestamp: lastTimestamp }, // 타임스탬프를 서버에 전송합니다.
 			dataType: 'json',
-			success: function(response) {
+			success: function(response) {				
 				console.log('알림장 조회 성공', response);
 				$('.todoList').empty(); // 기존 목록 삭제
 				for (let i = 0; i < response.length; i++) {
-					var startDate = new Date(response[i].start);
-					var endDate = new Date(response[i].end);
+					
+					const startDate = new Date(response[i].start);
+					const endDate = new Date(response[i].end);
+					const startMonth = String(startDate.getMonth() + 1).padStart(2, '0');
+					const startDay = String(startDate.getDate()).padStart(2, '0');
 
-					var startMonth = String(startDate.getMonth() + 1).padStart(2, '0');
-					var startDay = String(startDate.getDate()).padStart(2, '0');
+					const endMonth = String(endDate.getMonth() + 1).padStart(2, '0');
+					const endDay = String(endDate.getDate() - 1).padStart(2, '0');
 
-					var endMonth = String(endDate.getMonth() + 1).padStart(2, '0');
-					var endDay = String(endDate.getDate() - 1).padStart(2, '0');
-					var endMonth2 = endMonth;
-					var formattedStart = `${startMonth}-${startDay}`;
-					console.log(endDay);
-					if (endDay === 00) {
-						endMonth2 = endMonth2 - 1;
-						if (endMonth < 0) {
-							endMonth2 = 11; 
-							endYear -= 1;
-							console.log(endDay);
-						}
-						
-						// 이전 달의 마지막 날짜를 계산합니다.
-						endMonth2 = new Date(endMonth2 + 1, 0);
-						endDay = endMonth2.getDate();
-						console.log(endDay);
-					}
-
+					const formattedStart = `${startMonth}-${startDay}`;
 					const formattedEnd = `${endMonth}-${endDay}`;
 
 					const todoItem = `
@@ -51,7 +36,7 @@ $(document).ready(function() {
             <div>${response[i].title}</div>
             <div>${formattedStart}</div> ~
             <div>${formattedEnd}</div>
-            <button class="Todo_delete_btn">&times;</button>
+            <button class="Todo_delete_btn" data-num="${response[i].num}">&times;</button>
           </div>
         `;
 					$('.todoList').append(todoItem); // 새로운 목록 추가
@@ -64,10 +49,8 @@ $(document).ready(function() {
 	}
 
 
-
 	// 페이지가 로드될 때 할 일 목록을 서버에서 가져와 화면에 보여줌
 	loadTodoList();
-
 
 	setInterval(function() {
 		const lastTimestamp = $('.todoList').find('.memo_box:last-child div:eq(3)').text().trim();
@@ -129,16 +112,13 @@ $(document).ready(function() {
 	// 삭제 버튼 클릭 이벤트 처리
 	$(document).on('click', '.Todo_delete_btn', function() {
 		const listItem = $(this).closest('.todo_box');
-		const name = listItem.find('div').eq(0).text().trim();
-		const title = listItem.find('div').eq(1).text().trim();
-		const start = listItem.find('div').eq(2).text().trim();
-		const end = listItem.find('div').eq(3).text().trim();
-
+		const num = $(this).data('num'); 
+		console.log(num);
 		// 서버에 해당 리스트의 정보를 삭제 요청합니다.
 		$.ajax({
 			type: 'POST',
 			url: './todoDeleteCon',
-			data: { "name": name, "title": title, 'start': start, 'end': end },
+			data: { 'num': num },
 			dataType: 'text',
 			success: function(response) {
 				console.log('가족알림장 데이터 삭제 성공!!!');

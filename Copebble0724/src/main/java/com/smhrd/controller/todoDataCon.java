@@ -46,7 +46,6 @@ public class todoDataCon extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		int num = 1;
 
 		HttpSession session = request.getSession();
 		String FAMILY_KEY = (String) session.getAttribute("FAMILY_KEY");
@@ -57,7 +56,7 @@ public class todoDataCon extends HttpServlet {
 		String color = "0000";
 
 		int row = new TodoDAO().writeTodo(
-				new TodoDTO(num, FK, ASSORT, eventTodoManager, eventTodoTitle, eventTodoStart, eventTodoEnd, color));
+				new TodoDTO(FK, ASSORT, eventTodoManager, eventTodoTitle, eventTodoStart, eventTodoEnd, color));
 		if (row > 0) {
 			System.out.println("가족알림장 저장 성공");
 		} else {
