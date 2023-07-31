@@ -18,17 +18,31 @@ $(document).ready(function() {
 				console.log('알림장 조회 성공', response);
 				$('.todoList').empty(); // 기존 목록 삭제
 				for (let i = 0; i < response.length; i++) {
-					const startDate = new Date(response[i].start);
-					const endDate = new Date(response[i].end);
+					var startDate = new Date(response[i].start);
+					var endDate = new Date(response[i].end);
 
-					const startMonth = String(startDate.getMonth() + 1).padStart(2, '0');
-					const startDay = String(startDate.getDate()).padStart(2, '0');
+					var startMonth = String(startDate.getMonth() + 1).padStart(2, '0');
+					var startDay = String(startDate.getDate()).padStart(2, '0');
 
-					const endMonth = String(endDate.getMonth() + 1).padStart(2, '0');
-					// 수정본 -1 추가
-					const endDay = String(endDate.getDate() - 1).padStart(2, '0');
+					var endMonth = String(endDate.getMonth() + 1).padStart(2, '0');
+					var endDay = String(endDate.getDate() - 1).padStart(2, '0');
+					var endMonth2 = endMonth;
+					var formattedStart = `${startMonth}-${startDay}`;
+					console.log(endDay);
+					if (endDay === 00) {
+						endMonth2 = endMonth2 - 1;
+						if (endMonth < 0) {
+							endMonth2 = 11; 
+							endYear -= 1;
+							console.log(endDay);
+						}
+						
+						// 이전 달의 마지막 날짜를 계산합니다.
+						endMonth2 = new Date(endMonth2 + 1, 0);
+						endDay = endMonth2.getDate();
+						console.log(endDay);
+					}
 
-					const formattedStart = `${startMonth}-${startDay}`;
 					const formattedEnd = `${endMonth}-${endDay}`;
 
 					const todoItem = `
@@ -74,10 +88,10 @@ $(document).ready(function() {
 
 
 		// 유효성 검사 수행
-        if (title.trim() === "" || start === "" || end === "" || manager === "") {
-            alert("모두 입력해주세요.");
-            return;
-        }
+		if (title.trim() === "" || start === "" || end === "" || manager === "") {
+			alert("모두 입력해주세요.");
+			return;
+		}
 
 
 		// AJAX를 사용하여 데이터 서버에 보내기
@@ -129,7 +143,7 @@ $(document).ready(function() {
 			success: function(response) {
 				console.log('가족알림장 데이터 삭제 성공!!!');
 				listItem.remove();
-				
+
 				setTimeout(function() {
 					location.reload();
 				}, 500);
