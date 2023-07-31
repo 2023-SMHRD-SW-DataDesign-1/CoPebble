@@ -16,6 +16,7 @@ $(document).ready(function() {
 			dataType: 'json',
 			success: function(response) {				
 				console.log('알림장 조회 성공', response);
+				console.log(response.start);
 				$('.todoList').empty(); // 기존 목록 삭제
 				for (let i = 0; i < response.length; i++) {
 					
