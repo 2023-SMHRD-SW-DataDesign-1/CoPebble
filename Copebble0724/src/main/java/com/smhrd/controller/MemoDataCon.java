@@ -20,7 +20,6 @@ public class MemoDataCon extends HttpServlet {
         // 자바스크립트에서 전송한 데이터를 받아옵니다.
         String MemoManager = request.getParameter("manager");
         String MemoTitle = request.getParameter("title");
-        String num = "1";
         // 받아온 데이터를 출력합니다.
         System.out.println("MemoManager: " + MemoManager);
         System.out.println("MemoTitle: " + MemoTitle);
@@ -30,7 +29,7 @@ public class MemoDataCon extends HttpServlet {
 		System.out.println(FAMILY_KEY);
 		String FK = FAMILY_KEY;
 
-		int row = new MemoDAO().writeMemo(new MemoDTO(num,FK,MemoManager,MemoTitle));
+		int row = new MemoDAO().writeMemo(new MemoDTO(FK,MemoManager,MemoTitle));
 		 if(row>0) {
 	    	  System.out.println("부부 브리핑 저장 성공");
 	      }else {

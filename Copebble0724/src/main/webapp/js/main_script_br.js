@@ -15,12 +15,12 @@ $(document).ready(function() {
 			console.log('메모 조회 성공', response);
 			for (i = 0; i < response.length; i++) {
 				const memoBox = `
-                        <div class="memo_box">
-                            <div>${response[i].WRITER}</div>
-                            <div>${response[i].B_CONTENT}</div>
-                            <button class="delete_btn">&times;</button>
-                        </div>
-                    `;
+                    <div class="memo_box">
+                        <div>${response[i].WRITER}</div>
+                        <div>${response[i].B_CONTENT}</div>
+                        <button class="delete_btn" data-num="${response[i].num}">&times;</button>
+                    </div>
+                `;
 				$('#MemoList').append(memoBox);
 			}
 		},
@@ -34,13 +34,15 @@ $(document).on('click', '.delete_btn', function() {
 	const memoBox = $(this).parent('.memo_box');
 	const manager = memoBox.find('div').eq(0).text();
 	const title = memoBox.find('div').eq(1).text();
+	const num = $(this).data('num'); 
 
 	$.ajax({
 		type: 'POST',
 		url: './MemodeleteCon',
 		data: {
 			"manager": manager,
-			"title": title
+			"title": title,
+			"num": num
 		},
 		dataType: 'text',
 		success: function(response) {

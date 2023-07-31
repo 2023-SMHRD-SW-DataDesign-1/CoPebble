@@ -21,9 +21,10 @@ public class MemodeleteCon extends HttpServlet {
 		System.out.println("메모 삭제하는 곳");
 		String MemoManager = request.getParameter("manager");
 		String MemoTitle = request.getParameter("title");
-		String num = "1";
+		String num = request.getParameter("num");
 		System.out.println("MemoManager: " + MemoManager);
 		System.out.println("MemoTitle: " + MemoTitle);
+		System.out.println("num: " + num);
 		
         HttpSession session = request.getSession();
 	    String FAMILY_KEY = (String) session.getAttribute("FAMILY_KEY");

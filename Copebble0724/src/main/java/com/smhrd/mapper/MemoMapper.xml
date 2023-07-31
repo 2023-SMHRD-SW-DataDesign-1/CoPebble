@@ -6,7 +6,7 @@
 <mapper namespace="com.smhrd.mapper.MemoMapper">
 
 	<insert id="insertMemo" parameterType="MemoDTO">
-		insert into brefing values(#{num}, #{FAMILY_KEY}, #{WRITER}, #{B_CONTENT})
+		insert into brefing values(NUM2.nextval, #{FAMILY_KEY}, #{WRITER}, #{B_CONTENT})
 	</insert>
 
 	<select id="showMemo" resultType="MemoDTO">
