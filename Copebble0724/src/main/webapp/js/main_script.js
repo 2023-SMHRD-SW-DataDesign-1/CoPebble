@@ -140,7 +140,14 @@ document.addEventListener('DOMContentLoaded', function() {
 		var eventStart = document.getElementById('eventStart').value;
 		var eventEnd = document.getElementById('eventEnd').value;
 		var eventColor = document.getElementById('eventColor').value;
-
+	
+        // 유효성 검사 수행
+        if (eventTitle.trim() === "" || eventStart === "" || eventEnd === "" || eventColor === "") {
+            alert("모두 입력해주세요.");
+            return;
+        }
+		
+		
 		// 필수 입력 필드 확인
 		if (eventTitle && eventStart && eventEnd && eventColor) {
 			// end +1 추가

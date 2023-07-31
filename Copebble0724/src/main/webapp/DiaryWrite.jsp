@@ -73,13 +73,14 @@
 				
         <div class="diary_babyname_div">
             <p id="diary_babyname_p">BABY DIARY</p>
+            </div>
+    <div class="diary_write_date_div">
+        <p id="diary_write_date_p"></p>
+    </div>
+    <form action="DiaryWriteCon.do" method="post" enctype="multipart/form-data" id="DiaryForm" onsubmit="return validateForm()">
+        <div class="diary_write_title_div">
+            <input type="text" name="TITLE" placeholder="제목을 입력해주세요" required>
         </div>
-        <div class="diary_write_date_div">
-            <p id="diary_write_date_p"></p>
-        </div>
-    <form action="DiaryWriteCon.do" method="post"
-			enctype="multipart/form-data" id="DiaryForm">
-        <div class="diary_write_title_div"><input type="text" name="TITLE" placeholder="제목을 입력해주세요"></div>
         <div>
             <div class="diary_picture_div">
                 <div id="image_preview_div">
@@ -87,17 +88,18 @@
                     <p></p>
                 </div>
             </div>
-            <input type="file" name="FILENAME" id="file_input">
+            <input type="file" name="FILENAME" id="file_input" required>
             <div class="diary_write_memo_div">
-                <textarea name="DIARY" cols="45" rows="6" style="resize: none;"></textarea>
+                <textarea name="DIARY" cols="45" rows="6" style="resize: none;" required></textarea>
             </div>
             <% String FAMILY_KEY = (String)session.getAttribute("FAMILY_KEY"); %>
             <input hidden type="text" name="FAMILY_KEY" value="<%= FAMILY_KEY%>">
             <div id="diary_button">
             </div>
-                <button id="diary_upload_btn">등록</button></form>
+            <button id="diary_upload_btn">등록</button>
         </div>
-    </div>
+    </form>
+</div>
 </body>
 <script src="./js/diaryWrite.js"></script>
 

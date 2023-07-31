@@ -72,6 +72,14 @@ $(document).ready(function() {
 		const end = $('#eventTodoEnd').val();
 		const manager = $('input[name=Manager]:checked').val();
 
+
+		// 유효성 검사 수행
+        if (title.trim() === "" || start === "" || end === "" || manager === "") {
+            alert("모두 입력해주세요.");
+            return;
+        }
+
+
 		// AJAX를 사용하여 데이터 서버에 보내기
 		$.ajax({
 			type: 'POST',

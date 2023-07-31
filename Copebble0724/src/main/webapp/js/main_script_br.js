@@ -57,6 +57,15 @@ $('#addMemoBtn').click(function() {
 	const eventMemoTitle = $('#eventMemo').val();
 	const eventMemoManager = $('input[name=memoManager]:checked').val();
 
+
+			// 유효성 검사 수행
+        if (eventMemoTitle.trim() === "" || eventMemoManager === "") {
+            alert("모두 입력해주세요.");
+            return;
+        }
+
+
+
 	const MemoList = `
             <div class="memo_box">
                 <div>${eventMemoManager}</div>

@@ -32,7 +32,6 @@
 
 <body>
 	<!-- 세션에 저장된 info불러오기 -->
-	<c:set var="info" value="${sessionScope.info}" />
 	<!--헤더-->
 
 	<header class="header_main mt-3 ">
@@ -137,15 +136,15 @@
 		<h2>일정 추가</h2>
 		<div class="form-group">
 			<label for="eventTitle">일정 제목</label> <input type="text"
-				id="eventTitle" placeholder="일정 제목을 입력하세요">
+				id="eventTitle" placeholder="일정 제목을 입력하세요" required>
 		</div>
 		<div class="form-group">
 			<label for="eventStart">시작일</label> <input class="date_input"
-				type="date" id="eventStart" placeholder="날짜를 입력하세요">
+				type="date" id="eventStart" placeholder="날짜를 입력하세요" required>
 		</div>
 		<div class="form-group">
 			<label for="eventEnd">종료일</label> <input class="date_input"
-				type="date" id="eventEnd" placeholder="날짜를 입력하세요">
+				type="date" id="eventEnd" placeholder="날짜를 입력하세요" required>
 		</div>
 		<div class="form-group">
 			<label>색상 선택</label> <select id="eventColor">
@@ -179,15 +178,15 @@
 		<h2>✏가족알림장✏</h2>
 		<div class="form-group">
 			<label for="eventTodoTitle">내용</label> <input type="text"
-				id="eventTodoTitle" placeholder="내용을 입력하세요">
+				id="eventTodoTitle" placeholder="내용을 입력하세요" required>
 		</div>
 		<div class="form-group">
 			<label for="eventTodoStart">시작일</label> <input class="date_input"
-				type="date" id="eventTodoStart" placeholder="날짜를 입력하세요">
+				type="date" id="eventTodoStart" placeholder="날짜를 입력하세요" required>
 		</div>
 		<div class="form-group">
 			<label for="eventTodoEnd">종료일</label> <input class="date_input"
-				type="date" id="eventTodoEnd" placeholder="날짜를 입력하세요">
+				type="date" id="eventTodoEnd" placeholder="날짜를 입력하세요" required>
 		</div>
 		<div class="form-group">
 			<label for="eventManager"></label> <label><input type="radio"
@@ -204,7 +203,7 @@
 		<h2>부부브리핑</h2>
 		<div class="form-group">
 			<label for="eventMemoTitle">내용</label> <input type="text"
-				id="eventMemo" placeholder="내용을 입력하세요">
+				id="eventMemo" placeholder="내용을 입력하세요" required>
 		</div>
 		<div class="form-group">
 			<label for="eventManager"></label> <label><input type="radio"
