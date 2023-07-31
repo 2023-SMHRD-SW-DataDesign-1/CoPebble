@@ -142,8 +142,7 @@ button:hover {
     height: 30px;
     background-color: rgb(245, 149, 59);
     border: 1px solid whitesmoke;
-    border-radius: 20%;
-     font-family: 'NanumSquareNeo-Variable';
+    border-radius: 20px;
     font-weight: 600;
 }
 

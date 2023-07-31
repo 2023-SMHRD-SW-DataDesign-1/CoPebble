@@ -102,7 +102,7 @@
 				<% String FAMILY_KEY = (String)session.getAttribute("FAMILY_KEY"); %>
             <input hidden type="text" name="FAMILY_KEY" value="<%= FAMILY_KEY%>">
 				<input hidden name="FAMILY_KEY" type="text" value="<%= FAMILY_KEY%>">
-				<button id="diary_modify_btn">수정하기</button>
+				<button id="diary_modify_btn">저장</button>
 				</form>
 			</div>
 
