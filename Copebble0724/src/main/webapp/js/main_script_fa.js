@@ -12,14 +12,19 @@ $(document).ready(function() {
 		$.ajax({
 			type: 'POST',
 			url: './todoSelectCon',
+			async:false,
 			data: { lastTimestamp: lastTimestamp }, // 타임스탬프를 서버에 전송합니다.
 			dataType: 'json',
-			success: function(response) {				
+			success: function(response) {
 				console.log('알림장 조회 성공', response);
 				console.log(response.start);
 				$('.todoList').empty(); // 기존 목록 삭제
+
+				// 고유 식별자를 기준으로 response 배열을 정렬합니다 (예: 타임스탬프나 ID를 사용)
+				response.sort((a, b) => a.timestampOrId - b.timestampOrId);
+
 				for (let i = 0; i < response.length; i++) {
-					
+
 					const startDate = new Date(response[i].start);
 					const endDate = new Date(response[i].end);
 					const startMonth = String(startDate.getMonth() + 1).padStart(2, '0');
@@ -84,6 +89,7 @@ $(document).ready(function() {
 			url: './todoDataCon',
 			data: { "title": title, 'start': start, 'end': end, 'manager': manager },
 			dataType: 'text',
+			async:false,
 			success: function(response) {
 
 			},
@@ -94,18 +100,6 @@ $(document).ready(function() {
 
 		loadTodoList()
 
-		// To-do 리스트에 새로운 항목 추가 using jQuery
-		const todoItem = `
-      <div class="todo_box">
-        <div>${manager}</div>
-        <div>${title}</div>
-        <div>${start}</div> ~
-        <div>${end}</div>
-        <button class="Todo_delete_btn">&times;</button>
-      </div>
-    `;
-		$('.todoList').append(todoItem);
-
 		// 일정 추가 창 닫기 및 입력 필드 초기화
 		hideAddEventPopup();
 	});
@@ -113,7 +107,7 @@ $(document).ready(function() {
 	// 삭제 버튼 클릭 이벤트 처리
 	$(document).on('click', '.Todo_delete_btn', function() {
 		const listItem = $(this).closest('.todo_box');
-		const num = $(this).data('num'); 
+		const num = $(this).data('num');
 		console.log(num);
 		// 서버에 해당 리스트의 정보를 삭제 요청합니다.
 		$.ajax({
@@ -127,7 +121,7 @@ $(document).ready(function() {
 
 				setTimeout(function() {
 					location.reload();
-				}, 500);
+				}, 1000);
 			},
 			error: function(xhr, status, error) {
 				console.error('가족알림장 데이터 삭제 실패', error);
