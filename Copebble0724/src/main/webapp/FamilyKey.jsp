@@ -112,7 +112,7 @@
 
 
                   <input type="text" class="form-control" id="FAMILY_KEY2"
-                     name="FAMILY_KEY" placeholder="패밀리키를 등록해주세요">
+                     name="FAMILY_KEY" placeholder="패밀리키를 등록해주세요" required>
 
                   <button type="submit" id="familykey_submit"
                      class="btn btn-success">패밀리키 등록</button>

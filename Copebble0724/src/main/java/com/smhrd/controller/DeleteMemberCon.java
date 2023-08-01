@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.MemberDAO;
 
@@ -32,6 +33,11 @@ public class DeleteMemberCon extends HttpServlet {
       // 5. 페이지 이동
       response.setCharacterEncoding("UTF-8");
       response.getWriter().print("row :"+row + " (0이면 통신실패, 1이면 변경성공)");
+      
+      HttpSession session = request.getSession();
+      System.out.println("삭제 전 :"+session.getAttribute("info"));
+      session.removeAttribute("info"); // 세션삭제
+      System.out.println("삭제 후: "+session.getAttribute("info"));
       
       response.sendRedirect("./IntroModal.jsp");
       
