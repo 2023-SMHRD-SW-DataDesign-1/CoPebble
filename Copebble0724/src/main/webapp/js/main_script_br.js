@@ -45,9 +45,10 @@ $(document).on('click', '.delete_btn', function() {
 			"num": num
 		},
 		dataType: 'text',
+		async:false,
 		success: function(response) {
 			console.log('메모 삭제 성공', response);
-			 location.reload();
+			memoBox.remove();
 		},
 		error: function(error) {
 			console.error('메모 삭제 실패', error);
@@ -65,16 +66,6 @@ $('#addMemoBtn').click(function() {
             alert("모두 입력해주세요.");
             return;
         }
-
-	const MemoList = `
-            <div class="memo_box">
-                <div>${eventMemoManager}</div>
-                <div>${eventMemoTitle}</div>
-                <button class="delete_btn">&times;</button>
-            </div>
-        `;
-	$('#MemoList').append(MemoList);
-
 	$.ajax({
 		type: 'POST',
 		url: './MemoDataCon',
@@ -85,16 +76,39 @@ $('#addMemoBtn').click(function() {
 		dataType: 'text',
 		success: function(response) {
 			console.log('브리핑 DB 서버 응답 성공', response);
-			$('#MemoList').html(response);
+			
+			$.ajax({
+		type: 'POST',
+		url: './MemoSelectCon',
+		dataType: 'json',
+		async:false,
+		success: function(response) {
+			$('#MemoList').empty();
+			console.log('메모 조회 성공', response);
+			for (i = 0; i < response.length; i++) {
+				const memoBox = `
+                    <div class="memo_box">
+                        <div>${response[i].WRITER}</div>
+                        <div>${response[i].B_CONTENT}</div>
+                        <button class="delete_btn" data-num="${response[i].num}">&times;</button>
+                    </div>
+                `;
+				$('#MemoList').append(memoBox);
+			}
+		},
+		error: function(error) {
+			console.error('메모 조회 실패', error);
+		}
+	});
 		},
 		error: function(error) {
 			console.error('브리핑 DB 서버 응답 실패', error);
 		}
 	});
-	location.reload();
 	$('#addEventPopup3').hide();
 	document.getElementById('eventMemo').value = '';
 	$('input[name=memoManager]').prop('checked', false);
+	$('#MemoList').html(response);
 });
 
 $('#cancelMemoBtn').click(function() {
