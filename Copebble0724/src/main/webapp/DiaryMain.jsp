@@ -135,10 +135,11 @@
 
 
 	<script>
-    // JavaScript code for pagination
+    // 페이지네이션을 위한 JavaScript 코드
     const diaryCards = document.querySelectorAll('.diary_card');
     const itemsPerPage = 5;
     let currentPage = 0;
+    const totalPages = Math.ceil(diaryCards.length / itemsPerPage);
 
     function showPage(page) {
         const startIndex = page * itemsPerPage;
@@ -154,8 +155,12 @@
     }
 
     function nextPage() {
-        currentPage++;
-        showPage(currentPage);
+        if (currentPage < totalPages - 1) {
+            currentPage++;
+            showPage(currentPage);
+        } else {
+            alert('마지막 페이지입니다.');
+        }
     }
 
     function prevPage() {
@@ -166,7 +171,7 @@
         showPage(currentPage);
     }
 
-    // Show the first page on initial load
+    // 초기 로드 시 첫 페이지를 보여줍니다.
     showPage(currentPage);
 </script>
 	<script>
