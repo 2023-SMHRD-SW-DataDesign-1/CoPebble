@@ -34,6 +34,68 @@
 ## 🛠 시스템 아키텍쳐
 ![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/d347244f-0f87-4b36-816f-3119b8d650a9)
 
+## ⛏️ 기술스택
+<table>
+    <tr>
+        <th>구분</th>
+        <th>내용</th>
+    </tr>
+    <tr>
+        <td>Language</td>
+        <td>
+          <img src="https://img.shields.io/badge/JAVA-FF7800?style=for-the-badge&logo=java&logoColor=white">
+          <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white" />
+          <img src="https://img.shields.io/badge/python-1D9FD7?style=for-the-badge&logo=python&logoColor=white">
+          <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white" />
+          <img src="https://img.shields.io/badge/CSS3-48B0F1?style=for-the-badge&logo=CSS3&logoColor=white" />
+        </td>
+    </tr>
+    <tr>
+        <td>Library</td>
+        <td>
+          <img src="https://img.shields.io/badge/Mybatis-311C87?style=for-the-badge&logo&logoColor=white" />
+          <img src="https://img.shields.io/badge/BootStrap-9933CC?style=for-the-badge&logo=BootStrap&logoColor=white" />
+          <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white"/>
+          <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white" />
+        </td>
+    </tr>
+   <tr>
+        <td>API</td>
+        <td>
+          <img src="https://img.shields.io/badge/KakaoLogin-FFCD00?style=for-the-badge&logo=Kakao&logoColor=white" />
+          <img src="https://img.shields.io/badge/Fullcalendar-1CAAD9?style=for-the-badge&logo=Fullcalendar&logoColor=white"/>
+        </td>
+    </tr>
+    <tr>
+        <td>Development Tool</td>
+        <td>
+          <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=Eclipse&logoColor=white" />
+          <img src="https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=VisualStudioCode&logoColor=white" />
+        </td>
+    </tr>
+    <tr>
+        <td>Server</td>
+        <td>
+            <img src="https://img.shields.io/badge/Apache Tomcat-E43526?style=for-the-badge&logo=Apache Tomcat&logoColor=black" />
+        </td>
+    </tr>
+    <tr>
+        <td>DB</td>
+        <td>
+            <img src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white" />
+        </td>
+    </tr>
+    <tr>
+        <td>Collaboration Tool</td>
+        <td>
+            <img src="https://img.shields.io/badge/Git-E10098?style=for-the-badge&logo=Git&logoColor=white" />
+            <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white" />
+            <img src="https://img.shields.io/badge/Notion-white?style=for-the-badge&logo=Notion&logoColor=000000&" />
+        </td>
+    </tr>
+</table>
+
+
 
 ## 📰 서비스 흐름도
 ![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/4c595042-ef7b-469b-81f0-0658ac3ffa06)
@@ -44,6 +106,9 @@
 
 ## ✏️ ER 다이어그램
 ![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/e5a2be88-25a8-4289-87c1-b86a734c64af)
+
+## 💚 시연 영상 
+<img width="80%" src=""/>
 
 
 ## 🖥️ 화면구성
