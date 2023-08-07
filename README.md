@@ -67,4 +67,63 @@
 ![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/ab6e2f35-1373-4b81-8e53-a8e37079bb54)
 ![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/5c346761-a646-486d-9363-93f6071987ba)
 
+## 👑 팀원역할
+
+<table>
+  <tr>
+    <td>이름</td>
+    <td>류상지</td>
+    <td>이승훈</td> 
+    <td>유한솔</td>
+    <td>김지혜</td>
+  </tr>
+    <tr>
+    <td>계정링크</td>
+    <td><a href="https://github.com/chgo0506" target='_blank'>github</a></td>
+    <td><a href="https://github.com/SIM-TOO" target='_blank'>github</a></td>
+    <td><a href="https://github.com/pbnc1123" target='_blank'>github</a></td>
+    <td><a href="https://github.com/rlawlgp0197" target='_blank'>github</a></td>
+  </tr>
+  <tr>
+    <td>담당</td>
+    <td> 팀장 / Front-End </td>
+    <td> Front-End / Back-End </td>
+    <td> PM/DB/Front-End/Back-End </td>
+    <td> Front-End / Back-End </td>
+  </tr>
+  <tr>
+    <td>역할</td>
+    <td> 프로젝트 총괄 </td>
+    <td> 전체화면설계 및 구현</td>
+    <td> 패밀리키 페이지 F/B </td>
+  </tr>
+  <tr>
+    <td>  </td>
+    <td> 좋아요, 댓글 기능 구현</td>
+    <td>   </td>
+    <td> SNS로그인 기능 구현 </td>
+    <td> DB설계 및 구축 </td>
+  </tr>
+  <tr>
+    <td>  </td>
+    <td> 피드생성 및 출력</td>
+    <td>   </td>
+    <td> 결제 API </td>
+    <td>  프론트 JS담당  </td>
+  </tr>
+  <tr>
+    <td>  </td>
+    <td> 상품등록 및 출력</td>
+    <td>   </td>
+    <td> 장바구니 </td>
+    <td>  DTO 구축  </td>
+  </tr>
+  <tr>
+    <td>  </td>
+    <td> 실시간 채팅 기능 구현</td>
+    <td>   </td>
+    <td>   </td>
+    <td>   </td>
+  </tr> 
+</table>
 
