@@ -45,85 +45,85 @@
 
 ## 🖥️ 화면구성
 
-### 💛로그인 전 메인
+### 💛 로그인 전 메인화면
 ![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/e42b8017-a2b7-4a89-81d8-b5ecf821806e)
 
-### 💛로그인 후 메인
+### 💛 로그인 후 메인화면
 ![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/6f4c7b0e-2808-45ce-b18d-bf7c18dc5245)
 
-### 💛육아다이어리
+### 💛 육아다이어리
 ![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/9c264414-c43e-497a-93d3-dac83a013c07)
 
-### 💛집안일 관리
+### 💛 집안일 관리
 ![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/067b3553-88c8-4b92-a39c-6e0358d60719)
 
-### 💛패밀리키 생성 및 등록
+### 💛 패밀리키 생성 및 등록
 ![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/b89534a4-9be4-4ec6-a8d9-3ab43ff83238)
 
-### 💛마이페이지
+### 💛 마이페이지
 ![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/0700495e-25f6-40cb-bec0-8e20366e8fe0)
 
-### 💛로그인 및 회원가입 모달
+### 💛 로그인 및 회원가입 모달
 ![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/ab6e2f35-1373-4b81-8e53-a8e37079bb54)
 ![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/5c346761-a646-486d-9363-93f6071987ba)
 
-## 👑 팀원역할
+## 🌷 팀원역할
 
 <table>
   <tr>
-    <td>이름</td>
     <td>류상지</td>
     <td>이승훈</td> 
     <td>유한솔</td>
     <td>김지혜</td>
   </tr>
     <tr>
-    <td>계정링크</td>
+    <td> <img src="https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/349a320a-48e9-4992-9390-98629f0f4330"/>
+</td>
+    <td> <img src="https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/b9963154-3111-4899-bfdc-ef0c9de025b6"/>
+</td>
+    <td> <img src="https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/3bc32c0c-f01c-4de2-ad7c-8891cf296af4"/>
+ </td>
+    <td><img src="https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/5ac886da-26b6-4787-9af3-a6a646cd79b3"/>
+ </td>
+  </tr>
+    <tr>
     <td><a href="https://github.com/chgo0506" target='_blank'>github</a></td>
     <td><a href="https://github.com/SIM-TOO" target='_blank'>github</a></td>
     <td><a href="https://github.com/pbnc1123" target='_blank'>github</a></td>
     <td><a href="https://github.com/rlawlgp0197" target='_blank'>github</a></td>
   </tr>
   <tr>
-    <td>담당</td>
-    <td> 팀장 / Front-End </td>
-    <td> Front-End / Back-End </td>
-    <td> PM/DB/Front-End/Back-End </td>
-    <td> Front-End / Back-End </td>
+    <td> 팀장 / F / B </td>
+    <td> F / B </td>
+    <td> PM / DB / F/ B </td>
+    <td> F / B </td>
   </tr>
   <tr>
-    <td>역할</td>
-    <td>  </td>
-    <td>  </td>
-    <td> </td>
+    <td> 프로젝트 F 총괄 </td>
+    <td> 메인페이지 F/B </td>
+    <td> 회원 마이페이지 F/B </td>
+    <td> 카카오로그인 API </td>
   </tr>
   <tr>
-    <td> </td>
-    <td> </td>
-    <td>   </td>
-    <td>  </td>
-    <td>  </td>
+    <td> 전체 레이아웃 구상 F </td>
+    <td> 풀캘린더 API </td>
+    <td> 집안일관리 F </td>
+    <td> 육아다이어리 F/B </td>
   </tr>
   <tr>
-    <td>  </td>
-    <td> </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
+    <td> 패밀리키 F/B </td>
+    <td> 집안일관리 B </td>
+    <td> 로그인, 회원가입 F/B </td>
+    <td> 패밀리키 B/공유 </td>
   </tr>
-  <tr>
-    <td>  </td>
-    <td> </td>
-    <td>   </td>
-    <td> </td>
-    <td>  </td>
-  </tr>
-  <tr>
-    <td>  </td>
-    <td> </td>
-    <td>   </td>
-    <td>   </td>
-    <td>   </td>
-  </tr> 
+
 </table>
 
+
+## 🚩 트러블슈팅
+<br>
+<h3> ✖form 태그 -> ✔ AJAX </h3>
+<p> 대부분의 입력 창을 모달창으로 구현하면서 기존에 form태그를 이용한 페이지 이동 데이터 전송 방식이 부적절하다는 문제 </p>
+<p> 비동기 데이터 처리 방식인 AJAX를 활용해 페이지 이동 없이도 페이지 일부분만을 업데이트 해 데이터 전송</p>
+<br>
+<br>
