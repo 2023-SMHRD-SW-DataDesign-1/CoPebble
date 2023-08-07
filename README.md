@@ -43,4 +43,28 @@
 
 ## ✏️ ER 다이어그램
 
+## 🖥️ 화면구성
+
+### 💛로그인 전 메인
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/e42b8017-a2b7-4a89-81d8-b5ecf821806e)
+
+### 💛로그인 후 메인
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/6f4c7b0e-2808-45ce-b18d-bf7c18dc5245)
+
+### 💛육아다이어리
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/9c264414-c43e-497a-93d3-dac83a013c07)
+
+### 💛집안일 관리
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/067b3553-88c8-4b92-a39c-6e0358d60719)
+
+### 💛패밀리키 생성 및 등록
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/b89534a4-9be4-4ec6-a8d9-3ab43ff83238)
+
+### 💛마이페이지
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/0700495e-25f6-40cb-bec0-8e20366e8fe0)
+
+### 💛로그인 및 회원가입 모달
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/ab6e2f35-1373-4b81-8e53-a8e37079bb54)
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/5c346761-a646-486d-9363-93f6071987ba)
+
 
