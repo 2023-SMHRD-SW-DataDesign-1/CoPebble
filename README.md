@@ -40,8 +40,11 @@
 
 
 ## 🖥 유스케이스
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/cb377b30-5348-468f-90a0-5eafa03c22fd)
 
 ## ✏️ ER 다이어그램
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/e5a2be88-25a8-4289-87c1-b86a734c64af)
+
 
 ## 🖥️ 화면구성
 
