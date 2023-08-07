@@ -93,34 +93,34 @@
   </tr>
   <tr>
     <td>역할</td>
-    <td> 프로젝트 총괄 </td>
-    <td> 메인페이지 F/B </td>
-    <td> 패밀리키 페이지 F/B </td>
+    <td>  </td>
+    <td>  </td>
+    <td> </td>
   </tr>
   <tr>
-    <td> 전체화면설계 및 구현 </td>
-    <td> 풀캘린더 API </td>
+    <td> </td>
+    <td> </td>
     <td>   </td>
-    <td> SNS로그인 기능 구현 </td>
-    <td> DB설계 및 구축 </td>
-  </tr>
-  <tr>
-    <td> 패밀리키 페이지 F/B  </td>
-    <td> 집안일관리 B</td>
-    <td>   </td>
-    <td> 결제 API </td>
-    <td>  프론트 JS담당  </td>
+    <td>  </td>
+    <td>  </td>
   </tr>
   <tr>
     <td>  </td>
-    <td> 상품등록 및 출력</td>
-    <td>   </td>
-    <td> 장바구니 </td>
-    <td>  DTO 구축  </td>
+    <td> </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
   </tr>
   <tr>
     <td>  </td>
-    <td> 실시간 채팅 기능 구현</td>
+    <td> </td>
+    <td>   </td>
+    <td> </td>
+    <td>  </td>
+  </tr>
+  <tr>
+    <td>  </td>
+    <td> </td>
     <td>   </td>
     <td>   </td>
     <td>   </td>
