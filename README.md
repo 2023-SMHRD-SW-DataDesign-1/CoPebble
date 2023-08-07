@@ -25,7 +25,7 @@
 <P>- 💚 패밀리키 : 패밀리키를 등록해 부부 간 같은 화면을 공유할 수 있습니다. </P>
 <P>- 🎶 애니메이션 :서비스 설명 인트로 페이지에서 눈을 즐겁게하는 애니메이션을 구현했습니다. </P>
 
-
+<br>
 
 ## 🔨사용 언어 및 도구
 ![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/acc71402-aed7-4cf2-94cf-35bf126a2339)
@@ -39,6 +39,8 @@
 ![image](https://github.com/2023-SMHRD-SW-DataDesign-1/CoPebble/assets/134522033/4c595042-ef7b-469b-81f0-0658ac3ffa06)
 
 
+## 🖥 유스케이스
 
+## ✏️ ER 다이어그램
 
 
